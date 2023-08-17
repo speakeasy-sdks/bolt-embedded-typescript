@@ -1,0 +1,12 @@
+# DetectAccountResponse
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `contentType`                                                                | *string*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |
+| `statusCode`                                                                 | *number*                                                                     | :heavy_check_mark:                                                           | N/A                                                                          |
+| `rawResponse`                                                                | [AxiosResponse>](https://axios-http.com/docs/res_schema)                     | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `errorsBoltApiResponse`                                                      | [shared.ErrorsBoltApiResponse](../../models/shared/errorsboltapiresponse.md) | :heavy_minus_sign:                                                           | Missing Query Parameter                                                      |
+| `v1AccountsView`                                                             | [shared.V1AccountsView](../../models/shared/v1accountsview.md)               | :heavy_minus_sign:                                                           | Has Bolt Account                                                             |

@@ -1,0 +1,11 @@
+# UpdateTransactionRequestBody
+
+Update a Transaction
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     | Example                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `displayId`                                                                                     | *string*                                                                                        | :heavy_minus_sign:                                                                              | This field corresponds to the merchant's order reference associated with this Bolt transaction. | order-123                                                                                       |
+| `metadata`                                                                                      | Record<string, *string*>                                                                        | :heavy_minus_sign:                                                                              | Custom metadata associated with this Bolt transaction.                                          |                                                                                                 |

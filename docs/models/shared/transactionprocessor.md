@@ -1,0 +1,32 @@
+# TransactionProcessor
+
+The processor used. **Nullable** for Transactions Details.
+
+
+## Values
+
+| Name              | Value             |
+| ----------------- | ----------------- |
+| `AdyenGateway`    | adyen_gateway     |
+| `AdyenPayfac`     | adyen_payfac      |
+| `Affirm`          | affirm            |
+| `Afterpay`        | afterpay          |
+| `AllianceData`    | alliance_data     |
+| `AmazonPay`       | amazon_pay        |
+| `AuthorizeNet`    | authorize_net     |
+| `Braintree`       | braintree         |
+| `CheckoutCom`     | checkout_com      |
+| `Cybersource`     | cybersource       |
+| `FirstData`       | first_data        |
+| `Klarna`          | klarna            |
+| `Nmi`             | nmi               |
+| `Orbital`         | orbital           |
+| `Paypal`          | paypal            |
+| `Radial`          | radial            |
+| `RadialKlarna`    | radial_klarna     |
+| `RadialPaypal`    | radial_paypal     |
+| `Rocketgate`      | rocketgate        |
+| `Sezzle`          | sezzle            |
+| `ShopifyPayments` | shopify_payments  |
+| `Stripe`          | stripe            |
+| `Vantiv`          | vantiv            |

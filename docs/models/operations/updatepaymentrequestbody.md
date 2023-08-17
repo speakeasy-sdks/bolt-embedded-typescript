@@ -1,0 +1,9 @@
+# UpdatePaymentRequestBody
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `cart`                                                                                                        | [shared.CartCreate](../../models/shared/cartcreate.md)                                                        | :heavy_minus_sign:                                                                                            | The details of the cart being purchased with this payment.                                                    |
+| `shopperIdentity`                                                                                             | [UpdatePaymentRequestBodyShopperIdentity](../../models/operations/updatepaymentrequestbodyshopperidentity.md) | :heavy_minus_sign:                                                                                            | Identification information for the Shopper. This is only required when creating a new Bolt account.           |
