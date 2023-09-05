@@ -53,19 +53,29 @@ export class Account {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let properties: utils.SecurityProperties;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.AddAddressSecurity(security);
         }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
+        const localProperties = utils.parseSecurityProperties(security);
+        properties = {
+            params: { ...properties.params, ...localProperties.params },
+            headers: { ...properties.headers, ...localProperties.headers },
+        };
         const headers = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
+            ...properties.headers,
         };
         headers["Accept"] = "application/json";
 
@@ -149,19 +159,29 @@ export class Account {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let properties: utils.SecurityProperties;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.AddPaymentMethodSecurity(security);
         }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
+        const localProperties = utils.parseSecurityProperties(security);
+        properties = {
+            params: { ...properties.params, ...localProperties.params },
+            headers: { ...properties.headers, ...localProperties.headers },
+        };
         const headers = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
+            ...properties.headers,
         };
         headers["Accept"] = "application/json";
 
@@ -246,19 +266,29 @@ export class Account {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let properties: utils.SecurityProperties;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.CreateAccountSecurity(security);
         }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
+        const localProperties = utils.parseSecurityProperties(security);
+        properties = {
+            params: { ...properties.params, ...localProperties.params },
+            headers: { ...properties.headers, ...localProperties.headers },
+        };
         const headers = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
+            ...properties.headers,
         };
         headers["Accept"] = "application/json";
 
@@ -330,16 +360,29 @@ export class Account {
             this.sdkConfiguration.serverDefaults
         );
         const url: string = utils.generateURL(baseURL, "/v1/account/addresses/{id}", req);
-
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let properties: utils.SecurityProperties;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.DeleteAddressSecurity(security);
         }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
-        const headers = { ...utils.getHeadersFromRequest(req), ...config?.headers };
+        const localProperties = utils.parseSecurityProperties(security);
+        properties = {
+            params: { ...properties.params, ...localProperties.params },
+            headers: { ...properties.headers, ...localProperties.headers },
+        };
+        const headers = {
+            ...utils.getHeadersFromRequest(req),
+            ...config?.headers,
+            ...properties.headers,
+        };
         headers["Accept"] = "*/*";
 
         headers[
@@ -398,16 +441,29 @@ export class Account {
             "/v1/account/payment_methods/{payment_method_id}",
             req
         );
-
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let properties: utils.SecurityProperties;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.DeletePaymentMethodSecurity(security);
         }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
-        const headers = { ...utils.getHeadersFromRequest(req), ...config?.headers };
+        const localProperties = utils.parseSecurityProperties(security);
+        properties = {
+            params: { ...properties.params, ...localProperties.params },
+            headers: { ...properties.headers, ...localProperties.headers },
+        };
+        const headers = {
+            ...utils.getHeadersFromRequest(req),
+            ...config?.headers,
+            ...properties.headers,
+        };
         headers["Accept"] = "application/json";
 
         headers[
@@ -478,9 +534,7 @@ export class Account {
             this.sdkConfiguration.serverDefaults
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/account/exists";
-
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-
         const headers = { ...utils.getHeadersFromRequest(req), ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -578,19 +632,29 @@ export class Account {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let properties: utils.SecurityProperties;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.EditAddressSecurity(security);
         }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
+        const localProperties = utils.parseSecurityProperties(security);
+        properties = {
+            params: { ...properties.params, ...localProperties.params },
+            headers: { ...properties.headers, ...localProperties.headers },
+        };
         const headers = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
+            ...properties.headers,
         };
         headers["Accept"] = "application/json";
 
@@ -661,16 +725,29 @@ export class Account {
             this.sdkConfiguration.serverDefaults
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/account";
-
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let properties: utils.SecurityProperties;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetAccountSecurity(security);
         }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
-        const headers = { ...utils.getHeadersFromRequest(req), ...config?.headers };
+        const localProperties = utils.parseSecurityProperties(security);
+        properties = {
+            params: { ...properties.params, ...localProperties.params },
+            headers: { ...properties.headers, ...localProperties.headers },
+        };
+        const headers = {
+            ...utils.getHeadersFromRequest(req),
+            ...config?.headers,
+            ...properties.headers,
+        };
         headers["Accept"] = "application/json";
 
         headers[
@@ -751,19 +828,29 @@ export class Account {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let properties: utils.SecurityProperties;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.ReplaceAddressSecurity(security);
         }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
+        const localProperties = utils.parseSecurityProperties(security);
+        properties = {
+            params: { ...properties.params, ...localProperties.params },
+            headers: { ...properties.headers, ...localProperties.headers },
+        };
         const headers = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
+            ...properties.headers,
         };
         headers["Accept"] = "application/json";
 
@@ -844,19 +931,29 @@ export class Account {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
             }
         }
-
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let properties: utils.SecurityProperties;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.UpdateAccountProfileSecurity(security);
         }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
+        const localProperties = utils.parseSecurityProperties(security);
+        properties = {
+            params: { ...properties.params, ...localProperties.params },
+            headers: { ...properties.headers, ...localProperties.headers },
+        };
         const headers = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
+            ...properties.headers,
         };
         headers["Accept"] = "application/json";
 
