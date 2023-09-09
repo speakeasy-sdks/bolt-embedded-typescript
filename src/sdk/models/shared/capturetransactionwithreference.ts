@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Capture a Transaction
- */
 export class CaptureTransactionWithReference extends SpeakeasyBase {
     /**
      * The amount in cents. **Nullable** for Transactions Details.

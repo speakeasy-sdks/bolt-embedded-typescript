@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Has Bolt Account
- */
 export class V1AccountsView extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "has_bolt_account" })

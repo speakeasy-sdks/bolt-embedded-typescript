@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * OAuth token response.
- */
 export class OAuthTokenResponse extends SpeakeasyBase {
     /**
      * An access token you can use to make requests on behalf of a Bolt Account.

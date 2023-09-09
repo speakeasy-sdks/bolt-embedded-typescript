@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Invalid request to OAuth Token.
- */
 export class ErrorsOauthServerResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "error" })

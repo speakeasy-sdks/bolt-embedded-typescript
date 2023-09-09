@@ -172,9 +172,6 @@ export class TransactionViewVoid extends SpeakeasyBase {
     void?: string;
 }
 
-/**
- * Capture Successful
- */
 export class TransactionView extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })

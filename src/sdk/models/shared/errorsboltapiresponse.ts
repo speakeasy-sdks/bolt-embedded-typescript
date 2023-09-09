@@ -7,9 +7,6 @@ import { ErrorBoltApi } from "./errorboltapi";
 import { RequestResult } from "./requestresult";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Missing Query Parameter
- */
 export class ErrorsBoltApiResponse extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: ErrorBoltApi })
     @Expose({ name: "errors" })

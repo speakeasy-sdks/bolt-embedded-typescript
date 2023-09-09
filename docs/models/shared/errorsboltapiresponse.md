@@ -1,7 +1,5 @@
 # ErrorsBoltApiResponse
 
-Missing Query Parameter
-
 
 ## Fields
 

@@ -156,9 +156,6 @@ export class AccountDetailsAddresses extends SpeakeasyBase {
     streetAddress4?: string;
 }
 
-/**
- * Account Details Fetched
- */
 export class AccountDetails extends SpeakeasyBase {
     /**
      * A list of all addresses associated to the shopper's account.

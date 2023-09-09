@@ -6,9 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { TransactionView } from "./transactionview";
 import { Expose, Type } from "class-transformer";
 
-/**
- * Authorization Successful
- */
 export class IAuthorizeResultView extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "did_create_bolt_account" })
