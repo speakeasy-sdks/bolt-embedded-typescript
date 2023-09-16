@@ -68,7 +68,7 @@ sdk.account.addAddress({
 ## Available Resources and Operations
 
 
-### [account](docs/sdks/account/README.md)
+### [Account](docs/sdks/account/README.md)
 
 * [addAddress](docs/sdks/account/README.md#addaddress) - Add Address
 * [addPaymentMethod](docs/sdks/account/README.md#addpaymentmethod) - Add Payment Method
@@ -81,22 +81,22 @@ sdk.account.addAddress({
 * [replaceAddress](docs/sdks/account/README.md#replaceaddress) - Replace Address
 * [updateAccountProfile](docs/sdks/account/README.md#updateaccountprofile) - Update Profile
 
-### [oAuth](docs/sdks/oauth/README.md)
+### [OAuth](docs/sdks/oauth/README.md)
 
 * [oAuthToken](docs/sdks/oauth/README.md#oauthtoken) - OAuth Token Endpoint
 
-### [payments](docs/sdks/payments/README.md)
+### [Payments](docs/sdks/payments/README.md)
 
 * [finalizePayment](docs/sdks/payments/README.md#finalizepayment) - Finalize Payment
 * [initializePayment](docs/sdks/payments/README.md#initializepayment) - Initialize Payment
 * [updatePayment](docs/sdks/payments/README.md#updatepayment) - Update Payment
 
-### [testing](docs/sdks/testing/README.md)
+### [Testing](docs/sdks/testing/README.md)
 
 * [createTestingShopperAccount](docs/sdks/testing/README.md#createtestingshopperaccount) - Create Testing Shopper Account
 * [getTestCreditCardToken](docs/sdks/testing/README.md#gettestcreditcardtoken) - Fetch a Test Credit Card Token
 
-### [transactions](docs/sdks/transactions/README.md)
+### [Transactions](docs/sdks/transactions/README.md)
 
 * [authorizeTransaction](docs/sdks/transactions/README.md#authorizetransaction) - Authorize a Card
 * [captureTransaction](docs/sdks/transactions/README.md#capturetransaction) - Capture a Transaction
