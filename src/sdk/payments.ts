@@ -45,7 +45,7 @@ export class Payments {
         );
         const url: string = utils.generateURL(baseURL, "/v1/payments/{id}/finalize", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
@@ -151,7 +151,7 @@ export class Payments {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/payments";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
@@ -257,7 +257,7 @@ export class Payments {
         );
         const url: string = utils.generateURL(baseURL, "/v1/payments/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");

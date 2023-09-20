@@ -44,7 +44,7 @@ export class Account {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/account/addresses";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "addressAccount", "json");
@@ -150,7 +150,7 @@ export class Account {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/account/payment_methods";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
@@ -253,7 +253,7 @@ export class Account {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/account";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -623,7 +623,7 @@ export class Account {
         );
         const url: string = utils.generateURL(baseURL, "/v1/account/addresses/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "addressAccount", "json");
@@ -819,7 +819,7 @@ export class Account {
         );
         const url: string = utils.generateURL(baseURL, "/v1/account/addresses/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "addressAccount", "json");
@@ -922,7 +922,7 @@ export class Account {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/account/profile";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");

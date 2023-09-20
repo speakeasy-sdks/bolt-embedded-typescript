@@ -48,7 +48,7 @@ export class Transactions {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/authorize";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
@@ -155,7 +155,7 @@ export class Transactions {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/capture";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
@@ -403,7 +403,7 @@ export class Transactions {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/credit";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
@@ -525,7 +525,7 @@ export class Transactions {
             req
         );
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
@@ -646,7 +646,7 @@ export class Transactions {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/void";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "creditCardVoid", "json");

@@ -48,7 +48,7 @@ export class OAuth {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/oauth/token";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "form");
