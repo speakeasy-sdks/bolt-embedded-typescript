@@ -7,7 +7,7 @@ import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
 /**
  * Create and manage transactions for non credit card payments such as Paypal in your Embedded Accounts experience.
@@ -72,7 +72,7 @@ export class Payments {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
@@ -178,7 +178,7 @@ export class Payments {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
@@ -284,7 +284,7 @@ export class Payments {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,

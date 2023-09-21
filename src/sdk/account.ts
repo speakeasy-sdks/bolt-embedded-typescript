@@ -7,7 +7,7 @@ import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
 /**
  * Create Embedded Accounts user flows for logged-in and guest experiences by interacting with and updating shopper data.
@@ -71,7 +71,7 @@ export class Account {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
@@ -177,7 +177,7 @@ export class Account {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
@@ -284,7 +284,7 @@ export class Account {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
@@ -378,7 +378,7 @@ export class Account {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...config?.headers,
             ...properties.headers,
@@ -459,7 +459,7 @@ export class Account {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...config?.headers,
             ...properties.headers,
@@ -535,7 +535,10 @@ export class Account {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/account/exists";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...utils.getHeadersFromRequest(req), ...config?.headers };
+        const headers: RawAxiosRequestHeaders = {
+            ...utils.getHeadersFromRequest(req),
+            ...config?.headers,
+        };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
@@ -650,7 +653,7 @@ export class Account {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
@@ -743,7 +746,7 @@ export class Account {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...config?.headers,
             ...properties.headers,
@@ -846,7 +849,7 @@ export class Account {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
@@ -949,7 +952,7 @@ export class Account {
             params: { ...properties.params, ...localProperties.params },
             headers: { ...properties.headers, ...localProperties.headers },
         };
-        const headers = {
+        const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
             ...config?.headers,
