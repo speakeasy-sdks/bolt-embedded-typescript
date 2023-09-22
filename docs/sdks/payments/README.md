@@ -28,18 +28,18 @@ const operationSecurity: FinalizePaymentSecurity = {
 };
 
 sdk.payments.finalizePayment({
-  idempotencyKey: "dicta",
+  idempotencyKey: "dolore",
   requestBody: {
     merchantEventId: "dbe0cd5d-3261-41d9-ba61-49e5b9d07567",
     shopperIdentity: {
       createBoltAccount: true,
-      email: "Elena68@yahoo.com",
-      firstName: "Emilie",
-      lastName: "Thompson",
-      phone: "1-902-755-8255 x909",
+      email: "Birdie88@yahoo.com",
+      firstName: "Harry",
+      lastName: "VonRueden",
+      phone: "(365) 682-5590",
     },
   },
-  id: "91e450ad-2abd-4442-a980-2d502a94bb4f",
+  id: "e91e450a-d2ab-4d44-a698-02d502a94bb4",
 }, operationSecurity).then((res: FinalizePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -87,17 +87,17 @@ const operationSecurity: InitializePaymentSecurity = {
 };
 
 sdk.payments.initializePayment({
-  idempotencyKey: "eum",
+  idempotencyKey: "delectus",
   requestBody: {
     cart: {
       addOns: [
         {
-          description: "non",
-          imageUrl: "eligendi",
-          name: "Gilbert Medhurst",
-          price: 6389.21,
-          productId: "dolor",
-          productPageUrl: "debitis",
+          description: "eum",
+          imageUrl: "non",
+          name: "Sergio Hyatt",
+          price: 5722.52,
+          productId: "officia",
+          productPageUrl: "dolor",
         },
       ],
       billingAddress: {
@@ -128,7 +128,7 @@ sdk.payments.initializePayment({
           code: "SUMMER10DISCOUNT",
           description: "10% off our summer collection",
           detailsUrl: "https://boltswagstore.com/SUMMERSALE",
-          discountCategory: CartDiscountDiscountCategory.Unknown,
+          discountCategory: CartDiscountDiscountCategory.RewardsDiscount,
           reference: "DISC-1234",
           type: CartDiscountType.Percentage,
         },
@@ -138,10 +138,10 @@ sdk.payments.initializePayment({
         {
           description: "Item Fee",
           name: "Item Fee",
-          quantity: 6800.56,
+          quantity: 9527.49,
           reference: "ItemFee",
-          unitPrice: 4471.25,
-          unitTaxAmount: 4491.98,
+          unitPrice: 6800.56,
+          unitTaxAmount: 4471.25,
         },
       ],
       fulfillments: [
@@ -157,9 +157,9 @@ sdk.payments.initializePayment({
               customizations: [
                 {
                   attributes: {
-                    "illum": "maiores",
+                    "in": "illum",
                   },
-                  name: "Keith Gulgowski",
+                  name: "Jean Buckridge",
                   price: {
                     amount: 754,
                     currency: "USD",
@@ -170,9 +170,9 @@ sdk.payments.initializePayment({
               description: "Large tote with Bolt logo.",
               detailsUrl: "https://boltswagstore.com/products/123456",
               externalInputs: {
-                shopifyLineItemReference: 4118.2,
-                shopifyProductReference: 3965.06,
-                shopifyProductVariantReference: 6754.39,
+                shopifyLineItemReference: 8137.98,
+                shopifyProductReference: 4118.2,
+                shopifyProductVariantReference: 3965.06,
               },
               giftOption: {
                 cost: 770,
@@ -182,21 +182,21 @@ sdk.payments.initializePayment({
               },
               imageUrl: "https://boltswagstore.com/products/123456/images/1.png",
               isbn: "9780091347314",
-              itemGroup: "accusamus",
+              itemGroup: "laborum",
               manufacturer: "Bolt Textiles USA",
               merchantProductId: "881",
               merchantVariantId: "888",
-              msrp: 2497.96,
+              msrp: 8811.04,
               name: "Bolt Swag Bag",
               options: "Special Edition",
               properties: [
                 {
-                  color: "occaecati",
+                  color: "non",
                   display: false,
-                  name: "Sophia Wintheiser",
-                  nameId: 7252.55,
-                  value: "id",
-                  valueId: 5013.24,
+                  name: "Jon Tillman",
+                  nameId: 5884.65,
+                  value: "nam",
+                  valueId: 6596.69,
                 },
               ],
               quantity: 1,
@@ -246,13 +246,13 @@ sdk.payments.initializePayment({
               shipmentType: CartItemShipmentType.ShipToStore,
               size: "Large",
               sku: "BOLT-SKU_100",
-              source: "sapiente",
+              source: "deleniti",
               tags: "tote, blue, linen, eco-friendly",
               taxAmount: 0,
-              taxCode: "amet",
+              taxCode: "sapiente",
               taxable: false,
               totalAmount: 1000,
-              type: CartItemType.Physical,
+              type: CartItemType.Unknown,
               unitPrice: 1000,
               uom: "inches",
               upc: "825764603119",
@@ -303,8 +303,8 @@ sdk.payments.initializePayment({
             type: CartShipmentType.DoorDelivery,
           },
           digitalDelivery: {
-            email: "Henry.Mosciski@yahoo.com",
-            phone: "537-722-3674",
+            email: "Golda_Kassulke@yahoo.com",
+            phone: "243.762.2367 x481",
           },
           inStoreCartShipment: {
             cartShipment: {
@@ -372,8 +372,8 @@ sdk.payments.initializePayment({
               streetAddress3: "c/o Alicia Watts",
               streetAddress4: "Bridge Street Apartment Building B",
             },
-            pickupWindowClose: 878453,
-            pickupWindowOpen: 135474,
+            pickupWindowClose: 102863,
+            pickupWindowOpen: 298282,
             storeName: "Bolt Collective",
           },
           type: CartCreateFulfillmentsType.PhysicalDoorDelivery,
@@ -446,8 +446,8 @@ sdk.payments.initializePayment({
             streetAddress3: "c/o Alicia Watts",
             streetAddress4: "Bridge Street Apartment Building B",
           },
-          pickupWindowClose: 298282,
-          pickupWindowOpen: 92373,
+          pickupWindowClose: 569965,
+          pickupWindowOpen: 354047,
           storeName: "Bolt Collective",
         },
       ],
@@ -462,9 +462,9 @@ sdk.payments.initializePayment({
           customizations: [
             {
               attributes: {
-                "excepturi": "ullam",
+                "provident": "quos",
               },
-              name: "Miss Julian Marvin",
+              name: "Kenneth O'Hara",
               price: {
                 amount: 754,
                 currency: "USD",
@@ -475,9 +475,9 @@ sdk.payments.initializePayment({
           description: "Large tote with Bolt logo.",
           detailsUrl: "https://boltswagstore.com/products/123456",
           externalInputs: {
-            shopifyLineItemReference: 6521.03,
-            shopifyProductReference: 3209.97,
-            shopifyProductVariantReference: 4314.18,
+            shopifyLineItemReference: 3209.97,
+            shopifyProductReference: 4314.18,
+            shopifyProductVariantReference: 2212.62,
           },
           giftOption: {
             cost: 770,
@@ -487,21 +487,21 @@ sdk.payments.initializePayment({
           },
           imageUrl: "https://boltswagstore.com/products/123456/images/1.png",
           isbn: "9780091347314",
-          itemGroup: "dolor",
+          itemGroup: "necessitatibus",
           manufacturer: "Bolt Textiles USA",
           merchantProductId: "881",
           merchantVariantId: "888",
-          msrp: 8965.47,
+          msrp: 1412.64,
           name: "Bolt Swag Bag",
           options: "Special Edition",
           properties: [
             {
-              color: "odit",
+              color: "nemo",
               display: false,
-              name: "Joyce Kertzmann",
-              nameId: 2603.41,
-              value: "maxime",
-              valueId: 5370.23,
+              name: "Vera Wyman",
+              nameId: 8061.94,
+              value: "deleniti",
+              valueId: 7038.89,
             },
           ],
           quantity: 1,
@@ -548,16 +548,16 @@ sdk.payments.initializePayment({
             totalWeightUnit: "kg",
             type: CartShipmentType.DoorDelivery,
           },
-          shipmentType: CartItemShipmentType.ShipToStore,
+          shipmentType: CartItemShipmentType.DoorDelivery,
           size: "Large",
           sku: "BOLT-SKU_100",
-          source: "in",
+          source: "architecto",
           tags: "tote, blue, linen, eco-friendly",
           taxAmount: 0,
           taxCode: "architecto",
           taxable: false,
           totalAmount: 1000,
-          type: CartItemType.Unknown,
+          type: CartItemType.Bundled,
           unitPrice: 1000,
           uom: "inches",
           upc: "825764603119",
@@ -567,17 +567,17 @@ sdk.payments.initializePayment({
       ],
       loyaltyRewards: [
         {
-          amount: 9194.83,
-          couponCode: "ullam",
+          amount: 3523.12,
+          couponCode: "expedita",
           description: "$5 off (100 Points)",
           details: "{"id": 123456, "icon": "fa-dollar", "name": "$15.00 Off", "type": "Coupon", "amount": 100, "duration": "single_use", "cost_text": "150 Points",  "description": "Get $15 off your next purchase for 150 points", "discount_type": "fixed_amount", "unrendered_name": "$15.00 Off",  "discount_percentage": null, "discount_rate_cents": null, "discount_value_cents": null, "discount_amount_cents": 1500,  "unrendered_description": "Get $15 off your next purchase for 150 points", "applies_to_product_type": "ALL"}",
-          points: 7142.42,
-          source: "nihil",
-          type: "repellat",
+          points: 4692.49,
+          source: "repellat",
+          type: "quibusdam",
         },
       ],
       metadata: {
-        "quibusdam": "sed",
+        "sed": "saepe",
       },
       orderDescription: "Order #1234567890",
       orderReference: "order_100",
@@ -625,18 +625,18 @@ sdk.payments.initializePayment({
           type: CartShipmentType.DoorDelivery,
         },
       ],
-      taxAmount: 9046.48,
+      taxAmount: 8681.26,
       totalAmount: 900,
     },
     shopperIdentity: {
       createBoltAccount: true,
-      email: "Alia_Crooks@hotmail.com",
-      firstName: "Catalina",
-      lastName: "Casper",
-      phone: "888-551-4009 x63447",
+      email: "Carroll.Lang@gmail.com",
+      firstName: "Bradford",
+      lastName: "Satterfield",
+      phone: "(884) 614-0096 x34470",
     },
   },
-  xPublishableKey: "eaque",
+  xPublishableKey: "pariatur",
 }, operationSecurity).then((res: InitializePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -684,14 +684,14 @@ const operationSecurity: UpdatePaymentSecurity = {
 };
 
 sdk.payments.updatePayment({
-  idempotencyKey: "pariatur",
+  idempotencyKey: "nemo",
   requestBody: {
     cart: {
       addOns: [
         {
-          description: "nemo",
-          imageUrl: "voluptatibus",
-          name: "Miss Ginger Feeney",
+          description: "voluptatibus",
+          imageUrl: "perferendis",
+          name: "Vincent Anderson",
           price: 9441.24,
           productId: "libero",
           productPageUrl: "nobis",

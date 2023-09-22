@@ -54,23 +54,10 @@ export class Testing {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let properties: utils.SecurityProperties;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.CreateTestingShopperAccountSecurity(security);
         }
-        const localProperties = utils.parseSecurityProperties(security);
-        properties = {
-            params: { ...properties.params, ...localProperties.params },
-            headers: { ...properties.headers, ...localProperties.headers },
-        };
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -143,23 +130,10 @@ export class Testing {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/v1/testing/card_token";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let properties: utils.SecurityProperties;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetTestCreditCardTokenSecurity(security);
         }
-        const localProperties = utils.parseSecurityProperties(security);
-        properties = {
-            params: { ...properties.params, ...localProperties.params },
-            headers: { ...properties.headers, ...localProperties.headers },
-        };
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 

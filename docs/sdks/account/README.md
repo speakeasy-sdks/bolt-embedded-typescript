@@ -35,8 +35,8 @@ const operationSecurity: AddAddressSecurity = {
 };
 
 sdk.account.addAddress({
-  idempotencyKey: "quibusdam",
-  xPublishableKey: "unde",
+  idempotencyKey: "corrupti",
+  xPublishableKey: "illum",
   addressAccount: {
     company: "Bolt",
     country: "United States",
@@ -48,7 +48,7 @@ sdk.account.addAddress({
     lastName: "Watts",
     locality: "Brooklyn",
     metadata: {
-      additionalProperties: "nulla",
+      additionalProperties: "vel",
     },
     name: "Alan Watts",
     phone: "+12125550199",
@@ -107,7 +107,7 @@ const operationSecurity: AddPaymentMethodSecurity = {
 };
 
 sdk.account.addPaymentMethod({
-  idempotencyKey: "corrupti",
+  idempotencyKey: "error",
   requestBody: {
     billingAddress: {
       company: "Bolt",
@@ -131,23 +131,23 @@ sdk.account.addPaymentMethod({
     },
     billingAddressId: "null",
     bin: "411111",
-    cryptogram: "illum",
+    cryptogram: "deserunt",
     currency: "USD",
-    eci: "vel",
+    eci: "suscipit",
     expiration: "2025-11",
     last4: "1234",
     metadata: {
-      additionalProperties: "error",
+      additionalProperties: "iure",
     },
-    network: AddPaymentMethodRequestBodyNetwork.Jcb,
-    number: "suscipit",
+    network: AddPaymentMethodRequestBodyNetwork.Mastercard,
+    number: "debitis",
     postalCode: "10044",
     priority: AddPaymentMethodRequestBodyPriority.One,
     save: false,
     token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
     tokenType: AddPaymentMethodRequestBodyTokenType.Bolt,
   },
-  xPublishableKey: "magnam",
+  xPublishableKey: "delectus",
 }, operationSecurity).then((res: AddPaymentMethodResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -190,8 +190,8 @@ const operationSecurity: CreateAccountSecurity = {
 };
 
 sdk.account.createAccount({
-  idempotencyKey: "debitis",
-  xPublishableKey: "ipsa",
+  idempotencyKey: "tempora",
+  xPublishableKey: "suscipit",
   createAccountInput: {
     addresses: [
       {
@@ -205,7 +205,7 @@ sdk.account.createAccount({
         lastName: "Watts",
         locality: "Brooklyn",
         metadata: {
-          additionalProperties: "delectus",
+          additionalProperties: "molestiae",
         },
         name: "Alan Watts",
         phone: "+12125550199",
@@ -242,18 +242,18 @@ sdk.account.createAccount({
         },
         billingAddressId: "null",
         bin: "411111",
-        cryptogram: "tempora",
+        cryptogram: "minus",
         default: false,
-        eci: "suscipit",
+        eci: "placeat",
         expiration: "2025-11",
         last4: "1234",
         metadata: {
-          additionalProperties: "molestiae",
+          additionalProperties: "voluptatum",
         },
-        network: PaymentMethodAccountNetwork.Unionpay,
-        number: "placeat",
+        network: PaymentMethodAccountNetwork.Discover,
+        number: "excepturi",
         postalCode: "10044",
-        priority: PaymentMethodAccountPriority.Two,
+        priority: PaymentMethodAccountPriority.One,
         save: false,
         token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
         tokenType: PaymentMethodAccountTokenType.Bolt,
@@ -264,7 +264,7 @@ sdk.account.createAccount({
       firstName: "Alan",
       lastName: "Watts",
       metadata: {
-        additionalProperties: "iusto",
+        additionalProperties: "recusandae",
       },
       phone: "+12125550199",
     },
@@ -308,8 +308,8 @@ const operationSecurity: DeleteAddressSecurity = {
 };
 
 sdk.account.deleteAddress({
-  xPublishableKey: "excepturi",
-  id: "6ed151a0-5dfc-42dd-b7cc-78ca1ba928fc",
+  xPublishableKey: "temporibus",
+  id: "151a05df-c2dd-4f7c-878c-a1ba928fc816",
 }, operationSecurity).then((res: DeleteAddressResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -348,8 +348,8 @@ const operationSecurity: DeletePaymentMethodSecurity = {
 };
 
 sdk.account.deletePaymentMethod({
-  xPublishableKey: "totam",
-  paymentMethodId: "beatae",
+  xPublishableKey: "molestiae",
+  paymentMethodId: "modi",
 }, operationSecurity).then((res: DeletePaymentMethodResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -388,10 +388,10 @@ const sdk = new BoltEmbeddedApi({
 });
 
 sdk.account.detectAccount({
-  xPublishableKey: "commodi",
-  email: "Diego_Dibbert45@yahoo.com",
-  phone: "610.461.6263",
-  sha256Email: "hic",
+  xPublishableKey: "qui",
+  email: "Myra56@hotmail.com",
+  phone: "1-236-362-6399",
+  sha256Email: "fuga",
 }).then((res: DetectAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -431,7 +431,7 @@ const operationSecurity: EditAddressSecurity = {
 };
 
 sdk.account.editAddress({
-  xPublishableKey: "saepe",
+  xPublishableKey: "in",
   addressAccount: {
     company: "Bolt",
     country: "United States",
@@ -443,7 +443,7 @@ sdk.account.editAddress({
     lastName: "Watts",
     locality: "Brooklyn",
     metadata: {
-      additionalProperties: "fuga",
+      additionalProperties: "corporis",
     },
     name: "Alan Watts",
     phone: "+12125550199",
@@ -455,7 +455,7 @@ sdk.account.editAddress({
     streetAddress3: "c/o Alicia Watts",
     streetAddress4: "Bridge Street Apartment Building B",
   },
-  id: "7596eb10-faaa-4235-ac59-55907aff1a3a",
+  id: "96eb10fa-aa23-452c-9955-907aff1a3a2f",
 }, operationSecurity).then((res: EditAddressResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -494,7 +494,7 @@ const operationSecurity: GetAccountSecurity = {
 };
 
 sdk.account.getAccount({
-  xPublishableKey: "consequuntur",
+  xPublishableKey: "mollitia",
 }, operationSecurity).then((res: GetAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -535,8 +535,8 @@ const operationSecurity: ReplaceAddressSecurity = {
 };
 
 sdk.account.replaceAddress({
-  idempotencyKey: "repellat",
-  xPublishableKey: "mollitia",
+  idempotencyKey: "occaecati",
+  xPublishableKey: "numquam",
   addressAccount: {
     company: "Bolt",
     country: "United States",
@@ -548,7 +548,7 @@ sdk.account.replaceAddress({
     lastName: "Watts",
     locality: "Brooklyn",
     metadata: {
-      additionalProperties: "occaecati",
+      additionalProperties: "commodi",
     },
     name: "Alan Watts",
     phone: "+12125550199",
@@ -560,7 +560,7 @@ sdk.account.replaceAddress({
     streetAddress3: "c/o Alicia Watts",
     streetAddress4: "Bridge Street Apartment Building B",
   },
-  id: "46773925-1aa5-42c3-b5ad-019da1ffe78f",
+  id: "7739251a-a52c-43f5-ad01-9da1ffe78f09",
 }, operationSecurity).then((res: ReplaceAddressResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -603,10 +603,10 @@ sdk.account.updateAccountProfile({
     firstName: "Alan",
     lastName: "Watts",
     metadata: {
-      additionalProperties: "ipsa",
+      additionalProperties: "voluptate",
     },
   },
-  xPublishableKey: "omnis",
+  xPublishableKey: "cum",
 }, operationSecurity).then((res: UpdateAccountProfileResponse) => {
   if (res.statusCode == 200) {
     // handle response
