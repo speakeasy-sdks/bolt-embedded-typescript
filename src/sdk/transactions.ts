@@ -58,23 +58,10 @@ export class Transactions {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let properties: utils.SecurityProperties;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.AuthorizeTransactionSecurity(security);
         }
-        const localProperties = utils.parseSecurityProperties(security);
-        properties = {
-            params: { ...properties.params, ...localProperties.params },
-            headers: { ...properties.headers, ...localProperties.headers },
-        };
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -169,23 +156,10 @@ export class Transactions {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let properties: utils.SecurityProperties;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.CaptureTransactionSecurity(security);
         }
-        const localProperties = utils.parseSecurityProperties(security);
-        properties = {
-            params: { ...properties.params, ...localProperties.params },
-            headers: { ...properties.headers, ...localProperties.headers },
-        };
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -300,23 +274,10 @@ export class Transactions {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let properties: utils.SecurityProperties;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetTransactionDetailsSecurity(security);
         }
-        const localProperties = utils.parseSecurityProperties(security);
-        properties = {
-            params: { ...properties.params, ...localProperties.params },
-            headers: { ...properties.headers, ...localProperties.headers },
-        };
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -413,23 +374,10 @@ export class Transactions {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let properties: utils.SecurityProperties;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.RefundTransactionSecurity(security);
         }
-        const localProperties = utils.parseSecurityProperties(security);
-        properties = {
-            params: { ...properties.params, ...localProperties.params },
-            headers: { ...properties.headers, ...localProperties.headers },
-        };
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -535,23 +483,10 @@ export class Transactions {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let properties: utils.SecurityProperties;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.UpdateTransactionSecurity(security);
         }
-        const localProperties = utils.parseSecurityProperties(security);
-        properties = {
-            params: { ...properties.params, ...localProperties.params },
-            headers: { ...properties.headers, ...localProperties.headers },
-        };
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -656,23 +591,10 @@ export class Transactions {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let properties: utils.SecurityProperties;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        properties = utils.parseSecurityProperties(globalSecurity);
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.VoidTransactionSecurity(security);
         }
-        const localProperties = utils.parseSecurityProperties(security);
-        properties = {
-            params: { ...properties.params, ...localProperties.params },
-            headers: { ...properties.headers, ...localProperties.headers },
-        };
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
