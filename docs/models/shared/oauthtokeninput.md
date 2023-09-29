@@ -1,4 +1,4 @@
-# OAuthTokenInput2
+# OAuthTokenInput
 
 
 ## Fields

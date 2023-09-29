@@ -25,7 +25,7 @@ export enum OAuthTokenInputScope {
     Openid = "openid",
 }
 
-export class OAuthTokenInput2 extends SpeakeasyBase {
+export class OAuthTokenInput extends SpeakeasyBase {
     /**
      * Merchant publishable key which can be found in the merchant dashboard
      */

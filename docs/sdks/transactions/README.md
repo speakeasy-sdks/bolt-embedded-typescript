@@ -1,4 +1,5 @@
 # Transactions
+(*transactions*)
 
 ## Overview
 
@@ -50,18 +51,18 @@ const operationSecurity: AuthorizeTransactionSecurity = {
 };
 
 sdk.transactions.authorizeTransaction({
-  idempotencyKey: "soluta",
+  idempotencyKey: "Handmade",
   requestBody: {
     autoCapture: false,
     cart: {
       addOns: [
         {
-          description: "et",
-          imageUrl: "saepe",
-          name: "Carolyn Rohan",
-          price: 5844.76,
-          productId: "aperiam",
-          productPageUrl: "delectus",
+          description: "Seamless 6th generation array",
+          imageUrl: "online",
+          name: "how Rhode",
+          price: 5747.53,
+          productId: "sievert",
+          productPageUrl: "Valley",
         },
       ],
       billingAddress: {
@@ -102,10 +103,10 @@ sdk.transactions.authorizeTransaction({
         {
           description: "Item Fee",
           name: "Item Fee",
-          quantity: 2921.47,
+          quantity: 1097.93,
           reference: "ItemFee",
-          unitPrice: 2869.15,
-          unitTaxAmount: 2408.29,
+          unitPrice: 2763.1,
+          unitTaxAmount: 8037.22,
         },
       ],
       fulfillments: [
@@ -121,9 +122,9 @@ sdk.transactions.authorizeTransaction({
               customizations: [
                 {
                   attributes: {
-                    "dolorum": "architecto",
+                    "veniam": "relationships",
                   },
-                  name: "Margaret Luettgen MD",
+                  name: "when Marketing Dong",
                   price: {
                     amount: 754,
                     currency: "USD",
@@ -134,9 +135,9 @@ sdk.transactions.authorizeTransaction({
               description: "Large tote with Bolt logo.",
               detailsUrl: "https://boltswagstore.com/products/123456",
               externalInputs: {
-                shopifyLineItemReference: 8330.38,
-                shopifyProductReference: 7851.53,
-                shopifyProductVariantReference: 9843.3,
+                shopifyLineItemReference: 2054.91,
+                shopifyProductReference: 9318.51,
+                shopifyProductVariantReference: 1906.5,
               },
               giftOption: {
                 cost: 770,
@@ -146,21 +147,21 @@ sdk.transactions.authorizeTransaction({
               },
               imageUrl: "https://boltswagstore.com/products/123456/images/1.png",
               isbn: "9780091347314",
-              itemGroup: "ut",
+              itemGroup: "Boron",
               manufacturer: "Bolt Textiles USA",
               merchantProductId: "881",
               merchantVariantId: "888",
-              msrp: 7034.95,
+              msrp: 9743.04,
               name: "Bolt Swag Bag",
               options: "Special Edition",
               properties: [
                 {
-                  color: "cupiditate",
+                  color: "red",
                   display: false,
-                  name: "Amy Langworth",
-                  nameId: 9774.96,
-                  value: "quisquam",
-                  valueId: 8765.06,
+                  name: "South cloudy array",
+                  nameId: 4403.82,
+                  value: "Titanium Cisgender Intersex",
+                  valueId: 276.57,
                 },
               ],
               quantity: 1,
@@ -207,16 +208,16 @@ sdk.transactions.authorizeTransaction({
                 totalWeightUnit: "kg",
                 type: CartShipmentType.DoorDelivery,
               },
-              shipmentType: CartItemShipmentType.ShipToStore,
+              shipmentType: CartItemShipmentType.Unknown,
               size: "Large",
               sku: "BOLT-SKU_100",
-              source: "quis",
+              source: "Administrator",
               tags: "tote, blue, linen, eco-friendly",
               taxAmount: 0,
-              taxCode: "ipsum",
+              taxCode: "quos redundant Bronze",
               taxable: false,
               totalAmount: 1000,
-              type: CartItemType.Bundled,
+              type: CartItemType.Digital,
               unitPrice: 1000,
               uom: "inches",
               upc: "825764603119",
@@ -267,8 +268,8 @@ sdk.transactions.authorizeTransaction({
             type: CartShipmentType.DoorDelivery,
           },
           digitalDelivery: {
-            email: "Dario.Thiel94@yahoo.com",
-            phone: "846.784.2881 x6709",
+            email: "Santino.Christiansen@hotmail.com",
+            phone: "479-958-3644 x1780",
           },
           inStoreCartShipment: {
             cartShipment: {
@@ -336,8 +337,8 @@ sdk.transactions.authorizeTransaction({
               streetAddress3: "c/o Alicia Watts",
               streetAddress4: "Bridge Street Apartment Building B",
             },
-            pickupWindowClose: 347233,
-            pickupWindowOpen: 862310,
+            pickupWindowClose: 378877,
+            pickupWindowOpen: 713424,
             storeName: "Bolt Collective",
           },
           type: CartCreateFulfillmentsType.PhysicalDoorDelivery,
@@ -410,8 +411,8 @@ sdk.transactions.authorizeTransaction({
             streetAddress3: "c/o Alicia Watts",
             streetAddress4: "Bridge Street Apartment Building B",
           },
-          pickupWindowClose: 780427,
-          pickupWindowOpen: 981830,
+          pickupWindowClose: 402413,
+          pickupWindowOpen: 351232,
           storeName: "Bolt Collective",
         },
       ],
@@ -426,9 +427,9 @@ sdk.transactions.authorizeTransaction({
           customizations: [
             {
               attributes: {
-                "doloribus": "iusto",
+                "accusantium": "equatorial",
               },
-              name: "Kurt Abernathy",
+              name: "East",
               price: {
                 amount: 754,
                 currency: "USD",
@@ -439,9 +440,9 @@ sdk.transactions.authorizeTransaction({
           description: "Large tote with Bolt logo.",
           detailsUrl: "https://boltswagstore.com/products/123456",
           externalInputs: {
-            shopifyLineItemReference: 3685.84,
-            shopifyProductReference: 4104.92,
-            shopifyProductVariantReference: 1369,
+            shopifyLineItemReference: 3289.59,
+            shopifyProductReference: 2244.44,
+            shopifyProductVariantReference: 370.02,
           },
           giftOption: {
             cost: 770,
@@ -451,21 +452,21 @@ sdk.transactions.authorizeTransaction({
           },
           imageUrl: "https://boltswagstore.com/products/123456/images/1.png",
           isbn: "9780091347314",
-          itemGroup: "vel",
+          itemGroup: "Aluminium deposit",
           manufacturer: "Bolt Textiles USA",
           merchantProductId: "881",
           merchantVariantId: "888",
-          msrp: 8221.18,
+          msrp: 9945.75,
           name: "Bolt Swag Bag",
           options: "Special Edition",
           properties: [
             {
-              color: "magnam",
+              color: "olive",
               display: false,
-              name: "Mrs. Vicki Langosh",
-              nameId: 978.44,
-              value: "ex",
-              valueId: 8621.92,
+              name: "indigo Northeast South",
+              nameId: 6860.88,
+              value: "notwithstanding Electronic",
+              valueId: 4727.26,
             },
           ],
           quantity: 1,
@@ -512,16 +513,16 @@ sdk.transactions.authorizeTransaction({
             totalWeightUnit: "kg",
             type: CartShipmentType.DoorDelivery,
           },
-          shipmentType: CartItemShipmentType.ShipToStore,
+          shipmentType: CartItemShipmentType.Unknown,
           size: "Large",
           sku: "BOLT-SKU_100",
-          source: "voluptatibus",
+          source: "Passenger Vito",
           tags: "tote, blue, linen, eco-friendly",
           taxAmount: 0,
-          taxCode: "nostrum",
+          taxCode: "deposit East Borders",
           taxable: false,
           totalAmount: 1000,
-          type: CartItemType.Bundled,
+          type: CartItemType.Digital,
           unitPrice: 1000,
           uom: "inches",
           upc: "825764603119",
@@ -531,17 +532,17 @@ sdk.transactions.authorizeTransaction({
       ],
       loyaltyRewards: [
         {
-          amount: 7888.73,
-          couponCode: "saepe",
+          amount: 4720.43,
+          couponCode: "male Avon deposit",
           description: "$5 off (100 Points)",
-          details: "{"id": 123456, "icon": "fa-dollar", "name": "$15.00 Off", "type": "Coupon", "amount": 100, "duration": "single_use", "cost_text": "150 Points",  "description": "Get $15 off your next purchase for 150 points", "discount_type": "fixed_amount", "unrendered_name": "$15.00 Off",  "discount_percentage": null, "discount_rate_cents": null, "discount_value_cents": null, "discount_amount_cents": 1500,  "unrendered_description": "Get $15 off your next purchase for 150 points", "applies_to_product_type": "ALL"}",
-          points: 4113.72,
-          source: "impedit",
-          type: "corporis",
+          details: "{\"id\": 123456, \"icon\": \"fa-dollar\", \"name\": \"$15.00 Off\", \"type\": \"Coupon\", \"amount\": 100, \"duration\": \"single_use\", \"cost_text\": \"150 Points\",  \"description\": \"Get $15 off your next purchase for 150 points\", \"discount_type\": \"fixed_amount\", \"unrendered_name\": \"$15.00 Off\",  \"discount_percentage\": null, \"discount_rate_cents\": null, \"discount_value_cents\": null, \"discount_amount_cents\": 1500,  \"unrendered_description\": \"Get $15 off your next purchase for 150 points\", \"applies_to_product_type\": \"ALL\"}",
+          points: 5962.98,
+          source: "Bentley Florida",
+          type: "Togo",
         },
       ],
       metadata: {
-        "veniam": "aliquid",
+        "vel": "application",
       },
       orderDescription: "Order #1234567890",
       orderReference: "order_100",
@@ -589,7 +590,7 @@ sdk.transactions.authorizeTransaction({
           type: CartShipmentType.DoorDelivery,
         },
       ],
-      taxAmount: 811.01,
+      taxAmount: 3471.23,
       totalAmount: 900,
     },
     creditCardId: "SAeEcU1hpMobc",
@@ -630,7 +631,7 @@ sdk.transactions.authorizeTransaction({
       lastName: "Charles",
     },
   },
-  xPublishableKey: "magnam",
+  xPublishableKey: "Blues",
 }, operationSecurity).then((res: AuthorizeTransactionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -671,7 +672,7 @@ const operationSecurity: CaptureTransactionSecurity = {
 };
 
 sdk.transactions.captureTransaction({
-  idempotencyKey: "ea",
+  idempotencyKey: "Metal",
   captureTransactionWithReference: {
     amount: 754,
     currency: "USD",
@@ -719,7 +720,7 @@ const operationSecurity: GetTransactionDetailsSecurity = {
 };
 
 sdk.transactions.getTransactionDetails({
-  reference: "quo",
+  reference: "repurpose Holmium Trans",
 }, operationSecurity).then((res: GetTransactionDetailsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -757,7 +758,7 @@ const operationSecurity: RefundTransactionSecurity = {
 };
 
 sdk.transactions.refundTransaction({
-  idempotencyKey: "consectetur",
+  idempotencyKey: "strategy Gasoline",
   requestBody: {
     amount: 754,
     currency: "USD",
@@ -802,12 +803,12 @@ const operationSecurity: UpdateTransactionSecurity = {
 };
 
 sdk.transactions.updateTransaction({
-  idempotencyKey: "recusandae",
-  reference: "aspernatur",
+  idempotencyKey: "Paterson",
+  reference: "set Administrator Networked",
   requestBody: {
     displayId: "order-123",
     metadata: {
-      "minima": "eaque",
+      "rerum": "circuit",
     },
   },
 }, operationSecurity).then((res: UpdateTransactionResponse) => {
@@ -850,7 +851,7 @@ const operationSecurity: VoidTransactionSecurity = {
 };
 
 sdk.transactions.voidTransaction({
-  idempotencyKey: "a",
+  idempotencyKey: "Bicycle",
   creditCardVoid: {
     merchantEventId: "dbe0cd5d-3261-41d9-ba61-49e5b9d07567",
     skipHookNotification: false,

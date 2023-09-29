@@ -1,4 +1,5 @@
 # Payments
+(*payments*)
 
 ## Overview
 
@@ -28,18 +29,18 @@ const operationSecurity: FinalizePaymentSecurity = {
 };
 
 sdk.payments.finalizePayment({
-  idempotencyKey: "dicta",
+  idempotencyKey: "triumphantly generating SQL",
   requestBody: {
     merchantEventId: "dbe0cd5d-3261-41d9-ba61-49e5b9d07567",
     shopperIdentity: {
       createBoltAccount: true,
-      email: "Elena68@yahoo.com",
-      firstName: "Emilie",
-      lastName: "Thompson",
-      phone: "1-902-755-8255 x909",
+      email: "Janie_Ondricka6@hotmail.com",
+      firstName: "Bryana",
+      lastName: "Schuster",
+      phone: "(576) 993-3446 x04190",
     },
   },
-  id: "91e450ad-2abd-4442-a980-2d502a94bb4f",
+  id: "<ID>",
 }, operationSecurity).then((res: FinalizePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -87,17 +88,17 @@ const operationSecurity: InitializePaymentSecurity = {
 };
 
 sdk.payments.initializePayment({
-  idempotencyKey: "eum",
+  idempotencyKey: "Bicycle",
   requestBody: {
     cart: {
       addOns: [
         {
-          description: "non",
-          imageUrl: "eligendi",
-          name: "Gilbert Medhurst",
-          price: 6389.21,
-          productId: "dolor",
-          productPageUrl: "debitis",
+          description: "Cloned actuating knowledge user",
+          imageUrl: "Auto",
+          name: "Plastic IP Architect",
+          price: 1981.96,
+          productId: "sketch silently",
+          productPageUrl: "red wireless Recumbent",
         },
       ],
       billingAddress: {
@@ -128,7 +129,7 @@ sdk.payments.initializePayment({
           code: "SUMMER10DISCOUNT",
           description: "10% off our summer collection",
           detailsUrl: "https://boltswagstore.com/SUMMERSALE",
-          discountCategory: CartDiscountDiscountCategory.Unknown,
+          discountCategory: CartDiscountDiscountCategory.RewardsDiscount,
           reference: "DISC-1234",
           type: CartDiscountType.Percentage,
         },
@@ -138,10 +139,10 @@ sdk.payments.initializePayment({
         {
           description: "Item Fee",
           name: "Item Fee",
-          quantity: 6800.56,
+          quantity: 4604.82,
           reference: "ItemFee",
-          unitPrice: 4471.25,
-          unitTaxAmount: 4491.98,
+          unitPrice: 9895.87,
+          unitTaxAmount: 4855.31,
         },
       ],
       fulfillments: [
@@ -157,9 +158,9 @@ sdk.payments.initializePayment({
               customizations: [
                 {
                   attributes: {
-                    "illum": "maiores",
+                    "ratione": "Northeast",
                   },
-                  name: "Keith Gulgowski",
+                  name: "simplistic Berkshire",
                   price: {
                     amount: 754,
                     currency: "USD",
@@ -170,9 +171,9 @@ sdk.payments.initializePayment({
               description: "Large tote with Bolt logo.",
               detailsUrl: "https://boltswagstore.com/products/123456",
               externalInputs: {
-                shopifyLineItemReference: 4118.2,
-                shopifyProductReference: 3965.06,
-                shopifyProductVariantReference: 6754.39,
+                shopifyLineItemReference: 2484.13,
+                shopifyProductReference: 9036.66,
+                shopifyProductVariantReference: 2155.16,
               },
               giftOption: {
                 cost: 770,
@@ -182,21 +183,21 @@ sdk.payments.initializePayment({
               },
               imageUrl: "https://boltswagstore.com/products/123456/images/1.png",
               isbn: "9780091347314",
-              itemGroup: "accusamus",
+              itemGroup: "Cisgender female",
               manufacturer: "Bolt Textiles USA",
               merchantProductId: "881",
               merchantVariantId: "888",
-              msrp: 2497.96,
+              msrp: 6633.02,
               name: "Bolt Swag Bag",
               options: "Special Edition",
               properties: [
                 {
-                  color: "occaecati",
+                  color: "yellow",
                   display: false,
-                  name: "Sophia Wintheiser",
-                  nameId: 7252.55,
-                  value: "id",
-                  valueId: 5013.24,
+                  name: "invoice programming",
+                  nameId: 7703.73,
+                  value: "open",
+                  valueId: 8814.48,
                 },
               ],
               quantity: 1,
@@ -246,10 +247,10 @@ sdk.payments.initializePayment({
               shipmentType: CartItemShipmentType.ShipToStore,
               size: "Large",
               sku: "BOLT-SKU_100",
-              source: "sapiente",
+              source: "Strategist THX",
               tags: "tote, blue, linen, eco-friendly",
               taxAmount: 0,
-              taxCode: "amet",
+              taxCode: "Sedan haptic",
               taxable: false,
               totalAmount: 1000,
               type: CartItemType.Physical,
@@ -303,8 +304,8 @@ sdk.payments.initializePayment({
             type: CartShipmentType.DoorDelivery,
           },
           digitalDelivery: {
-            email: "Henry.Mosciski@yahoo.com",
-            phone: "537-722-3674",
+            email: "Weldon4@gmail.com",
+            phone: "459.697.0696 x62730",
           },
           inStoreCartShipment: {
             cartShipment: {
@@ -372,11 +373,11 @@ sdk.payments.initializePayment({
               streetAddress3: "c/o Alicia Watts",
               streetAddress4: "Bridge Street Apartment Building B",
             },
-            pickupWindowClose: 878453,
-            pickupWindowOpen: 135474,
+            pickupWindowClose: 344315,
+            pickupWindowOpen: 707410,
             storeName: "Bolt Collective",
           },
-          type: CartCreateFulfillmentsType.PhysicalDoorDelivery,
+          type: CartCreateFulfillmentsType.PhysicalShipToStore,
         },
       ],
       inStoreCartShipments: [
@@ -446,8 +447,8 @@ sdk.payments.initializePayment({
             streetAddress3: "c/o Alicia Watts",
             streetAddress4: "Bridge Street Apartment Building B",
           },
-          pickupWindowClose: 298282,
-          pickupWindowOpen: 92373,
+          pickupWindowClose: 14054,
+          pickupWindowOpen: 692493,
           storeName: "Bolt Collective",
         },
       ],
@@ -462,9 +463,9 @@ sdk.payments.initializePayment({
           customizations: [
             {
               attributes: {
-                "excepturi": "ullam",
+                "dignissimos": "male",
               },
-              name: "Miss Julian Marvin",
+              name: "Future Altenwerth",
               price: {
                 amount: 754,
                 currency: "USD",
@@ -475,9 +476,9 @@ sdk.payments.initializePayment({
           description: "Large tote with Bolt logo.",
           detailsUrl: "https://boltswagstore.com/products/123456",
           externalInputs: {
-            shopifyLineItemReference: 6521.03,
-            shopifyProductReference: 3209.97,
-            shopifyProductVariantReference: 4314.18,
+            shopifyLineItemReference: 1650.3,
+            shopifyProductReference: 7121.75,
+            shopifyProductVariantReference: 5414.12,
           },
           giftOption: {
             cost: 770,
@@ -487,21 +488,21 @@ sdk.payments.initializePayment({
           },
           imageUrl: "https://boltswagstore.com/products/123456/images/1.png",
           isbn: "9780091347314",
-          itemGroup: "dolor",
+          itemGroup: "Virginia",
           manufacturer: "Bolt Textiles USA",
           merchantProductId: "881",
           merchantVariantId: "888",
-          msrp: 8965.47,
+          msrp: 4440.99,
           name: "Bolt Swag Bag",
           options: "Special Edition",
           properties: [
             {
-              color: "odit",
+              color: "mint green",
               display: false,
-              name: "Joyce Kertzmann",
-              nameId: 2603.41,
-              value: "maxime",
-              valueId: 5370.23,
+              name: "Principal",
+              nameId: 1271.55,
+              value: "Facilitator female",
+              valueId: 8076.7,
             },
           ],
           quantity: 1,
@@ -548,16 +549,16 @@ sdk.payments.initializePayment({
             totalWeightUnit: "kg",
             type: CartShipmentType.DoorDelivery,
           },
-          shipmentType: CartItemShipmentType.ShipToStore,
+          shipmentType: CartItemShipmentType.InStorePickup,
           size: "Large",
           sku: "BOLT-SKU_100",
-          source: "in",
+          source: "Jazz",
           tags: "tote, blue, linen, eco-friendly",
           taxAmount: 0,
-          taxCode: "architecto",
+          taxCode: "Folk Porsche Berkshire",
           taxable: false,
           totalAmount: 1000,
-          type: CartItemType.Unknown,
+          type: CartItemType.Physical,
           unitPrice: 1000,
           uom: "inches",
           upc: "825764603119",
@@ -567,17 +568,17 @@ sdk.payments.initializePayment({
       ],
       loyaltyRewards: [
         {
-          amount: 9194.83,
-          couponCode: "ullam",
+          amount: 1851.98,
+          couponCode: "newton offering Infrastructure",
           description: "$5 off (100 Points)",
-          details: "{"id": 123456, "icon": "fa-dollar", "name": "$15.00 Off", "type": "Coupon", "amount": 100, "duration": "single_use", "cost_text": "150 Points",  "description": "Get $15 off your next purchase for 150 points", "discount_type": "fixed_amount", "unrendered_name": "$15.00 Off",  "discount_percentage": null, "discount_rate_cents": null, "discount_value_cents": null, "discount_amount_cents": 1500,  "unrendered_description": "Get $15 off your next purchase for 150 points", "applies_to_product_type": "ALL"}",
-          points: 7142.42,
-          source: "nihil",
-          type: "repellat",
+          details: "{\"id\": 123456, \"icon\": \"fa-dollar\", \"name\": \"$15.00 Off\", \"type\": \"Coupon\", \"amount\": 100, \"duration\": \"single_use\", \"cost_text\": \"150 Points\",  \"description\": \"Get $15 off your next purchase for 150 points\", \"discount_type\": \"fixed_amount\", \"unrendered_name\": \"$15.00 Off\",  \"discount_percentage\": null, \"discount_rate_cents\": null, \"discount_value_cents\": null, \"discount_amount_cents\": 1500,  \"unrendered_description\": \"Get $15 off your next purchase for 150 points\", \"applies_to_product_type\": \"ALL\"}",
+          points: 811.42,
+          source: "Fiat by",
+          type: "hertz blah integrated",
         },
       ],
       metadata: {
-        "quibusdam": "sed",
+        "aliquid": "Cheese",
       },
       orderDescription: "Order #1234567890",
       orderReference: "order_100",
@@ -625,18 +626,18 @@ sdk.payments.initializePayment({
           type: CartShipmentType.DoorDelivery,
         },
       ],
-      taxAmount: 9046.48,
+      taxAmount: 2899.19,
       totalAmount: 900,
     },
     shopperIdentity: {
       createBoltAccount: true,
-      email: "Alia_Crooks@hotmail.com",
-      firstName: "Catalina",
-      lastName: "Casper",
-      phone: "888-551-4009 x63447",
+      email: "Violet92@hotmail.com",
+      firstName: "Stephen",
+      lastName: "Powlowski",
+      phone: "(354) 487-8136 x6300",
     },
   },
-  xPublishableKey: "eaque",
+  xPublishableKey: "sky evolve",
 }, operationSecurity).then((res: InitializePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -684,17 +685,17 @@ const operationSecurity: UpdatePaymentSecurity = {
 };
 
 sdk.payments.updatePayment({
-  idempotencyKey: "pariatur",
+  idempotencyKey: "Northeast Pataca OCR",
   requestBody: {
     cart: {
       addOns: [
         {
-          description: "nemo",
-          imageUrl: "voluptatibus",
-          name: "Miss Ginger Feeney",
-          price: 9441.24,
-          productId: "libero",
-          productPageUrl: "nobis",
+          description: "Open-source contextually-based access",
+          imageUrl: "kelvin bus gadzooks",
+          name: "Tennessee Loan lumen",
+          price: 621.91,
+          productId: "Southwest ah",
+          productPageUrl: "Wagon calculate",
         },
       ],
       billingAddress: {
@@ -725,7 +726,7 @@ sdk.payments.updatePayment({
           code: "SUMMER10DISCOUNT",
           description: "10% off our summer collection",
           detailsUrl: "https://boltswagstore.com/SUMMERSALE",
-          discountCategory: CartDiscountDiscountCategory.Giftcard,
+          discountCategory: CartDiscountDiscountCategory.ManagedGiftcard,
           reference: "DISC-1234",
           type: CartDiscountType.Percentage,
         },
@@ -735,10 +736,10 @@ sdk.payments.updatePayment({
         {
           description: "Item Fee",
           name: "Item Fee",
-          quantity: 3394.04,
+          quantity: 6255.34,
           reference: "ItemFee",
-          unitPrice: 5210.37,
-          unitTaxAmount: 4895.49,
+          unitPrice: 3605.33,
+          unitTaxAmount: 2097.19,
         },
       ],
       fulfillments: [
@@ -754,9 +755,9 @@ sdk.payments.updatePayment({
               customizations: [
                 {
                   attributes: {
-                    "eaque": "quis",
+                    "cupiditate": "female",
                   },
-                  name: "Ruby Auer",
+                  name: "Platinum finally",
                   price: {
                     amount: 754,
                     currency: "USD",
@@ -767,9 +768,9 @@ sdk.payments.updatePayment({
               description: "Large tote with Bolt logo.",
               detailsUrl: "https://boltswagstore.com/products/123456",
               externalInputs: {
-                shopifyLineItemReference: 4634.51,
-                shopifyProductReference: 2239.24,
-                shopifyProductVariantReference: 8745.73,
+                shopifyLineItemReference: 1604.67,
+                shopifyProductReference: 2435.65,
+                shopifyProductVariantReference: 3021.98,
               },
               giftOption: {
                 cost: 770,
@@ -779,21 +780,21 @@ sdk.payments.updatePayment({
               },
               imageUrl: "https://boltswagstore.com/products/123456/images/1.png",
               isbn: "9780091347314",
-              itemGroup: "nostrum",
+              itemGroup: "Face HTTP",
               manufacturer: "Bolt Textiles USA",
               merchantProductId: "881",
               merchantVariantId: "888",
-              msrp: 9441.2,
+              msrp: 7950.1,
               name: "Bolt Swag Bag",
               options: "Special Edition",
               properties: [
                 {
-                  color: "recusandae",
+                  color: "black",
                   display: false,
-                  name: "Miss Cesar Metz",
-                  nameId: 5000.26,
-                  value: "error",
-                  valueId: 503.7,
+                  name: "zero Human",
+                  nameId: 1634.01,
+                  value: "Dynamic",
+                  valueId: 6209.8,
                 },
               ],
               quantity: 1,
@@ -840,16 +841,16 @@ sdk.payments.updatePayment({
                 totalWeightUnit: "kg",
                 type: CartShipmentType.DoorDelivery,
               },
-              shipmentType: CartItemShipmentType.ShipToStore,
+              shipmentType: CartItemShipmentType.DoorDelivery,
               size: "Large",
               sku: "BOLT-SKU_100",
-              source: "rerum",
+              source: "facilitate",
               tags: "tote, blue, linen, eco-friendly",
               taxAmount: 0,
-              taxCode: "adipisci",
+              taxCode: "ivory",
               taxable: false,
               totalAmount: 1000,
-              type: CartItemType.Bundled,
+              type: CartItemType.Digital,
               unitPrice: 1000,
               uom: "inches",
               upc: "825764603119",
@@ -900,8 +901,8 @@ sdk.payments.updatePayment({
             type: CartShipmentType.DoorDelivery,
           },
           digitalDelivery: {
-            email: "Dolly_Morar86@hotmail.com",
-            phone: "(879) 453-2221 x2957",
+            email: "Tatyana_Kessler25@hotmail.com",
+            phone: "968-639-4285 x877",
           },
           inStoreCartShipment: {
             cartShipment: {
@@ -969,11 +970,11 @@ sdk.payments.updatePayment({
               streetAddress3: "c/o Alicia Watts",
               streetAddress4: "Bridge Street Apartment Building B",
             },
-            pickupWindowClose: 452109,
-            pickupWindowOpen: 490459,
+            pickupWindowClose: 358861,
+            pickupWindowOpen: 924450,
             storeName: "Bolt Collective",
           },
-          type: CartCreateFulfillmentsType.DigitalNoDelivery,
+          type: CartCreateFulfillmentsType.PhysicalInStorePickup,
         },
       ],
       inStoreCartShipments: [
@@ -1043,8 +1044,8 @@ sdk.payments.updatePayment({
             streetAddress3: "c/o Alicia Watts",
             streetAddress4: "Bridge Street Apartment Building B",
           },
-          pickupWindowClose: 227414,
-          pickupWindowOpen: 680545,
+          pickupWindowClose: 428066,
+          pickupWindowOpen: 597057,
           storeName: "Bolt Collective",
         },
       ],
@@ -1059,9 +1060,9 @@ sdk.payments.updatePayment({
           customizations: [
             {
               attributes: {
-                "numquam": "veritatis",
+                "tenetur": "Northwest",
               },
-              name: "Angela Kerluke",
+              name: "Beauty siemens",
               price: {
                 amount: 754,
                 currency: "USD",
@@ -1072,9 +1073,9 @@ sdk.payments.updatePayment({
           description: "Large tote with Bolt logo.",
           detailsUrl: "https://boltswagstore.com/products/123456",
           externalInputs: {
-            shopifyLineItemReference: 8810.05,
-            shopifyProductReference: 6963.44,
-            shopifyProductVariantReference: 9764.05,
+            shopifyLineItemReference: 1393.18,
+            shopifyProductReference: 2477.99,
+            shopifyProductVariantReference: 2493.09,
           },
           giftOption: {
             cost: 770,
@@ -1084,21 +1085,21 @@ sdk.payments.updatePayment({
           },
           imageUrl: "https://boltswagstore.com/products/123456/images/1.png",
           isbn: "9780091347314",
-          itemGroup: "voluptas",
+          itemGroup: "withdrawal Southeast",
           manufacturer: "Bolt Textiles USA",
           merchantProductId: "881",
           merchantVariantId: "888",
-          msrp: 6176.58,
+          msrp: 8791.42,
           name: "Bolt Swag Bag",
           options: "Special Edition",
           properties: [
             {
-              color: "eos",
+              color: "indigo",
               display: false,
-              name: "Miss Paul Steuber",
-              nameId: 4785.96,
-              value: "voluptate",
-              valueId: 6770.82,
+              name: "overriding",
+              nameId: 2419.8,
+              value: "holistic salmon",
+              valueId: 4786.08,
             },
           ],
           quantity: 1,
@@ -1145,16 +1146,16 @@ sdk.payments.updatePayment({
             totalWeightUnit: "kg",
             type: CartShipmentType.DoorDelivery,
           },
-          shipmentType: CartItemShipmentType.ShipToStore,
+          shipmentType: CartItemShipmentType.DoorDelivery,
           size: "Large",
           sku: "BOLT-SKU_100",
-          source: "omnis",
+          source: "Home transmitting",
           tags: "tote, blue, linen, eco-friendly",
           taxAmount: 0,
-          taxCode: "necessitatibus",
+          taxCode: "nonconforming non although",
           taxable: false,
           totalAmount: 1000,
-          type: CartItemType.Physical,
+          type: CartItemType.Digital,
           unitPrice: 1000,
           uom: "inches",
           upc: "825764603119",
@@ -1164,17 +1165,17 @@ sdk.payments.updatePayment({
       ],
       loyaltyRewards: [
         {
-          amount: 9903.39,
-          couponCode: "nihil",
+          amount: 9114.8,
+          couponCode: "synergies Hop deposit",
           description: "$5 off (100 Points)",
-          details: "{"id": 123456, "icon": "fa-dollar", "name": "$15.00 Off", "type": "Coupon", "amount": 100, "duration": "single_use", "cost_text": "150 Points",  "description": "Get $15 off your next purchase for 150 points", "discount_type": "fixed_amount", "unrendered_name": "$15.00 Off",  "discount_percentage": null, "discount_rate_cents": null, "discount_value_cents": null, "discount_amount_cents": 1500,  "unrendered_description": "Get $15 off your next purchase for 150 points", "applies_to_product_type": "ALL"}",
-          points: 2168.97,
-          source: "voluptate",
-          type: "id",
+          details: "{\"id\": 123456, \"icon\": \"fa-dollar\", \"name\": \"$15.00 Off\", \"type\": \"Coupon\", \"amount\": 100, \"duration\": \"single_use\", \"cost_text\": \"150 Points\",  \"description\": \"Get $15 off your next purchase for 150 points\", \"discount_type\": \"fixed_amount\", \"unrendered_name\": \"$15.00 Off\",  \"discount_percentage\": null, \"discount_rate_cents\": null, \"discount_value_cents\": null, \"discount_amount_cents\": 1500,  \"unrendered_description\": \"Get $15 off your next purchase for 150 points\", \"applies_to_product_type\": \"ALL\"}",
+          points: 8306.32,
+          source: "Stracke",
+          type: "interactive saepe North",
         },
       ],
       metadata: {
-        "saepe": "eius",
+        "beatae": "Sulfur",
       },
       orderDescription: "Order #1234567890",
       orderReference: "order_100",
@@ -1222,19 +1223,19 @@ sdk.payments.updatePayment({
           type: CartShipmentType.DoorDelivery,
         },
       ],
-      taxAmount: 1372.2,
+      taxAmount: 1438.01,
       totalAmount: 900,
     },
     shopperIdentity: {
       createBoltAccount: true,
-      email: "Daphne.Rosenbaum90@gmail.com",
-      firstName: "Geraldine",
-      lastName: "Oberbrunner",
-      phone: "(485) 708-3247 x8169",
+      email: "Cameron_Borer@hotmail.com",
+      firstName: "Mona",
+      lastName: "Maggio",
+      phone: "580-305-9242 x56905",
     },
   },
-  xPublishableKey: "esse",
-  id: "a73cf3be-453f-4870-b326-b5a73429cdb1",
+  xPublishableKey: "Pakistan hack",
+  id: "<ID>",
 }, operationSecurity).then((res: UpdatePaymentResponse) => {
   if (res.statusCode == 200) {
     // handle response

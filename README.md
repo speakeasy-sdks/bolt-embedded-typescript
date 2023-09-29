@@ -18,8 +18,6 @@ yarn add https://github.com/speakeasy-sdks/bolt-embedded-typescript
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddAddressResponse, AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
@@ -31,8 +29,8 @@ const operationSecurity: AddAddressSecurity = {
 };
 
 sdk.account.addAddress({
-  idempotencyKey: "corrupti",
-  xPublishableKey: "provident",
+  idempotencyKey: "Maserati Bespoke frictionless",
+  xPublishableKey: "deploy Central",
   addressAccount: {
     company: "Bolt",
     country: "United States",
@@ -44,7 +42,7 @@ sdk.account.addAddress({
     lastName: "Watts",
     locality: "Brooklyn",
     metadata: {
-      additionalProperties: "distinctio",
+      additionalProperties: "Loan Dollar",
     },
     name: "Alan Watts",
     phone: "+12125550199",
@@ -68,7 +66,7 @@ sdk.account.addAddress({
 ## Available Resources and Operations
 
 
-### [Account](docs/sdks/account/README.md)
+### [account](docs/sdks/account/README.md)
 
 * [addAddress](docs/sdks/account/README.md#addaddress) - Add Address
 * [addPaymentMethod](docs/sdks/account/README.md#addpaymentmethod) - Add Payment Method
@@ -81,22 +79,22 @@ sdk.account.addAddress({
 * [replaceAddress](docs/sdks/account/README.md#replaceaddress) - Replace Address
 * [updateAccountProfile](docs/sdks/account/README.md#updateaccountprofile) - Update Profile
 
-### [OAuth](docs/sdks/oauth/README.md)
+### [oAuth](docs/sdks/oauth/README.md)
 
 * [oAuthToken](docs/sdks/oauth/README.md#oauthtoken) - OAuth Token Endpoint
 
-### [Payments](docs/sdks/payments/README.md)
+### [payments](docs/sdks/payments/README.md)
 
 * [finalizePayment](docs/sdks/payments/README.md#finalizepayment) - Finalize Payment
 * [initializePayment](docs/sdks/payments/README.md#initializepayment) - Initialize Payment
 * [updatePayment](docs/sdks/payments/README.md#updatepayment) - Update Payment
 
-### [Testing](docs/sdks/testing/README.md)
+### [testing](docs/sdks/testing/README.md)
 
 * [createTestingShopperAccount](docs/sdks/testing/README.md#createtestingshopperaccount) - Create Testing Shopper Account
 * [getTestCreditCardToken](docs/sdks/testing/README.md#gettestcreditcardtoken) - Fetch a Test Credit Card Token
 
-### [Transactions](docs/sdks/transactions/README.md)
+### [transactions](docs/sdks/transactions/README.md)
 
 * [authorizeTransaction](docs/sdks/transactions/README.md#authorizetransaction) - Authorize a Card
 * [captureTransaction](docs/sdks/transactions/README.md#capturetransaction) - Capture a Transaction
@@ -105,6 +103,32 @@ sdk.account.addAddress({
 * [updateTransaction](docs/sdks/transactions/README.md#updatetransaction) - Update a Transaction
 * [voidTransaction](docs/sdks/transactions/README.md#voidtransaction) - Void a Transaction
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `next` method that can be called to pull down the next group of results. If the
+return value of `next` is `null`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

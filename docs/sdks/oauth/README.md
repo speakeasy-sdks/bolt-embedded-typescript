@@ -1,4 +1,5 @@
 # OAuth
+(*oAuth*)
 
 ## Overview
 
@@ -33,14 +34,14 @@ const sdk = new BoltEmbeddedApi({
 
 sdk.oAuth.oAuthToken({
   requestBody: {
-    clientId: "cum",
-    clientSecret: "perferendis",
-    code: "doloremque",
+    clientId: "marvelous East female",
+    clientSecret: "systems",
+    code: "Northwest Pants Strategist",
     grantType: OAuthTokenInputGrantType.AuthorizationCode,
-    scope: OAuthTokenInputScope.BoltAccountView,
-    state: "ut",
+    scope: OAuthTokenInputScope.Openid,
+    state: "indigo",
   },
-  xPublishableKey: "maiores",
+  xPublishableKey: "grow Gorgeous Passenger",
 }).then((res: OAuthTokenResponse) => {
   if (res.statusCode == 200) {
     // handle response

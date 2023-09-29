@@ -1,4 +1,5 @@
 # Account
+(*account*)
 
 ## Overview
 
@@ -35,8 +36,8 @@ const operationSecurity: AddAddressSecurity = {
 };
 
 sdk.account.addAddress({
-  idempotencyKey: "quibusdam",
-  xPublishableKey: "unde",
+  idempotencyKey: "Maserati Bespoke frictionless",
+  xPublishableKey: "deploy Central",
   addressAccount: {
     company: "Bolt",
     country: "United States",
@@ -48,7 +49,7 @@ sdk.account.addAddress({
     lastName: "Watts",
     locality: "Brooklyn",
     metadata: {
-      additionalProperties: "nulla",
+      additionalProperties: "Loan Dollar",
     },
     name: "Alan Watts",
     phone: "+12125550199",
@@ -107,7 +108,7 @@ const operationSecurity: AddPaymentMethodSecurity = {
 };
 
 sdk.account.addPaymentMethod({
-  idempotencyKey: "corrupti",
+  idempotencyKey: "violet Scandium",
   requestBody: {
     billingAddress: {
       company: "Bolt",
@@ -131,23 +132,23 @@ sdk.account.addPaymentMethod({
     },
     billingAddressId: "null",
     bin: "411111",
-    cryptogram: "illum",
+    cryptogram: "Gasoline aggregate",
     currency: "USD",
-    eci: "vel",
+    eci: "District",
     expiration: "2025-11",
     last4: "1234",
     metadata: {
-      additionalProperties: "error",
+      additionalProperties: "male Chips termite",
     },
-    network: AddPaymentMethodRequestBodyNetwork.Jcb,
-    number: "suscipit",
+    network: AddPaymentMethodRequestBodyNetwork.Amex,
+    number: "Fish Transgender ivory",
     postalCode: "10044",
     priority: AddPaymentMethodRequestBodyPriority.One,
     save: false,
     token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
     tokenType: AddPaymentMethodRequestBodyTokenType.Bolt,
   },
-  xPublishableKey: "magnam",
+  xPublishableKey: "katal Buckinghamshire",
 }, operationSecurity).then((res: AddPaymentMethodResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -190,8 +191,8 @@ const operationSecurity: CreateAccountSecurity = {
 };
 
 sdk.account.createAccount({
-  idempotencyKey: "debitis",
-  xPublishableKey: "ipsa",
+  idempotencyKey: "grey North rare",
+  xPublishableKey: "content Man",
   createAccountInput: {
     addresses: [
       {
@@ -205,7 +206,7 @@ sdk.account.createAccount({
         lastName: "Watts",
         locality: "Brooklyn",
         metadata: {
-          additionalProperties: "delectus",
+          additionalProperties: "Handmade",
         },
         name: "Alan Watts",
         phone: "+12125550199",
@@ -242,16 +243,16 @@ sdk.account.createAccount({
         },
         billingAddressId: "null",
         bin: "411111",
-        cryptogram: "tempora",
+        cryptogram: "West Rap",
         default: false,
-        eci: "suscipit",
+        eci: "matrix",
         expiration: "2025-11",
         last4: "1234",
         metadata: {
-          additionalProperties: "molestiae",
+          additionalProperties: "Bicycle Lauderhill",
         },
-        network: PaymentMethodAccountNetwork.Unionpay,
-        number: "placeat",
+        network: PaymentMethodAccountNetwork.Amex,
+        number: "Hybrid frame Alabama",
         postalCode: "10044",
         priority: PaymentMethodAccountPriority.Two,
         save: false,
@@ -264,7 +265,7 @@ sdk.account.createAccount({
       firstName: "Alan",
       lastName: "Watts",
       metadata: {
-        additionalProperties: "iusto",
+        additionalProperties: "payment",
       },
       phone: "+12125550199",
     },
@@ -308,8 +309,8 @@ const operationSecurity: DeleteAddressSecurity = {
 };
 
 sdk.account.deleteAddress({
-  xPublishableKey: "excepturi",
-  id: "6ed151a0-5dfc-42dd-b7cc-78ca1ba928fc",
+  xPublishableKey: "Grocery Configurable Larissa",
+  id: "<ID>",
 }, operationSecurity).then((res: DeleteAddressResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -348,8 +349,8 @@ const operationSecurity: DeletePaymentMethodSecurity = {
 };
 
 sdk.account.deletePaymentMethod({
-  xPublishableKey: "totam",
-  paymentMethodId: "beatae",
+  xPublishableKey: "Rico Security aha",
+  paymentMethodId: "sed",
 }, operationSecurity).then((res: DeletePaymentMethodResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -388,10 +389,10 @@ const sdk = new BoltEmbeddedApi({
 });
 
 sdk.account.detectAccount({
-  xPublishableKey: "commodi",
-  email: "Diego_Dibbert45@yahoo.com",
-  phone: "610.461.6263",
-  sha256Email: "hic",
+  xPublishableKey: "Specialist",
+  email: "Connor42@gmail.com",
+  phone: "935-762-8190 x328",
+  sha256Email: "markets Frozen",
 }).then((res: DetectAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -431,7 +432,7 @@ const operationSecurity: EditAddressSecurity = {
 };
 
 sdk.account.editAddress({
-  xPublishableKey: "saepe",
+  xPublishableKey: "Latin Lead",
   addressAccount: {
     company: "Bolt",
     country: "United States",
@@ -443,7 +444,7 @@ sdk.account.editAddress({
     lastName: "Watts",
     locality: "Brooklyn",
     metadata: {
-      additionalProperties: "fuga",
+      additionalProperties: "Nauru Frozen",
     },
     name: "Alan Watts",
     phone: "+12125550199",
@@ -455,7 +456,7 @@ sdk.account.editAddress({
     streetAddress3: "c/o Alicia Watts",
     streetAddress4: "Bridge Street Apartment Building B",
   },
-  id: "7596eb10-faaa-4235-ac59-55907aff1a3a",
+  id: "<ID>",
 }, operationSecurity).then((res: EditAddressResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -494,7 +495,7 @@ const operationSecurity: GetAccountSecurity = {
 };
 
 sdk.account.getAccount({
-  xPublishableKey: "consequuntur",
+  xPublishableKey: "Market",
 }, operationSecurity).then((res: GetAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -535,8 +536,8 @@ const operationSecurity: ReplaceAddressSecurity = {
 };
 
 sdk.account.replaceAddress({
-  idempotencyKey: "repellat",
-  xPublishableKey: "mollitia",
+  idempotencyKey: "West Northwest logistical",
+  xPublishableKey: "purple",
   addressAccount: {
     company: "Bolt",
     country: "United States",
@@ -548,7 +549,7 @@ sdk.account.replaceAddress({
     lastName: "Watts",
     locality: "Brooklyn",
     metadata: {
-      additionalProperties: "occaecati",
+      additionalProperties: "Frozen Zealand Passenger",
     },
     name: "Alan Watts",
     phone: "+12125550199",
@@ -560,7 +561,7 @@ sdk.account.replaceAddress({
     streetAddress3: "c/o Alicia Watts",
     streetAddress4: "Bridge Street Apartment Building B",
   },
-  id: "46773925-1aa5-42c3-b5ad-019da1ffe78f",
+  id: "<ID>",
 }, operationSecurity).then((res: ReplaceAddressResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -603,10 +604,10 @@ sdk.account.updateAccountProfile({
     firstName: "Alan",
     lastName: "Watts",
     metadata: {
-      additionalProperties: "ipsa",
+      additionalProperties: "over",
     },
   },
-  xPublishableKey: "omnis",
+  xPublishableKey: "monetize Northwest",
 }, operationSecurity).then((res: UpdateAccountProfileResponse) => {
   if (res.statusCode == 200) {
     // handle response

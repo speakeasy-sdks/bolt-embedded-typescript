@@ -12,8 +12,8 @@ const operationSecurity: AddAddressSecurity = {
 };
 
 sdk.account.addAddress({
-  idempotencyKey: "corrupti",
-  xPublishableKey: "provident",
+  idempotencyKey: "Maserati Bespoke frictionless",
+  xPublishableKey: "deploy Central",
   addressAccount: {
     company: "Bolt",
     country: "United States",
@@ -25,7 +25,7 @@ sdk.account.addAddress({
     lastName: "Watts",
     locality: "Brooklyn",
     metadata: {
-      additionalProperties: "distinctio",
+      additionalProperties: "Loan Dollar",
     },
     name: "Alan Watts",
     phone: "+12125550199",

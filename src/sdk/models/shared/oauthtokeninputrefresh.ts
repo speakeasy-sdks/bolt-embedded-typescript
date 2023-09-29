@@ -16,7 +16,7 @@ export enum OAuthTokenInputRefreshGrantType {
     RefreshToken = "refresh_token",
 }
 
-export class OAuthTokenInputRefresh1 extends SpeakeasyBase {
+export class OAuthTokenInputRefresh extends SpeakeasyBase {
     /**
      * Merchant publishable key which can be found in the merchant dashboard
      */

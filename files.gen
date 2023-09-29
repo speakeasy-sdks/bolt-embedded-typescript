@@ -64,8 +64,8 @@ src/sdk/models/shared/errorboltapi.ts
 src/sdk/models/shared/v1accountsview.ts
 src/sdk/models/shared/oauthtokenresponse.ts
 src/sdk/models/shared/errorsoauthserverresponse.ts
-src/sdk/models/shared/oauthtokeninput2.ts
-src/sdk/models/shared/oauthtokeninputrefresh1.ts
+src/sdk/models/shared/oauthtokeninput.ts
+src/sdk/models/shared/oauthtokeninputrefresh.ts
 src/sdk/models/shared/cartcreate.ts
 src/sdk/models/shared/cartshipment.ts
 src/sdk/models/shared/cartshipmenttype.ts
@@ -184,12 +184,6 @@ src/sdk/models/shared/creditcardvoid.ts
 src/sdk/models/shared/security.ts
 src/sdk/models/shared/index.ts
 src/sdk/models/errors/index.ts
-docs/sdks/boltembeddedapi/README.md
-docs/sdks/account/README.md
-docs/sdks/oauth/README.md
-docs/sdks/payments/README.md
-docs/sdks/testing/README.md
-docs/sdks/transactions/README.md
 USAGE.md
 docs/models/operations/addaddresssecurity.md
 docs/models/operations/addaddressrequest.md
@@ -322,9 +316,9 @@ docs/models/shared/oauthtokenresponse.md
 docs/models/shared/errorsoauthserverresponse.md
 docs/models/shared/oauthtokeninputgranttype.md
 docs/models/shared/oauthtokeninputscope.md
-docs/models/shared/oauthtokeninput2.md
+docs/models/shared/oauthtokeninput.md
 docs/models/shared/oauthtokeninputrefreshgranttype.md
-docs/models/shared/oauthtokeninputrefresh1.md
+docs/models/shared/oauthtokeninputrefresh.md
 docs/models/shared/cartcreatefees.md
 docs/models/shared/cartcreatefulfillmentsdigitaldelivery.md
 docs/models/shared/cartcreatefulfillmentstype.md
@@ -495,4 +489,10 @@ docs/models/shared/authorizationverificationstatus.md
 docs/models/shared/addresschangerequestmetadataview.md
 docs/models/shared/creditcardvoid.md
 docs/models/shared/security.md
+docs/sdks/boltembeddedapi/README.md
+docs/sdks/account/README.md
+docs/sdks/oauth/README.md
+docs/sdks/payments/README.md
+docs/sdks/testing/README.md
+docs/sdks/transactions/README.md
 .gitattributes

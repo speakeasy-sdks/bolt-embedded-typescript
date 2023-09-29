@@ -1,4 +1,5 @@
 # Testing
+(*testing*)
 
 ## Overview
 
@@ -34,15 +35,15 @@ const operationSecurity: CreateTestingShopperAccountSecurity = {
 
 sdk.testing.createTestingShopperAccount({
   requestBody: {
-    deactivateInDays: 674848,
-    email: "Doyle71@yahoo.com",
+    deactivateInDays: 277760,
+    email: "Estella.Hoeger@hotmail.com",
     emailState: CreateTestingShopperAccountRequestBodyEmailState.Verified,
     hasAddress: false,
     migrated: false,
-    phone: "545.812.1141 x3790",
+    phone: "1-459-828-6149 x8692",
     phoneState: Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState.Verified,
   },
-  xPublishableKey: "cumque",
+  xPublishableKey: "Coupe Reggae Plastic",
 }, operationSecurity).then((res: CreateTestingShopperAccountResponse) => {
   if (res.statusCode == 200) {
     // handle response

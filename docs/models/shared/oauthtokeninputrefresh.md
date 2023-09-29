@@ -1,4 +1,4 @@
-# OAuthTokenInputRefresh1
+# OAuthTokenInputRefresh
 
 
 ## Fields
