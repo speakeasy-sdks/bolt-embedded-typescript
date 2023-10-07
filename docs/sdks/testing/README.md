@@ -21,34 +21,29 @@ Create a Bolt shopper account for testing purposes. Available for sandbox use on
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import {
   CreateTestingShopperAccountRequestBodyEmailState,
-  CreateTestingShopperAccountResponse,
   CreateTestingShopperAccountSecurity,
 } from "bolt-embedded-api/dist/sdk/models/operations";
 import {
   Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState,
 } from "bolt-embedded-api/dist/sdk/models/shared";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: CreateTestingShopperAccountSecurity = {
   xAPIKey: "",
 };
 
-sdk.testing.createTestingShopperAccount({
-  requestBody: {
-    deactivateInDays: 277760,
-    email: "Estella.Hoeger@hotmail.com",
-    emailState: CreateTestingShopperAccountRequestBodyEmailState.Verified,
-    hasAddress: false,
-    migrated: false,
-    phone: "1-459-828-6149 x8692",
-    phoneState: Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState.Verified,
-  },
-  xPublishableKey: "Coupe Reggae Plastic",
-}, operationSecurity).then((res: CreateTestingShopperAccountResponse) => {
+  const res = await sdk.testing.createTestingShopperAccount({
+    requestBody: {
+      emailState: CreateTestingShopperAccountRequestBodyEmailState.Verified,
+      phoneState: Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState.Verified,
+    },
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -73,18 +68,20 @@ This endpoint fetches a new credit card token for Bolt's universal test credit c
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { GetTestCreditCardTokenResponse, GetTestCreditCardTokenSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { GetTestCreditCardTokenSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: GetTestCreditCardTokenSecurity = {
   xAPIKey: "",
 };
 
-sdk.testing.getTestCreditCardToken(operationSecurity).then((res: GetTestCreditCardTokenResponse) => {
+  const res = await sdk.testing.getTestCreditCardToken(operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

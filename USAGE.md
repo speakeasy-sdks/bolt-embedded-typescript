@@ -3,44 +3,41 @@
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { AddAddressResponse, AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: AddAddressSecurity = {
   oAuth: "",
   xAPIKey: "",
 };
 
-sdk.account.addAddress({
-  idempotencyKey: "Maserati Bespoke frictionless",
-  xPublishableKey: "deploy Central",
-  addressAccount: {
-    company: "Bolt",
-    country: "United States",
-    countryCode: "US",
-    default: false,
-    doorCode: "123456",
-    email: "alan.watts@example.com",
-    firstName: "Alan",
-    lastName: "Watts",
-    locality: "Brooklyn",
-    metadata: {
-      additionalProperties: "Loan Dollar",
+  const res = await sdk.account.addAddress({
+    addressAccount: {
+      company: "Bolt",
+      country: "United States",
+      countryCode: "US",
+      doorCode: "123456",
+      email: "alan.watts@example.com",
+      firstName: "Alan",
+      lastName: "Watts",
+      locality: "Brooklyn",
+      metadata: {},
+      name: "Alan Watts",
+      phone: "+12125550199",
+      postalCode: "10044",
+      region: "NY",
+      regionCode: "NY",
+      streetAddress1: "888 main street",
+      streetAddress2: "apt 3021",
+      streetAddress3: "c/o Alicia Watts",
+      streetAddress4: "Bridge Street Apartment Building B",
     },
-    name: "Alan Watts",
-    phone: "+12125550199",
-    postalCode: "10044",
-    region: "NY",
-    regionCode: "NY",
-    streetAddress1: "888 main street",
-    streetAddress2: "apt 3021",
-    streetAddress3: "c/o Alicia Watts",
-    streetAddress4: "Bridge Street Apartment Building B",
-  },
-}, operationSecurity).then((res: AddAddressResponse) => {
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 <!-- End SDK Example Usage -->

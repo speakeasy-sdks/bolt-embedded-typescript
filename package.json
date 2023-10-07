@@ -1,6 +1,6 @@
 {
   "name": "bolt-embedded-api",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "author": "ryan-test",
   "scripts": {
     "prepare": "tsc --build"

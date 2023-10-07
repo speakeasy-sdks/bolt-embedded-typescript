@@ -27,45 +27,42 @@ Add an address to a shopper's account address book.
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { AddAddressResponse, AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: AddAddressSecurity = {
   oAuth: "",
   xAPIKey: "",
 };
 
-sdk.account.addAddress({
-  idempotencyKey: "Maserati Bespoke frictionless",
-  xPublishableKey: "deploy Central",
-  addressAccount: {
-    company: "Bolt",
-    country: "United States",
-    countryCode: "US",
-    default: false,
-    doorCode: "123456",
-    email: "alan.watts@example.com",
-    firstName: "Alan",
-    lastName: "Watts",
-    locality: "Brooklyn",
-    metadata: {
-      additionalProperties: "Loan Dollar",
+  const res = await sdk.account.addAddress({
+    addressAccount: {
+      company: "Bolt",
+      country: "United States",
+      countryCode: "US",
+      doorCode: "123456",
+      email: "alan.watts@example.com",
+      firstName: "Alan",
+      lastName: "Watts",
+      locality: "Brooklyn",
+      metadata: {},
+      name: "Alan Watts",
+      phone: "+12125550199",
+      postalCode: "10044",
+      region: "NY",
+      regionCode: "NY",
+      streetAddress1: "888 main street",
+      streetAddress2: "apt 3021",
+      streetAddress3: "c/o Alicia Watts",
+      streetAddress4: "Bridge Street Apartment Building B",
     },
-    name: "Alan Watts",
-    phone: "+12125550199",
-    postalCode: "10044",
-    region: "NY",
-    regionCode: "NY",
-    streetAddress1: "888 main street",
-    streetAddress2: "apt 3021",
-    streetAddress3: "c/o Alicia Watts",
-    streetAddress4: "Bridge Street Apartment Building B",
-  },
-}, operationSecurity).then((res: AddAddressResponse) => {
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -97,63 +94,54 @@ import {
   AddPaymentMethodRequestBodyNetwork,
   AddPaymentMethodRequestBodyPriority,
   AddPaymentMethodRequestBodyTokenType,
-  AddPaymentMethodResponse,
   AddPaymentMethodSecurity,
 } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: AddPaymentMethodSecurity = {
   oAuth: "",
   xAPIKey: "",
 };
 
-sdk.account.addPaymentMethod({
-  idempotencyKey: "violet Scandium",
-  requestBody: {
-    billingAddress: {
-      company: "Bolt",
-      country: "United States",
-      countryCode: "US",
-      default: true,
-      doorCode: "123456",
-      email: "alan.watts@example.com",
-      firstName: "Alan",
-      lastName: "Watts",
-      locality: "Brooklyn",
-      name: "Alan Watts",
-      phone: "+12125550199",
+  const res = await sdk.account.addPaymentMethod({
+    requestBody: {
+      billingAddress: {
+        company: "Bolt",
+        country: "United States",
+        countryCode: "US",
+        default: true,
+        doorCode: "123456",
+        email: "alan.watts@example.com",
+        firstName: "Alan",
+        lastName: "Watts",
+        locality: "Brooklyn",
+        name: "Alan Watts",
+        phone: "+12125550199",
+        postalCode: "10044",
+        region: "NY",
+        regionCode: "NY",
+        streetAddress1: "888 main street",
+        streetAddress2: "apt 3021",
+        streetAddress3: "c/o Alicia Watts",
+        streetAddress4: "Bridge Street Apartment Building B",
+      },
+      billingAddressId: "null",
+      bin: "411111",
+      currency: "USD",
+      expiration: "2025-11",
+      last4: "1234",
+      metadata: {},
       postalCode: "10044",
-      region: "NY",
-      regionCode: "NY",
-      streetAddress1: "888 main street",
-      streetAddress2: "apt 3021",
-      streetAddress3: "c/o Alicia Watts",
-      streetAddress4: "Bridge Street Apartment Building B",
+      token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
+      tokenType: AddPaymentMethodRequestBodyTokenType.Bolt,
     },
-    billingAddressId: "null",
-    bin: "411111",
-    cryptogram: "Gasoline aggregate",
-    currency: "USD",
-    eci: "District",
-    expiration: "2025-11",
-    last4: "1234",
-    metadata: {
-      additionalProperties: "male Chips termite",
-    },
-    network: AddPaymentMethodRequestBodyNetwork.Amex,
-    number: "Fish Transgender ivory",
-    postalCode: "10044",
-    priority: AddPaymentMethodRequestBodyPriority.One,
-    save: false,
-    token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
-    tokenType: AddPaymentMethodRequestBodyTokenType.Bolt,
-  },
-  xPublishableKey: "katal Buckinghamshire",
-}, operationSecurity).then((res: AddPaymentMethodResponse) => {
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -178,59 +166,32 @@ Create a Bolt shopping account.
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { CreateAccountResponse, CreateAccountSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { CreateAccountSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 import {
   PaymentMethodAccountNetwork,
   PaymentMethodAccountPriority,
   PaymentMethodAccountTokenType,
 } from "bolt-embedded-api/dist/sdk/models/shared";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: CreateAccountSecurity = {
   xAPIKey: "",
 };
 
-sdk.account.createAccount({
-  idempotencyKey: "grey North rare",
-  xPublishableKey: "content Man",
-  createAccountInput: {
-    addresses: [
-      {
-        company: "Bolt",
-        country: "United States",
-        countryCode: "US",
-        default: false,
-        doorCode: "123456",
-        email: "alan.watts@example.com",
-        firstName: "Alan",
-        lastName: "Watts",
-        locality: "Brooklyn",
-        metadata: {
-          additionalProperties: "Handmade",
-        },
-        name: "Alan Watts",
-        phone: "+12125550199",
-        postalCode: "10044",
-        region: "NY",
-        regionCode: "NY",
-        streetAddress1: "888 main street",
-        streetAddress2: "apt 3021",
-        streetAddress3: "c/o Alicia Watts",
-        streetAddress4: "Bridge Street Apartment Building B",
-      },
-    ],
-    paymentMethods: [
-      {
-        billingAddress: {
+  const res = await sdk.account.createAccount({
+    createAccountInput: {
+      addresses: [
+        {
           company: "Bolt",
           country: "United States",
           countryCode: "US",
-          default: true,
           doorCode: "123456",
           email: "alan.watts@example.com",
           firstName: "Alan",
           lastName: "Watts",
           locality: "Brooklyn",
+          metadata: {},
           name: "Alan Watts",
           phone: "+12125550199",
           postalCode: "10044",
@@ -241,40 +202,53 @@ sdk.account.createAccount({
           streetAddress3: "c/o Alicia Watts",
           streetAddress4: "Bridge Street Apartment Building B",
         },
-        billingAddressId: "null",
-        bin: "411111",
-        cryptogram: "West Rap",
-        default: false,
-        eci: "matrix",
-        expiration: "2025-11",
-        last4: "1234",
-        metadata: {
-          additionalProperties: "Bicycle Lauderhill",
+      ],
+      paymentMethods: [
+        {
+          billingAddress: {
+            company: "Bolt",
+            country: "United States",
+            countryCode: "US",
+            default: true,
+            doorCode: "123456",
+            email: "alan.watts@example.com",
+            firstName: "Alan",
+            lastName: "Watts",
+            locality: "Brooklyn",
+            name: "Alan Watts",
+            phone: "+12125550199",
+            postalCode: "10044",
+            region: "NY",
+            regionCode: "NY",
+            streetAddress1: "888 main street",
+            streetAddress2: "apt 3021",
+            streetAddress3: "c/o Alicia Watts",
+            streetAddress4: "Bridge Street Apartment Building B",
+          },
+          billingAddressId: "null",
+          bin: "411111",
+          expiration: "2025-11",
+          last4: "1234",
+          metadata: {},
+          postalCode: "10044",
+          token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
+          tokenType: PaymentMethodAccountTokenType.Bolt,
         },
-        network: PaymentMethodAccountNetwork.Amex,
-        number: "Hybrid frame Alabama",
-        postalCode: "10044",
-        priority: PaymentMethodAccountPriority.Two,
-        save: false,
-        token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
-        tokenType: PaymentMethodAccountTokenType.Bolt,
+      ],
+      profile: {
+        email: "alan.watts@example.com",
+        firstName: "Alan",
+        lastName: "Watts",
+        metadata: {},
+        phone: "+12125550199",
       },
-    ],
-    profile: {
-      email: "alan.watts@example.com",
-      firstName: "Alan",
-      lastName: "Watts",
-      metadata: {
-        additionalProperties: "payment",
-      },
-      phone: "+12125550199",
     },
-  },
-}, operationSecurity).then((res: CreateAccountResponse) => {
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -300,22 +274,23 @@ Deletes an existing address in a shopper's address book.
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { DeleteAddressResponse, DeleteAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { DeleteAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: DeleteAddressSecurity = {
   oAuth: "",
   xAPIKey: "",
 };
 
-sdk.account.deleteAddress({
-  xPublishableKey: "Grocery Configurable Larissa",
-  id: "<ID>",
-}, operationSecurity).then((res: DeleteAddressResponse) => {
+  const res = await sdk.account.deleteAddress({
+    id: "<ID>",
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -340,22 +315,23 @@ Delete a saved payment method from a shopper's Bolt account Wallet.
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { DeletePaymentMethodResponse, DeletePaymentMethodSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { DeletePaymentMethodSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: DeletePaymentMethodSecurity = {
   oAuth: "",
   xAPIKey: "",
 };
 
-sdk.account.deletePaymentMethod({
-  xPublishableKey: "Rico Security aha",
-  paymentMethodId: "sed",
-}, operationSecurity).then((res: DeletePaymentMethodResponse) => {
+  const res = await sdk.account.deletePaymentMethod({
+    paymentMethodId: "Rico Security aha",
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -380,24 +356,22 @@ Check whether an account exists using one of `email`, `phone`, or `sha256_email`
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { DetectAccountResponse } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi({
-  security: {
-    oAuth: "",
-  },
-});
+(async() => {
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "",
+    },
+  });
 
-sdk.account.detectAccount({
-  xPublishableKey: "Specialist",
-  email: "Connor42@gmail.com",
-  phone: "935-762-8190 x328",
-  sha256Email: "markets Frozen",
-}).then((res: DetectAccountResponse) => {
+  const res = await sdk.account.detectAccount({
+    xPublishableKey: "Specialist",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -423,45 +397,43 @@ This endpoint fully replaces the information for an existing address while retai
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { EditAddressResponse, EditAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { EditAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: EditAddressSecurity = {
   oAuth: "",
   xAPIKey: "",
 };
 
-sdk.account.editAddress({
-  xPublishableKey: "Latin Lead",
-  addressAccount: {
-    company: "Bolt",
-    country: "United States",
-    countryCode: "US",
-    default: false,
-    doorCode: "123456",
-    email: "alan.watts@example.com",
-    firstName: "Alan",
-    lastName: "Watts",
-    locality: "Brooklyn",
-    metadata: {
-      additionalProperties: "Nauru Frozen",
+  const res = await sdk.account.editAddress({
+    addressAccount: {
+      company: "Bolt",
+      country: "United States",
+      countryCode: "US",
+      doorCode: "123456",
+      email: "alan.watts@example.com",
+      firstName: "Alan",
+      lastName: "Watts",
+      locality: "Brooklyn",
+      metadata: {},
+      name: "Alan Watts",
+      phone: "+12125550199",
+      postalCode: "10044",
+      region: "NY",
+      regionCode: "NY",
+      streetAddress1: "888 main street",
+      streetAddress2: "apt 3021",
+      streetAddress3: "c/o Alicia Watts",
+      streetAddress4: "Bridge Street Apartment Building B",
     },
-    name: "Alan Watts",
-    phone: "+12125550199",
-    postalCode: "10044",
-    region: "NY",
-    regionCode: "NY",
-    streetAddress1: "888 main street",
-    streetAddress2: "apt 3021",
-    streetAddress3: "c/o Alicia Watts",
-    streetAddress4: "Bridge Street Apartment Building B",
-  },
-  id: "<ID>",
-}, operationSecurity).then((res: EditAddressResponse) => {
+    id: "<ID>",
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -486,21 +458,21 @@ Fetch a shopper's account details to pre-fill checkout fields. This request must
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { GetAccountResponse, GetAccountSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { GetAccountSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: GetAccountSecurity = {
   oAuth: "",
   xAPIKey: "",
 };
 
-sdk.account.getAccount({
-  xPublishableKey: "Market",
-}, operationSecurity).then((res: GetAccountResponse) => {
+  const res = await sdk.account.getAccount({}, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -527,46 +499,43 @@ These changes delete the existing address and create a new one.
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { ReplaceAddressResponse, ReplaceAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { ReplaceAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: ReplaceAddressSecurity = {
   oAuth: "",
   xAPIKey: "",
 };
 
-sdk.account.replaceAddress({
-  idempotencyKey: "West Northwest logistical",
-  xPublishableKey: "purple",
-  addressAccount: {
-    company: "Bolt",
-    country: "United States",
-    countryCode: "US",
-    default: false,
-    doorCode: "123456",
-    email: "alan.watts@example.com",
-    firstName: "Alan",
-    lastName: "Watts",
-    locality: "Brooklyn",
-    metadata: {
-      additionalProperties: "Frozen Zealand Passenger",
+  const res = await sdk.account.replaceAddress({
+    addressAccount: {
+      company: "Bolt",
+      country: "United States",
+      countryCode: "US",
+      doorCode: "123456",
+      email: "alan.watts@example.com",
+      firstName: "Alan",
+      lastName: "Watts",
+      locality: "Brooklyn",
+      metadata: {},
+      name: "Alan Watts",
+      phone: "+12125550199",
+      postalCode: "10044",
+      region: "NY",
+      regionCode: "NY",
+      streetAddress1: "888 main street",
+      streetAddress2: "apt 3021",
+      streetAddress3: "c/o Alicia Watts",
+      streetAddress4: "Bridge Street Apartment Building B",
     },
-    name: "Alan Watts",
-    phone: "+12125550199",
-    postalCode: "10044",
-    region: "NY",
-    regionCode: "NY",
-    streetAddress1: "888 main street",
-    streetAddress2: "apt 3021",
-    streetAddress3: "c/o Alicia Watts",
-    streetAddress4: "Bridge Street Apartment Building B",
-  },
-  id: "<ID>",
-}, operationSecurity).then((res: ReplaceAddressResponse) => {
+    id: "<ID>",
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -591,28 +560,27 @@ Update the identifiers for a shopper's profile (first name or last name).
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { UpdateAccountProfileResponse, UpdateAccountProfileSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+import { UpdateAccountProfileSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-const sdk = new BoltEmbeddedApi();
+(async() => {
+  const sdk = new BoltEmbeddedApi();
 const operationSecurity: UpdateAccountProfileSecurity = {
   oAuth: "",
   xAPIKey: "",
 };
 
-sdk.account.updateAccountProfile({
-  requestBody: {
-    firstName: "Alan",
-    lastName: "Watts",
-    metadata: {
-      additionalProperties: "over",
+  const res = await sdk.account.updateAccountProfile({
+    requestBody: {
+      firstName: "Alan",
+      lastName: "Watts",
+      metadata: {},
     },
-  },
-  xPublishableKey: "monetize Northwest",
-}, operationSecurity).then((res: UpdateAccountProfileResponse) => {
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

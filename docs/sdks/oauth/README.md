@@ -23,30 +23,22 @@ To use this endpoint, first use the Authorization Code Request flow by using the
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { OAuthTokenResponse } from "bolt-embedded-api/dist/sdk/models/operations";
-import { OAuthTokenInputGrantType, OAuthTokenInputRefreshGrantType, OAuthTokenInputScope } from "bolt-embedded-api/dist/sdk/models/shared";
 
-const sdk = new BoltEmbeddedApi({
-  security: {
-    oAuth: "",
-  },
-});
+(async() => {
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "",
+    },
+  });
 
-sdk.oAuth.oAuthToken({
-  requestBody: {
-    clientId: "marvelous East female",
-    clientSecret: "systems",
-    code: "Northwest Pants Strategist",
-    grantType: OAuthTokenInputGrantType.AuthorizationCode,
-    scope: OAuthTokenInputScope.Openid,
-    state: "indigo",
-  },
-  xPublishableKey: "grow Gorgeous Passenger",
-}).then((res: OAuthTokenResponse) => {
+  const res = await sdk.oAuth.oAuthToken({
+    requestBody: "gold",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
