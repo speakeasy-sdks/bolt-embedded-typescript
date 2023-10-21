@@ -37,7 +37,7 @@ const operationSecurity: AuthorizeTransactionSecurity = {
 };
 
   const res = await sdk.transactions.authorizeTransaction({
-    requestBody: "architect",
+    requestBody: "string",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -129,7 +129,7 @@ const operationSecurity: GetTransactionDetailsSecurity = {
 };
 
   const res = await sdk.transactions.getTransactionDetails({
-    reference: "repurpose Holmium Trans",
+    reference: "string",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -215,7 +215,7 @@ const operationSecurity: UpdateTransactionSecurity = {
 };
 
   const res = await sdk.transactions.updateTransaction({
-    reference: "Paterson",
+    reference: "string",
     requestBody: {
       displayId: "order-123",
       metadata: {

@@ -94,9 +94,9 @@ const operationSecurity: InitializePaymentSecurity = {
       cart: {
         addOns: [
           {
-            name: "Bicycle",
-            price: 807.72,
-            productId: "override",
+            name: "string",
+            price: 3089.77,
+            productId: "string",
           },
         ],
         billingAddress: {
@@ -136,10 +136,10 @@ const operationSecurity: InitializePaymentSecurity = {
           {
             description: "Item Fee",
             name: "Item Fee",
-            quantity: 4039.97,
+            quantity: 7673.67,
             reference: "ItemFee",
-            unitPrice: 7837.59,
-            unitTaxAmount: 643.7,
+            unitPrice: 7770.83,
+            unitTaxAmount: 7895.06,
           },
         ],
         fulfillments: [
@@ -526,8 +526,8 @@ const operationSecurity: InitializePaymentSecurity = {
           },
         ],
         metadata: {
-          "key1": "value1",
           "key2": "value2",
+          "key1": "value1",
         },
         orderDescription: "Order #1234567890",
         orderReference: "order_100",
@@ -579,10 +579,10 @@ const operationSecurity: InitializePaymentSecurity = {
       },
       shopperIdentity: {
         createBoltAccount: true,
-        email: "Deondre.Hudson@hotmail.com",
-        firstName: "Marlin",
-        lastName: "Konopelski",
-        phone: "698.508.7970",
+        email: "Angelica40@gmail.com",
+        firstName: "Ottis",
+        lastName: "Bergnaum",
+        phone: "434-564-1598 x40879",
       },
     },
   }, operationSecurity);
@@ -638,9 +638,9 @@ const operationSecurity: UpdatePaymentSecurity = {
       cart: {
         addOns: [
           {
-            name: "Northeast Pataca OCR",
-            price: 5220.84,
-            productId: "West",
+            name: "string",
+            price: 8194.81,
+            productId: "string",
           },
         ],
         billingAddress: {
@@ -680,10 +680,10 @@ const operationSecurity: UpdatePaymentSecurity = {
           {
             description: "Item Fee",
             name: "Item Fee",
-            quantity: 7407.21,
+            quantity: 1095.6,
             reference: "ItemFee",
-            unitPrice: 1430.94,
-            unitTaxAmount: 5206.57,
+            unitPrice: 2053.88,
+            unitTaxAmount: 4201.73,
           },
         ],
         fulfillments: [
@@ -1123,10 +1123,10 @@ const operationSecurity: UpdatePaymentSecurity = {
       },
       shopperIdentity: {
         createBoltAccount: true,
-        email: "Trey.Ondricka83@hotmail.com",
-        firstName: "Hayden",
-        lastName: "Volkman",
-        phone: "(760) 517-9258 x9562",
+        email: "Jannie.Kshlerin@yahoo.com",
+        firstName: "Adeline",
+        lastName: "Wyman",
+        phone: "358.969.1849 x6760",
       },
     },
     id: "<ID>",

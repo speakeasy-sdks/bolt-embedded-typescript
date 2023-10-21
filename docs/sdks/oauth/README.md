@@ -32,7 +32,7 @@ import { BoltEmbeddedApi } from "bolt-embedded-api";
   });
 
   const res = await sdk.oAuth.oAuthToken({
-    requestBody: "gold",
+    requestBody: "string",
   });
 
   if (res.statusCode == 200) {

@@ -325,7 +325,7 @@ const operationSecurity: DeletePaymentMethodSecurity = {
 };
 
   const res = await sdk.account.deletePaymentMethod({
-    paymentMethodId: "Rico Security aha",
+    paymentMethodId: "string",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -365,7 +365,7 @@ import { BoltEmbeddedApi } from "bolt-embedded-api";
   });
 
   const res = await sdk.account.detectAccount({
-    xPublishableKey: "Specialist",
+    xPublishableKey: "string",
   });
 
   if (res.statusCode == 200) {
