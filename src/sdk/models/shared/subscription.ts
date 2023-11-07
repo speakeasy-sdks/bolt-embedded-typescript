@@ -8,7 +8,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * The unit for this subscription's frequency.
  */
-export enum SubscriptionFrequencyUnit {
+export enum Unit {
     Day = "day",
     Week = "week",
     Month = "month",
@@ -18,13 +18,13 @@ export enum SubscriptionFrequencyUnit {
 /**
  * Describes how often the subscription recurs.
  */
-export class SubscriptionFrequency extends SpeakeasyBase {
+export class Frequency extends SpeakeasyBase {
     /**
      * The unit for this subscription's frequency.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "unit" })
-    unit?: SubscriptionFrequencyUnit;
+    unit?: Unit;
 
     /**
      * The value applied to the unit frequency.
@@ -43,6 +43,6 @@ export class Subscription extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    @Type(() => SubscriptionFrequency)
-    frequency?: SubscriptionFrequency;
+    @Type(() => Frequency)
+    frequency?: Frequency;
 }

@@ -1,5 +1,5 @@
 # Account
-(*account*)
+(*.account*)
 
 ## Overview
 
@@ -59,6 +59,7 @@ const operationSecurity: AddAddressSecurity = {
     },
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -90,12 +91,7 @@ Add a payment method to a shopper's Bolt account Wallet. For security purposes, 
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import {
-  AddPaymentMethodRequestBodyNetwork,
-  AddPaymentMethodRequestBodyPriority,
-  AddPaymentMethodRequestBodyTokenType,
-  AddPaymentMethodSecurity,
-} from "bolt-embedded-api/dist/sdk/models/operations";
+import { AddPaymentMethodSecurity, Network, Priority, TokenType } from "bolt-embedded-api/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new BoltEmbeddedApi();
@@ -134,9 +130,10 @@ const operationSecurity: AddPaymentMethodSecurity = {
       metadata: {},
       postalCode: "10044",
       token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
-      tokenType: AddPaymentMethodRequestBodyTokenType.Bolt,
+      tokenType: TokenType.Bolt,
     },
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -167,11 +164,7 @@ Create a Bolt shopping account.
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { CreateAccountSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
-import {
-  PaymentMethodAccountNetwork,
-  PaymentMethodAccountPriority,
-  PaymentMethodAccountTokenType,
-} from "bolt-embedded-api/dist/sdk/models/shared";
+import { Network, PaymentMethodAccountPriority, TokenType } from "bolt-embedded-api/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new BoltEmbeddedApi();
@@ -232,7 +225,7 @@ const operationSecurity: CreateAccountSecurity = {
           metadata: {},
           postalCode: "10044",
           token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
-          tokenType: PaymentMethodAccountTokenType.Bolt,
+          tokenType: TokenType.Bolt,
         },
       ],
       profile: {
@@ -244,6 +237,7 @@ const operationSecurity: CreateAccountSecurity = {
       },
     },
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -287,6 +281,7 @@ const operationSecurity: DeleteAddressSecurity = {
     id: "<ID>",
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -328,6 +323,7 @@ const operationSecurity: DeletePaymentMethodSecurity = {
     paymentMethodId: "string",
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -367,6 +363,7 @@ import { BoltEmbeddedApi } from "bolt-embedded-api";
   const res = await sdk.account.detectAccount({
     xPublishableKey: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -430,6 +427,7 @@ const operationSecurity: EditAddressSecurity = {
     id: "<ID>",
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -468,6 +466,7 @@ const operationSecurity: GetAccountSecurity = {
 };
 
   const res = await sdk.account.getAccount({}, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -532,6 +531,7 @@ const operationSecurity: ReplaceAddressSecurity = {
     id: "<ID>",
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -576,6 +576,7 @@ const operationSecurity: UpdateAccountProfileSecurity = {
       metadata: {},
     },
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response

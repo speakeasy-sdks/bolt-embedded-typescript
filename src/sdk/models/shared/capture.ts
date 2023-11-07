@@ -13,7 +13,7 @@ import { Expose, Type } from "class-transformer";
  * @remarks
  *
  */
-export enum CaptureSplitsType {
+export enum CaptureType {
     Net = "net",
     ProcessingFee = "processing_fee",
     RiskFee = "risk_fee",
@@ -26,7 +26,7 @@ export enum CaptureSplitsType {
 /**
  * A split of fees by type and amount.
  */
-export class CaptureSplits extends SpeakeasyBase {
+export class Splits extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     @Type(() => AmountView)
@@ -40,7 +40,7 @@ export class CaptureSplits extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: CaptureSplitsType;
+    type?: CaptureType;
 }
 
 /**
@@ -76,10 +76,10 @@ export class Capture extends SpeakeasyBase {
     /**
      * A split of fees by type and amount. **Nullable** for Transactions Details.
      */
-    @SpeakeasyMetadata({ elemType: CaptureSplits })
+    @SpeakeasyMetadata({ elemType: Splits })
     @Expose({ name: "splits" })
-    @Type(() => CaptureSplits)
-    splits?: CaptureSplits[];
+    @Type(() => Splits)
+    splits?: Splits[];
 
     /**
      * The status of the capture. **Nullable** for Transactions Details.

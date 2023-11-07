@@ -3,8 +3,8 @@
  */
 
 import * as utils from "../internal/utils";
+import * as shared from "../sdk/models/shared";
 import { Account } from "./account";
-import * as shared from "./models/shared";
 import { OAuth } from "./oauth";
 import { Payments } from "./payments";
 import { Testing } from "./testing";
@@ -66,9 +66,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0.1";
-    sdkVersion = "0.10.0";
-    genVersion = "2.171.0";
-    userAgent = "speakeasy-sdk/typescript 0.10.0 2.171.0 1.0.1 bolt-embedded-api";
+    sdkVersion = "0.11.0";
+    genVersion = "2.181.1";
+    userAgent = "speakeasy-sdk/typescript 0.11.0 2.181.1 1.0.1 bolt-embedded-api";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -95,6 +95,13 @@ export class BoltEmbeddedApi {
      */
     public account: Account;
     /**
+     * Authorize credit card transactions and perform operations on those transactions with Bolt's transaction API.
+     *
+     * @remarks
+     *
+     */
+    public transactions: Transactions;
+    /**
      * Interact with Shopper data by completing the Bolt OAuth process.
      *
      * @remarks
@@ -115,13 +122,6 @@ export class BoltEmbeddedApi {
      *
      */
     public testing: Testing;
-    /**
-     * Authorize credit card transactions and perform operations on those transactions with Bolt's transaction API.
-     *
-     * @remarks
-     *
-     */
-    public transactions: Transactions;
 
     private sdkConfiguration: SDKConfiguration;
 
@@ -142,9 +142,9 @@ export class BoltEmbeddedApi {
         });
 
         this.account = new Account(this.sdkConfiguration);
+        this.transactions = new Transactions(this.sdkConfiguration);
         this.oAuth = new OAuth(this.sdkConfiguration);
         this.payments = new Payments(this.sdkConfiguration);
         this.testing = new Testing(this.sdkConfiguration);
-        this.transactions = new Transactions(this.sdkConfiguration);
     }
 }

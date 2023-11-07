@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -15,7 +15,7 @@ export class AddPaymentMethodSecurity extends SpeakeasyBase {
     xAPIKey: string;
 }
 
-export enum AddPaymentMethodRequestBodyNetwork {
+export enum Network {
     Unknown = "unknown",
     Visa = "visa",
     Mastercard = "mastercard",
@@ -34,7 +34,7 @@ export enum AddPaymentMethodRequestBodyNetwork {
  * @remarks
  *
  */
-export enum AddPaymentMethodRequestBodyPriority {
+export enum Priority {
     One = 1,
     Two = 2,
 }
@@ -45,7 +45,7 @@ export enum AddPaymentMethodRequestBodyPriority {
  * @remarks
  *
  */
-export enum AddPaymentMethodRequestBodyTokenType {
+export enum TokenType {
     Vantiv = "vantiv",
     Applepay = "applepay",
     Bolt = "bolt",
@@ -127,7 +127,7 @@ export class AddPaymentMethodRequestBody extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "network" })
-    network?: AddPaymentMethodRequestBodyNetwork;
+    network?: Network;
 
     /**
      * Used to provide ApplePay DPAN or private label credit card PAN when applicable. Required when charging a private label credit card.
@@ -151,7 +151,7 @@ export class AddPaymentMethodRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "priority" })
-    priority?: AddPaymentMethodRequestBodyPriority;
+    priority?: Priority;
 
     /**
      * Determines whether or not the credit card will be saved to the shopper's account. Defaults to `true`.
@@ -178,7 +178,7 @@ export class AddPaymentMethodRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "token_type" })
-    tokenType?: AddPaymentMethodRequestBodyTokenType;
+    tokenType?: TokenType;
 }
 
 export class AddPaymentMethodRequest extends SpeakeasyBase {

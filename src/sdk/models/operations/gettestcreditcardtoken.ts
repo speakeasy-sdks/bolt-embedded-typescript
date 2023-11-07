@@ -14,7 +14,7 @@ export class GetTestCreditCardTokenSecurity extends SpeakeasyBase {
 /**
  * Successfully Fetched Credit Card Token
  */
-export class GetTestCreditCardToken200ApplicationJSON extends SpeakeasyBase {
+export class GetTestCreditCardTokenResponseBody extends SpeakeasyBase {
     /**
      * The credit card bin.
      */
@@ -74,5 +74,5 @@ export class GetTestCreditCardTokenResponse extends SpeakeasyBase {
      * Successfully Fetched Credit Card Token
      */
     @SpeakeasyMetadata()
-    getTestCreditCardToken200ApplicationJSONObject?: GetTestCreditCardToken200ApplicationJSON;
+    object?: GetTestCreditCardTokenResponseBody;
 }

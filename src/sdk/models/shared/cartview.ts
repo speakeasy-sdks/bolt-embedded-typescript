@@ -40,7 +40,7 @@ export class CartViewFulfillments extends SpeakeasyBase {
     items?: ICartItemView[];
 }
 
-export class CartViewLoyaltyRewards extends SpeakeasyBase {
+export class LoyaltyRewards extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     @Type(() => AmountView)
@@ -137,10 +137,10 @@ export class CartView extends SpeakeasyBase {
     @Type(() => ICartItemView)
     items?: ICartItemView[];
 
-    @SpeakeasyMetadata({ elemType: CartViewLoyaltyRewards })
+    @SpeakeasyMetadata({ elemType: LoyaltyRewards })
     @Expose({ name: "loyalty_rewards" })
-    @Type(() => CartViewLoyaltyRewards)
-    loyaltyRewards?: CartViewLoyaltyRewards[];
+    @Type(() => LoyaltyRewards)
+    loyaltyRewards?: LoyaltyRewards[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "loyalty_rewards_amount" })

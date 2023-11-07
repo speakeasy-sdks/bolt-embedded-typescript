@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { MerchantDivisionLogoView } from "./merchantdivisionlogoview";
 import { Expose, Type } from "class-transformer";
 
-export enum MerchantDivisionSummaryViewHookType {
+export enum HookType {
     One = "1",
     Two = "2",
     Three = "3",
@@ -54,7 +54,7 @@ export class MerchantDivisionSummaryView extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "hook_type" })
-    hookType?: MerchantDivisionSummaryViewHookType;
+    hookType?: HookType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "hook_url" })

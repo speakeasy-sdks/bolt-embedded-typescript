@@ -3,8 +3,8 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -93,9 +93,9 @@ export class Payments {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.finalizePayment200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.FinalizePayment200ApplicationJSON
+                        operations.FinalizePaymentResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -184,9 +184,9 @@ export class Payments {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.initializePayment200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.InitializePayment200ApplicationJSON
+                        operations.InitializePaymentResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -275,9 +275,9 @@ export class Payments {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.updatePayment200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.UpdatePayment200ApplicationJSON
+                        operations.UpdatePaymentResponseBody
                     );
                 } else {
                     throw new errors.SDKError(

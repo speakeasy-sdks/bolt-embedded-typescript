@@ -10,7 +10,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * The address object returned in the response.
  */
-export class AccountDetailsAddresses extends SpeakeasyBase {
+export class Addresses extends SpeakeasyBase {
     /**
      * The company name associated with this address.
      */
@@ -160,10 +160,10 @@ export class AccountDetails extends SpeakeasyBase {
     /**
      * A list of all addresses associated to the shopper's account.
      */
-    @SpeakeasyMetadata({ elemType: AccountDetailsAddresses })
+    @SpeakeasyMetadata({ elemType: Addresses })
     @Expose({ name: "addresses" })
-    @Type(() => AccountDetailsAddresses)
-    addresses?: AccountDetailsAddresses[];
+    @Type(() => Addresses)
+    addresses?: Addresses[];
 
     /**
      * Used to determine whether a Bolt Account exists with this shopper's account details.

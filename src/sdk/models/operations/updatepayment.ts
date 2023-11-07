@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -18,7 +18,7 @@ export class UpdatePaymentSecurity extends SpeakeasyBase {
 /**
  * Identification information for the Shopper. This is only required when creating a new Bolt account.
  */
-export class UpdatePaymentRequestBodyShopperIdentity extends SpeakeasyBase {
+export class UpdatePaymentShopperIdentity extends SpeakeasyBase {
     /**
      * determines whether to create a bolt account for this shopper
      */
@@ -69,8 +69,8 @@ export class UpdatePaymentRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "shopper_identity" })
-    @Type(() => UpdatePaymentRequestBodyShopperIdentity)
-    shopperIdentity?: UpdatePaymentRequestBodyShopperIdentity;
+    @Type(() => UpdatePaymentShopperIdentity)
+    shopperIdentity?: UpdatePaymentShopperIdentity;
 }
 
 export class UpdatePaymentRequest extends SpeakeasyBase {
@@ -99,7 +99,7 @@ export class UpdatePaymentRequest extends SpeakeasyBase {
 /**
  * The current payment status.
  */
-export enum UpdatePayment200ApplicationJSONStatus {
+export enum UpdatePaymentStatus {
     AwaitingUserConfirmation = "awaiting_user_confirmation",
     PaymentReady = "payment_ready",
     Success = "success",
@@ -108,7 +108,7 @@ export enum UpdatePayment200ApplicationJSONStatus {
 /**
  * Payment updated.
  */
-export class UpdatePayment200ApplicationJSON extends SpeakeasyBase {
+export class UpdatePaymentResponseBody extends SpeakeasyBase {
     /**
      * The ID for a Payment Attempt
      */
@@ -121,7 +121,7 @@ export class UpdatePayment200ApplicationJSON extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status?: UpdatePayment200ApplicationJSONStatus;
+    status?: UpdatePaymentStatus;
 }
 
 export class UpdatePaymentResponse extends SpeakeasyBase {
@@ -147,5 +147,5 @@ export class UpdatePaymentResponse extends SpeakeasyBase {
      * Payment updated.
      */
     @SpeakeasyMetadata()
-    updatePayment200ApplicationJSONObject?: UpdatePayment200ApplicationJSON;
+    object?: UpdatePaymentResponseBody;
 }

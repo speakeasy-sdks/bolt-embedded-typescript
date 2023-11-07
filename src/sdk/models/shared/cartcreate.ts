@@ -12,7 +12,7 @@ import { CartShipment } from "./cartshipment";
 import { InStoreCartShipment } from "./instorecartshipment";
 import { Expose, Type } from "class-transformer";
 
-export class CartCreateFees extends SpeakeasyBase {
+export class Fees extends SpeakeasyBase {
     /**
      * Description of the fee that will appear in the tooltip if the mouse hovers over the fee.
      */
@@ -47,7 +47,7 @@ export class CartCreateFees extends SpeakeasyBase {
     unitTaxAmount: number;
 }
 
-export class CartCreateFulfillmentsDigitalDelivery extends SpeakeasyBase {
+export class DigitalDelivery extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "email" })
     email?: string;
@@ -57,7 +57,7 @@ export class CartCreateFulfillmentsDigitalDelivery extends SpeakeasyBase {
     phone?: string;
 }
 
-export enum CartCreateFulfillmentsType {
+export enum CartCreateType {
     PhysicalDoorDelivery = "physical_door_delivery",
     PhysicalShipToStore = "physical_ship_to_store",
     PhysicalInStorePickup = "physical_in_store_pickup",
@@ -68,7 +68,7 @@ export enum CartCreateFulfillmentsType {
 /**
  * Defines the shipments associated with the cart items.
  */
-export class CartCreateFulfillments extends SpeakeasyBase {
+export class Fulfillments extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: CartItem })
     @Expose({ name: "cart_items" })
     @Type(() => CartItem)
@@ -84,8 +84,8 @@ export class CartCreateFulfillments extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "digital_delivery" })
-    @Type(() => CartCreateFulfillmentsDigitalDelivery)
-    digitalDelivery?: CartCreateFulfillmentsDigitalDelivery;
+    @Type(() => DigitalDelivery)
+    digitalDelivery?: DigitalDelivery;
 
     @SpeakeasyMetadata()
     @Expose({ name: "in_store_cart_shipment" })
@@ -94,7 +94,7 @@ export class CartCreateFulfillments extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: CartCreateFulfillmentsType;
+    type?: CartCreateType;
 }
 
 /**
@@ -137,15 +137,15 @@ export class CartCreate extends SpeakeasyBase {
     @Expose({ name: "display_id" })
     displayId?: string;
 
-    @SpeakeasyMetadata({ elemType: CartCreateFees })
+    @SpeakeasyMetadata({ elemType: Fees })
     @Expose({ name: "fees" })
-    @Type(() => CartCreateFees)
-    fees?: CartCreateFees[];
+    @Type(() => Fees)
+    fees?: Fees[];
 
-    @SpeakeasyMetadata({ elemType: CartCreateFulfillments })
+    @SpeakeasyMetadata({ elemType: Fulfillments })
     @Expose({ name: "fulfillments" })
-    @Type(() => CartCreateFulfillments)
-    fulfillments?: CartCreateFulfillments[];
+    @Type(() => Fulfillments)
+    fulfillments?: Fulfillments[];
 
     @SpeakeasyMetadata({ elemType: InStoreCartShipment })
     @Expose({ name: "in_store_cart_shipments" })

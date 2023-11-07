@@ -1,5 +1,5 @@
 # Transactions
-(*transactions*)
+(*.transactions*)
 
 ## Overview
 
@@ -39,6 +39,7 @@ const operationSecurity: AuthorizeTransactionSecurity = {
   const res = await sdk.transactions.authorizeTransaction({
     requestBody: "string",
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -89,6 +90,7 @@ const operationSecurity: CaptureTransactionSecurity = {
     },
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -131,6 +133,7 @@ const operationSecurity: GetTransactionDetailsSecurity = {
   const res = await sdk.transactions.getTransactionDetails({
     reference: "string",
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -177,6 +180,7 @@ const operationSecurity: RefundTransactionSecurity = {
       transactionReference: "LBLJ-TWW7-R9VC",
     },
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -225,6 +229,7 @@ const operationSecurity: UpdateTransactionSecurity = {
     },
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -271,6 +276,7 @@ const operationSecurity: VoidTransactionSecurity = {
       transactionReference: "LBLJ-TWW7-R9VC",
     },
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response

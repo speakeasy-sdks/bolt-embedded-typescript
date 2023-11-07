@@ -10,7 +10,7 @@ import { IWeight } from "./iweight";
 import { Subscription } from "./subscription";
 import { Expose, Type } from "class-transformer";
 
-export class ICartItemViewProperties extends SpeakeasyBase {
+export class Properties extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "color" })
     color?: string;
@@ -144,10 +144,10 @@ export class ICartItemView extends SpeakeasyBase {
     @Expose({ name: "options" })
     options?: string;
 
-    @SpeakeasyMetadata({ elemType: ICartItemViewProperties })
+    @SpeakeasyMetadata({ elemType: Properties })
     @Expose({ name: "properties" })
-    @Type(() => ICartItemViewProperties)
-    properties?: ICartItemViewProperties[];
+    @Type(() => Properties)
+    properties?: Properties[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "quantity" })

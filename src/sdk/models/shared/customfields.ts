@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-export enum CustomFieldsCheckoutSetup {
+export enum CheckoutSetup {
     ShippingStep = "shipping_step",
     DeliveryStep = "delivery_step",
     PaymentStep = "payment_step",
@@ -15,7 +15,7 @@ export enum CustomFieldsCheckoutSetup {
 export class CustomFields extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "checkout_setup" })
-    checkoutSetup?: CustomFieldsCheckoutSetup;
+    checkoutSetup?: CheckoutSetup;
 
     /**
      * Defines whether the field is dynamic.

@@ -7,7 +7,7 @@ import { Address } from "./address";
 import { Metadata } from "./metadata";
 import { Expose, Type } from "class-transformer";
 
-export enum PaymentMethodAccountNetwork {
+export enum Network {
     Unknown = "unknown",
     Visa = "visa",
     Mastercard = "mastercard",
@@ -37,7 +37,7 @@ export enum PaymentMethodAccountPriority {
  * @remarks
  *
  */
-export enum PaymentMethodAccountTokenType {
+export enum TokenType {
     Vantiv = "vantiv",
     Applepay = "applepay",
     Bolt = "bolt",
@@ -119,7 +119,7 @@ export class PaymentMethodAccount extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "network" })
-    network?: PaymentMethodAccountNetwork;
+    network?: Network;
 
     /**
      * Used to provide ApplePay DPAN or private label credit card PAN when applicable. Required when charging a private label credit card.
@@ -170,5 +170,5 @@ export class PaymentMethodAccount extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "token_type" })
-    tokenType?: PaymentMethodAccountTokenType;
+    tokenType?: TokenType;
 }

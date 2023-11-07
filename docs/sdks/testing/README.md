@@ -1,5 +1,5 @@
 # Testing
-(*testing*)
+(*.testing*)
 
 ## Overview
 
@@ -19,10 +19,7 @@ Create a Bolt shopper account for testing purposes. Available for sandbox use on
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import {
-  CreateTestingShopperAccountRequestBodyEmailState,
-  CreateTestingShopperAccountSecurity,
-} from "bolt-embedded-api/dist/sdk/models/operations";
+import { CreateTestingShopperAccountSecurity, EmailState } from "bolt-embedded-api/dist/sdk/models/operations";
 import {
   Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState,
 } from "bolt-embedded-api/dist/sdk/models/shared";
@@ -35,10 +32,11 @@ const operationSecurity: CreateTestingShopperAccountSecurity = {
 
   const res = await sdk.testing.createTestingShopperAccount({
     requestBody: {
-      emailState: CreateTestingShopperAccountRequestBodyEmailState.Verified,
+      emailState: EmailState.Verified,
       phoneState: Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState.Verified,
     },
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -77,6 +75,7 @@ const operationSecurity: GetTestCreditCardTokenSecurity = {
 };
 
   const res = await sdk.testing.getTestCreditCardToken(operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-export enum CartDiscountDiscountCategory {
+export enum DiscountCategory {
     Coupon = "coupon",
     Giftcard = "giftcard",
     ManagedGiftcard = "managed_giftcard",
@@ -21,7 +21,7 @@ export enum CartDiscountDiscountCategory {
 /**
  * The type of discount.
  */
-export enum CartDiscountType {
+export enum TypeT {
     FixedAmount = "fixed_amount",
     Percentage = "percentage",
     FreeShipping = "free_shipping",
@@ -52,7 +52,7 @@ export class CartDiscount extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "discount_category" })
-    discountCategory?: CartDiscountDiscountCategory;
+    discountCategory?: DiscountCategory;
 
     /**
      * Used to define the reference ID associated with the discount available.
@@ -66,5 +66,5 @@ export class CartDiscount extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: CartDiscountType;
+    type?: TypeT;
 }

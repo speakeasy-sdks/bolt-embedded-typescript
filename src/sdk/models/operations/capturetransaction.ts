@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -26,7 +26,7 @@ export class CaptureTransactionRequest extends SpeakeasyBase {
     captureTransactionWithReference?: shared.CaptureTransactionWithReference;
 }
 
-export class CaptureTransaction422ApplicationJSONErrors extends SpeakeasyBase {
+export class Errors extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "code" })
     code?: number;
@@ -40,21 +40,21 @@ export class CaptureTransaction422ApplicationJSONErrors extends SpeakeasyBase {
     message?: string;
 }
 
-export class CaptureTransaction422ApplicationJSONResult extends SpeakeasyBase {}
+export class Result extends SpeakeasyBase {}
 
 /**
  * Unprocessable Entity
  */
-export class CaptureTransaction422ApplicationJSON extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: CaptureTransaction422ApplicationJSONErrors })
+export class CaptureTransactionResponseBody extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: Errors })
     @Expose({ name: "errors" })
-    @Type(() => CaptureTransaction422ApplicationJSONErrors)
-    errors?: CaptureTransaction422ApplicationJSONErrors[];
+    @Type(() => Errors)
+    errors?: Errors[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "result" })
-    @Type(() => CaptureTransaction422ApplicationJSONResult)
-    result?: CaptureTransaction422ApplicationJSONResult;
+    @Type(() => Result)
+    result?: Result;
 }
 
 export class CaptureTransactionResponse extends SpeakeasyBase {
@@ -77,16 +77,16 @@ export class CaptureTransactionResponse extends SpeakeasyBase {
     rawResponse?: AxiosResponse;
 
     /**
-     * Unprocessable Entity
-     */
-    @SpeakeasyMetadata()
-    captureTransaction422ApplicationJSONObject?: CaptureTransaction422ApplicationJSON;
-
-    /**
      * Generic Error Schema
      */
     @SpeakeasyMetadata()
     errorsBoltApiResponse?: shared.ErrorsBoltApiResponse;
+
+    /**
+     * Unprocessable Entity
+     */
+    @SpeakeasyMetadata()
+    object?: CaptureTransactionResponseBody;
 
     /**
      * Capture Successful

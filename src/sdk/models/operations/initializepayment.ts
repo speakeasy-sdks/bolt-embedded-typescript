@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -18,7 +18,7 @@ export class InitializePaymentSecurity extends SpeakeasyBase {
 /**
  * Identification information for the Shopper. This is only required when creating a new Bolt account.
  */
-export class InitializePaymentRequestBodyShopperIdentity extends SpeakeasyBase {
+export class InitializePaymentShopperIdentity extends SpeakeasyBase {
     /**
      * determines whether to create a bolt account for this shopper
      */
@@ -69,8 +69,8 @@ export class InitializePaymentRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "shopper_identity" })
-    @Type(() => InitializePaymentRequestBodyShopperIdentity)
-    shopperIdentity?: InitializePaymentRequestBodyShopperIdentity;
+    @Type(() => InitializePaymentShopperIdentity)
+    shopperIdentity?: InitializePaymentShopperIdentity;
 }
 
 export class InitializePaymentRequest extends SpeakeasyBase {
@@ -93,7 +93,7 @@ export class InitializePaymentRequest extends SpeakeasyBase {
 /**
  * The current payment status.
  */
-export enum InitializePayment200ApplicationJSONStatus {
+export enum InitializePaymentStatus {
     AwaitingUserConfirmation = "awaiting_user_confirmation",
     PaymentReady = "payment_ready",
     Success = "success",
@@ -102,7 +102,7 @@ export enum InitializePayment200ApplicationJSONStatus {
 /**
  * Payment token retrieved.
  */
-export class InitializePayment200ApplicationJSON extends SpeakeasyBase {
+export class InitializePaymentResponseBody extends SpeakeasyBase {
     /**
      * The ID for a Payment Attempt
      */
@@ -115,7 +115,7 @@ export class InitializePayment200ApplicationJSON extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status?: InitializePayment200ApplicationJSONStatus;
+    status?: InitializePaymentStatus;
 }
 
 export class InitializePaymentResponse extends SpeakeasyBase {
@@ -141,5 +141,5 @@ export class InitializePaymentResponse extends SpeakeasyBase {
      * Payment token retrieved.
      */
     @SpeakeasyMetadata()
-    initializePayment200ApplicationJSONObject?: InitializePayment200ApplicationJSON;
+    object?: InitializePaymentResponseBody;
 }

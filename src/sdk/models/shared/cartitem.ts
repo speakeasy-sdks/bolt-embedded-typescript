@@ -12,7 +12,7 @@ import { Expose, Type } from "class-transformer";
 /**
  * Contains the gift option settings for wrapping and custom messages.
  */
-export class CartItemGiftOption extends SpeakeasyBase {
+export class GiftOption extends SpeakeasyBase {
     /**
      * The cost in cents.
      */
@@ -42,7 +42,7 @@ export class CartItemGiftOption extends SpeakeasyBase {
     wrap?: boolean;
 }
 
-export enum CartItemShipmentType {
+export enum ShipmentType {
     Unknown = "unknown",
     DoorDelivery = "door_delivery",
     ShipToStore = "ship_to_store",
@@ -105,8 +105,8 @@ export class CartItem extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "gift_option" })
-    @Type(() => CartItemGiftOption)
-    giftOption?: CartItemGiftOption;
+    @Type(() => GiftOption)
+    giftOption?: GiftOption;
 
     /**
      * Used to provide a link to the image associated with the item.
@@ -182,7 +182,7 @@ export class CartItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "shipment_type" })
-    shipmentType?: CartItemShipmentType;
+    shipmentType?: ShipmentType;
 
     /**
      * Used to define the size of the item.

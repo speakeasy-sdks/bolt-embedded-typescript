@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -224,9 +224,9 @@ export class Transactions {
                 break;
             case httpRes?.status == 422:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.captureTransaction422ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.CaptureTransaction422ApplicationJSON
+                        operations.CaptureTransactionResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -304,9 +304,9 @@ export class Transactions {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getTransactionDetails200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetTransactionDetails200ApplicationJSON
+                        operations.GetTransactionDetailsResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -514,9 +514,9 @@ export class Transactions {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.updateTransaction200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.UpdateTransaction200ApplicationJSON
+                        operations.UpdateTransactionResponseBody
                     );
                 } else {
                     throw new errors.SDKError(

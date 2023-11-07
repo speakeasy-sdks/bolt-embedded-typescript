@@ -5,12 +5,12 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-export enum LoginViewActions {
+export enum Actions {
     SetPassword = "set_password",
     RotatePassword = "rotate_password",
 }
 
-export enum LoginViewMethods {
+export enum Methods {
     Code = "code",
     CodePassword = "code_password",
     Password = "password",
@@ -20,11 +20,11 @@ export enum LoginViewMethods {
 export class LoginView extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "actions" })
-    actions?: LoginViewActions[];
+    actions?: Actions[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "methods" })
-    methods?: LoginViewMethods[];
+    methods?: Methods[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "sso_authorization_url" })

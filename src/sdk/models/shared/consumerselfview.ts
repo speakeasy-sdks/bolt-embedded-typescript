@@ -8,7 +8,7 @@ import { LoginView } from "./loginview";
 import { PhoneView } from "./phoneview";
 import { Expose, Type } from "class-transformer";
 
-export enum ConsumerSelfViewPlatformAccountStatus {
+export enum PlatformAccountStatus {
     None = "none",
     Linked = "linked",
     Unlinked = "unlinked",
@@ -48,5 +48,5 @@ export class ConsumerSelfView extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "platform_account_status" })
-    platformAccountStatus?: ConsumerSelfViewPlatformAccountStatus;
+    platformAccountStatus?: PlatformAccountStatus;
 }

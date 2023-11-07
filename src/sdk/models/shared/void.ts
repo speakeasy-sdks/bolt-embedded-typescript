@@ -8,7 +8,7 @@ import { Expose } from "class-transformer";
 /**
  * Specifies why this particular transaction is voided.
  */
-export enum VoidCause {
+export enum Cause {
     MerchantAction = "merchant_action",
     PaypalSync = "paypal_sync",
     AmazonPaySync = "amazon_pay_sync",
@@ -22,7 +22,7 @@ export enum VoidCause {
 /**
  * The status of the void request.
  */
-export enum VoidStatus {
+export enum Status {
     Succeeded = "succeeded",
     Declined = "declined",
     Error = "error",
@@ -34,7 +34,7 @@ export class Void extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "cause" })
-    cause?: VoidCause;
+    cause?: Cause;
 
     /**
      * The reference ID associated with a transaction event (auth, capture, refund, void). This is an arbitrary identifier created by the merchant. Bolt does not enforce any uniqueness constraints on this ID. It is up to the merchant to generate identifiers that properly fulfill its needs.
@@ -48,7 +48,7 @@ export class Void extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status?: VoidStatus;
+    status?: Status;
 
     /**
      * The void ID returned from the payment processor.

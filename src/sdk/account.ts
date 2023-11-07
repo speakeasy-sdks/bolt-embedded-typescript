@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
-import * as shared from "./models/shared";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -93,9 +93,9 @@ export class Account {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.addAddress200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.AddAddress200ApplicationJSON
+                        operations.AddAddressResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -607,9 +607,9 @@ export class Account {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.editAddress200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.EditAddress200ApplicationJSON
+                        operations.EditAddressResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -773,9 +773,9 @@ export class Account {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.replaceAddress200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.ReplaceAddress200ApplicationJSON
+                        operations.ReplaceAddressResponseBody
                     );
                 } else {
                     throw new errors.SDKError(

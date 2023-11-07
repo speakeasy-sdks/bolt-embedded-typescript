@@ -17,7 +17,7 @@ export class FinalizePaymentSecurity extends SpeakeasyBase {
 /**
  * Identification information for the Shopper
  */
-export class FinalizePaymentRequestBodyShopperIdentity extends SpeakeasyBase {
+export class ShopperIdentity extends SpeakeasyBase {
     /**
      * determines whether to create a bolt account for this shopper
      */
@@ -67,8 +67,8 @@ export class FinalizePaymentRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "shopper_identity" })
-    @Type(() => FinalizePaymentRequestBodyShopperIdentity)
-    shopperIdentity?: FinalizePaymentRequestBodyShopperIdentity;
+    @Type(() => ShopperIdentity)
+    shopperIdentity?: ShopperIdentity;
 }
 
 export class FinalizePaymentRequest extends SpeakeasyBase {
@@ -88,7 +88,7 @@ export class FinalizePaymentRequest extends SpeakeasyBase {
     id: string;
 }
 
-export class FinalizePayment200ApplicationJSONPaypal extends SpeakeasyBase {
+export class Paypal extends SpeakeasyBase {
     /**
      * An email address.
      */
@@ -100,13 +100,13 @@ export class FinalizePayment200ApplicationJSONPaypal extends SpeakeasyBase {
 /**
  * The current payment status.
  */
-export enum FinalizePayment200ApplicationJSONStatus {
+export enum Status {
     AwaitingUserConfirmation = "awaiting_user_confirmation",
     PaymentReady = "payment_ready",
     Success = "success",
 }
 
-export class FinalizePayment200ApplicationJSONTransaction extends SpeakeasyBase {
+export class Transaction extends SpeakeasyBase {
     /**
      * The Bolt transaction reference (can be used to fetch transaction details, capture, void or refund transaction)
      */
@@ -118,7 +118,7 @@ export class FinalizePayment200ApplicationJSONTransaction extends SpeakeasyBase 
 /**
  * Payment Token Retrieved
  */
-export class FinalizePayment200ApplicationJSON extends SpeakeasyBase {
+export class FinalizePaymentResponseBody extends SpeakeasyBase {
     /**
      * The ID for the given Payment Attempt
      */
@@ -135,20 +135,20 @@ export class FinalizePayment200ApplicationJSON extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "paypal" })
-    @Type(() => FinalizePayment200ApplicationJSONPaypal)
-    paypal?: FinalizePayment200ApplicationJSONPaypal;
+    @Type(() => Paypal)
+    paypal?: Paypal;
 
     /**
      * The current payment status.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status?: FinalizePayment200ApplicationJSONStatus;
+    status?: Status;
 
     @SpeakeasyMetadata()
     @Expose({ name: "transaction" })
-    @Type(() => FinalizePayment200ApplicationJSONTransaction)
-    transaction?: FinalizePayment200ApplicationJSONTransaction;
+    @Type(() => Transaction)
+    transaction?: Transaction;
 }
 
 export class FinalizePaymentResponse extends SpeakeasyBase {
@@ -174,5 +174,5 @@ export class FinalizePaymentResponse extends SpeakeasyBase {
      * Payment Token Retrieved
      */
     @SpeakeasyMetadata()
-    finalizePayment200ApplicationJSONObject?: FinalizePayment200ApplicationJSON;
+    object?: FinalizePaymentResponseBody;
 }

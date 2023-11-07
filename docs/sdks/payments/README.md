@@ -1,5 +1,5 @@
 # Payments
-(*payments*)
+(*.payments*)
 
 ## Overview
 
@@ -43,6 +43,7 @@ const operationSecurity: FinalizePaymentSecurity = {
     id: "<ID>",
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -74,13 +75,13 @@ Initialize a Bolt payment token that will be used to reference this payment to B
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { InitializePaymentSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 import {
-  CartCreateFulfillmentsType,
-  CartDiscountDiscountCategory,
-  CartDiscountType,
-  CartItemShipmentType,
+  CartCreateType,
   CartItemType,
   CartShipmentType,
-  InStoreCartShipmentDistanceUnit,
+  DiscountCategory,
+  DistanceUnit,
+  ShipmentType,
+  TypeT,
 } from "bolt-embedded-api/dist/sdk/models/shared";
 
 (async() => {
@@ -128,7 +129,7 @@ const operationSecurity: InitializePaymentSecurity = {
             description: "10% off our summer collection",
             detailsUrl: "https://boltswagstore.com/SUMMERSALE",
             reference: "DISC-1234",
-            type: CartDiscountType.Percentage,
+            type: TypeT.Percentage,
           },
         ],
         displayId: "displayid_100",
@@ -328,7 +329,7 @@ const operationSecurity: InitializePaymentSecurity = {
               },
               description: "Pick up in-store at 123 Main St.",
               distance: 3,
-              distanceUnit: InStoreCartShipmentDistanceUnit.Mile,
+              distanceUnit: DistanceUnit.Mile,
               inStorePickupAddress: {
                 company: "Bolt",
                 country: "United States",
@@ -399,7 +400,7 @@ const operationSecurity: InitializePaymentSecurity = {
             },
             description: "Pick up in-store at 123 Main St.",
             distance: 3,
-            distanceUnit: InStoreCartShipmentDistanceUnit.Mile,
+            distanceUnit: DistanceUnit.Mile,
             inStorePickupAddress: {
               company: "Bolt",
               country: "United States",
@@ -526,8 +527,8 @@ const operationSecurity: InitializePaymentSecurity = {
           },
         ],
         metadata: {
-          "key2": "value2",
           "key1": "value1",
+          "key2": "value2",
         },
         orderDescription: "Order #1234567890",
         orderReference: "order_100",
@@ -587,6 +588,7 @@ const operationSecurity: InitializePaymentSecurity = {
     },
   }, operationSecurity);
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -618,13 +620,13 @@ Update a Bolt payment using the token given after initializing a payment.  Updat
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { UpdatePaymentSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 import {
-  CartCreateFulfillmentsType,
-  CartDiscountDiscountCategory,
-  CartDiscountType,
-  CartItemShipmentType,
+  CartCreateType,
   CartItemType,
   CartShipmentType,
-  InStoreCartShipmentDistanceUnit,
+  DiscountCategory,
+  DistanceUnit,
+  ShipmentType,
+  TypeT,
 } from "bolt-embedded-api/dist/sdk/models/shared";
 
 (async() => {
@@ -672,7 +674,7 @@ const operationSecurity: UpdatePaymentSecurity = {
             description: "10% off our summer collection",
             detailsUrl: "https://boltswagstore.com/SUMMERSALE",
             reference: "DISC-1234",
-            type: CartDiscountType.Percentage,
+            type: TypeT.Percentage,
           },
         ],
         displayId: "displayid_100",
@@ -699,8 +701,8 @@ const operationSecurity: UpdatePaymentSecurity = {
                 customizations: [
                   {
                     attributes: {
-                      "key2": "value2",
                       "key1": "value1",
+                      "key2": "value2",
                     },
                     price: {
                       amount: 754,
@@ -872,7 +874,7 @@ const operationSecurity: UpdatePaymentSecurity = {
               },
               description: "Pick up in-store at 123 Main St.",
               distance: 3,
-              distanceUnit: InStoreCartShipmentDistanceUnit.Mile,
+              distanceUnit: DistanceUnit.Mile,
               inStorePickupAddress: {
                 company: "Bolt",
                 country: "United States",
@@ -943,7 +945,7 @@ const operationSecurity: UpdatePaymentSecurity = {
             },
             description: "Pick up in-store at 123 Main St.",
             distance: 3,
-            distanceUnit: InStoreCartShipmentDistanceUnit.Mile,
+            distanceUnit: DistanceUnit.Mile,
             inStorePickupAddress: {
               company: "Bolt",
               country: "United States",
@@ -1131,6 +1133,7 @@ const operationSecurity: UpdatePaymentSecurity = {
     },
     id: "<ID>",
   }, operationSecurity);
+
 
   if (res.statusCode == 200) {
     // handle response

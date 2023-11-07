@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-export enum ICustomFieldViewCheckoutStep {
+export enum CheckoutStep {
     ShippingStep = "SHIPPING_STEP",
     DeliveryStep = "DELIVERY_STEP",
     PaymentStep = "PAYMENT_STEP",
@@ -15,7 +15,7 @@ export enum ICustomFieldViewCheckoutStep {
 export class ICustomFieldView extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "checkout_step" })
-    checkoutStep?: ICustomFieldViewCheckoutStep;
+    checkoutStep?: CheckoutStep;
 
     @SpeakeasyMetadata()
     @Expose({ name: "dynamic" })

@@ -7,7 +7,7 @@ import { Address } from "./address";
 import { CartShipment } from "./cartshipment";
 import { Expose, Type } from "class-transformer";
 
-export enum InStoreCartShipmentDistanceUnit {
+export enum DistanceUnit {
     Km = "km",
     Mile = "mile",
 }
@@ -34,7 +34,7 @@ export class InStoreCartShipment extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "distance_unit" })
-    distanceUnit?: InStoreCartShipmentDistanceUnit;
+    distanceUnit?: DistanceUnit;
 
     /**
      * The Address object is used for billing, shipping, and physical store address use cases.

@@ -7,7 +7,7 @@ import { CreditCardAuthorizationReason } from "./creditcardauthorizationreason";
 import { CreditCardAuthorizationStatus } from "./creditcardauthorizationstatus";
 import { Expose } from "class-transformer";
 
-export enum CreditCardAuthorizationViewAvsResponse {
+export enum AvsResponse {
     Zero = "00",
     One = "01",
     Two = "02",
@@ -45,7 +45,7 @@ export enum CreditCardAuthorizationViewAvsResponse {
     AdyenK = "adyen_K",
 }
 
-export enum CreditCardAuthorizationViewCvvResponse {
+export enum CvvResponse {
     M = "M",
     N = "N",
     P = "P",
@@ -71,7 +71,7 @@ export enum CreditCardAuthorizationViewCvvResponse {
     Cvv2 = "CVV2",
 }
 
-export enum CreditCardAuthorizationViewProcessor {
+export enum Processor {
     Vantiv = "vantiv",
     AdyenPayfac = "adyen_payfac",
     AdyenGateway = "adyen_gateway",
@@ -92,11 +92,11 @@ export class CreditCardAuthorizationView extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "avs_response" })
-    avsResponse?: CreditCardAuthorizationViewAvsResponse;
+    avsResponse?: AvsResponse;
 
     @SpeakeasyMetadata()
     @Expose({ name: "cvv_response" })
-    cvvResponse?: CreditCardAuthorizationViewCvvResponse;
+    cvvResponse?: CvvResponse;
 
     /**
      * The reference ID associated with a transaction event (auth, capture, refund, void). This is an arbitrary identifier created by the merchant. Bolt does not enforce any uniqueness constraints on this ID. It is up to the merchant to generate identifiers that properly fulfill its needs.
@@ -111,7 +111,7 @@ export class CreditCardAuthorizationView extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "processor" })
-    processor?: CreditCardAuthorizationViewProcessor;
+    processor?: Processor;
 
     /**
      * The reason code explaining the authorization status.

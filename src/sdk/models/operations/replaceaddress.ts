@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -41,7 +41,7 @@ export class ReplaceAddressRequest extends SpeakeasyBase {
 /**
  * The address object returned in the response.
  */
-export class ReplaceAddress200ApplicationJSON extends SpeakeasyBase {
+export class ReplaceAddressResponseBody extends SpeakeasyBase {
     /**
      * The company name associated with this address.
      */
@@ -207,5 +207,5 @@ export class ReplaceAddressResponse extends SpeakeasyBase {
      * Address Updated Successfully
      */
     @SpeakeasyMetadata()
-    replaceAddress200ApplicationJSONObject?: ReplaceAddress200ApplicationJSON;
+    object?: ReplaceAddressResponseBody;
 }

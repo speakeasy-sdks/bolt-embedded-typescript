@@ -7,7 +7,7 @@ import { ICustomFieldView } from "./icustomfieldview";
 import { IGiftOptionView } from "./igiftoptionview";
 import { Expose, Type } from "class-transformer";
 
-export enum IOrderDynamicContentEligiblePaymentMethodsTransactionProcessorType {
+export enum TransactionProcessorType {
     Affirm = "affirm",
     Afterpay = "afterpay",
     AmazonPay = "amazon_pay",
@@ -39,17 +39,17 @@ export enum IOrderDynamicContentEligiblePaymentMethodsTransactionProcessorType {
     Bolt = "bolt",
 }
 
-export class IOrderDynamicContentEligiblePaymentMethods extends SpeakeasyBase {
+export class EligiblePaymentMethods extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "eligible" })
     eligible?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "transaction_processor_type" })
-    transactionProcessorType?: IOrderDynamicContentEligiblePaymentMethodsTransactionProcessorType;
+    transactionProcessorType?: TransactionProcessorType;
 }
 
-export enum IOrderDynamicContentHideApm {
+export enum HideApm {
     Paypal = "PAYPAL",
     Affirm = "AFFIRM",
     Afterpay = "AFTERPAY",
@@ -68,10 +68,10 @@ export class IOrderDynamicContent extends SpeakeasyBase {
     @Type(() => ICustomFieldView)
     customFields?: ICustomFieldView[];
 
-    @SpeakeasyMetadata({ elemType: IOrderDynamicContentEligiblePaymentMethods })
+    @SpeakeasyMetadata({ elemType: EligiblePaymentMethods })
     @Expose({ name: "eligible_payment_methods" })
-    @Type(() => IOrderDynamicContentEligiblePaymentMethods)
-    eligiblePaymentMethods?: IOrderDynamicContentEligiblePaymentMethods[];
+    @Type(() => EligiblePaymentMethods)
+    eligiblePaymentMethods?: EligiblePaymentMethods[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "gift_option_view" })
@@ -80,7 +80,7 @@ export class IOrderDynamicContent extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "hide_apm" })
-    hideApm?: IOrderDynamicContentHideApm[];
+    hideApm?: HideApm[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "order_notice" })

@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -26,7 +26,7 @@ export class GetTransactionDetailsRequest extends SpeakeasyBase {
  * @remarks
  *
  */
-export enum GetTransactionDetails200ApplicationJSONSplitsType {
+export enum TypeT {
     Net = "net",
     ProcessingFee = "processing_fee",
     BoltFee = "bolt_fee",
@@ -38,7 +38,7 @@ export enum GetTransactionDetails200ApplicationJSONSplitsType {
 /**
  * A split of fees by type and amount.
  */
-export class GetTransactionDetails200ApplicationJSONSplits extends SpeakeasyBase {
+export class Splits extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     @Type(() => shared.AmountView)
@@ -52,10 +52,10 @@ export class GetTransactionDetails200ApplicationJSONSplits extends SpeakeasyBase
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: GetTransactionDetails200ApplicationJSONSplitsType;
+    type?: TypeT;
 }
 
-export class GetTransactionDetails200ApplicationJSONTransactionRejectionDetailsAuthRejectionDetails extends SpeakeasyBase {
+export class AuthRejectionDetails extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "reason_code" })
     reasonCode?: string;
@@ -65,13 +65,11 @@ export class GetTransactionDetails200ApplicationJSONTransactionRejectionDetailsA
     reasonDescription?: string;
 }
 
-export class GetTransactionDetails200ApplicationJSONTransactionRejectionDetails extends SpeakeasyBase {
+export class TransactionRejectionDetails extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "auth_rejection_details" })
-    @Type(
-        () => GetTransactionDetails200ApplicationJSONTransactionRejectionDetailsAuthRejectionDetails
-    )
-    authRejectionDetails?: GetTransactionDetails200ApplicationJSONTransactionRejectionDetailsAuthRejectionDetails;
+    @Type(() => AuthRejectionDetails)
+    authRejectionDetails?: AuthRejectionDetails;
 }
 
 /**
@@ -80,7 +78,7 @@ export class GetTransactionDetails200ApplicationJSONTransactionRejectionDetails 
  * @remarks
  *
  */
-export class GetTransactionDetails200ApplicationJSON extends SpeakeasyBase {
+export class GetTransactionDetailsResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address_change_request_metadata" })
     @Type(() => shared.AddressChangeRequestMetadataView)
@@ -349,10 +347,10 @@ export class GetTransactionDetails200ApplicationJSON extends SpeakeasyBase {
     /**
      * A list of splits. **Nullable** for Transactions Details.
      */
-    @SpeakeasyMetadata({ elemType: GetTransactionDetails200ApplicationJSONSplits })
+    @SpeakeasyMetadata({ elemType: Splits })
     @Expose({ name: "splits" })
-    @Type(() => GetTransactionDetails200ApplicationJSONSplits)
-    splits?: GetTransactionDetails200ApplicationJSONSplits[];
+    @Type(() => Splits)
+    splits?: Splits[];
 
     /**
      * The transaction's status.
@@ -385,8 +383,8 @@ export class GetTransactionDetails200ApplicationJSON extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "transaction_rejection_details" })
-    @Type(() => GetTransactionDetails200ApplicationJSONTransactionRejectionDetails)
-    transactionRejectionDetails?: GetTransactionDetails200ApplicationJSONTransactionRejectionDetails;
+    @Type(() => TransactionRejectionDetails)
+    transactionRejectionDetails?: TransactionRejectionDetails;
 
     /**
      * The type of transaction.
@@ -441,5 +439,5 @@ export class GetTransactionDetailsResponse extends SpeakeasyBase {
      *
      */
     @SpeakeasyMetadata()
-    getTransactionDetails200ApplicationJSONObject?: GetTransactionDetails200ApplicationJSON;
+    object?: GetTransactionDetailsResponseBody;
 }

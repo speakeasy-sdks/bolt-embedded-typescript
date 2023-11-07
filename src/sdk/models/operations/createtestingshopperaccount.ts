@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
@@ -15,7 +15,7 @@ export class CreateTestingShopperAccountSecurity extends SpeakeasyBase {
 /**
  * The status of the shopper account identifier (email or phone). If the account does not have this identifier, the status is "missing"; If the identifier has been used to receive an OTP code, the status is "verified"; If the identifier has not been used to receive an OTP code, the status is "unverified".
  */
-export enum CreateTestingShopperAccountRequestBodyEmailState {
+export enum EmailState {
     Missing = "missing",
     Verified = "verified",
     Unverified = "unverified",
@@ -41,7 +41,7 @@ export class CreateTestingShopperAccountRequestBody extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "email_state" })
-    emailState?: CreateTestingShopperAccountRequestBodyEmailState;
+    emailState?: EmailState;
 
     /**
      * Add a random U.S. address to the created account if set to `true`
@@ -86,7 +86,7 @@ export class CreateTestingShopperAccountRequest extends SpeakeasyBase {
 /**
  * Testing Account Created
  */
-export class CreateTestingShopperAccount200ApplicationJSON extends SpeakeasyBase {
+export class CreateTestingShopperAccountResponseBody extends SpeakeasyBase {
     /**
      * An email address.
      */
@@ -167,5 +167,5 @@ export class CreateTestingShopperAccountResponse extends SpeakeasyBase {
      * Testing Account Created
      */
     @SpeakeasyMetadata()
-    createTestingShopperAccount200ApplicationJSONObject?: CreateTestingShopperAccount200ApplicationJSON;
+    object?: CreateTestingShopperAccountResponseBody;
 }

@@ -28,7 +28,7 @@ import { Expose, Type } from "class-transformer";
  * @remarks
  *
  */
-export enum TransactionViewCaptureSplitsType {
+export enum TransactionViewType {
     Net = "net",
     ProcessingFee = "processing_fee",
     RiskFee = "risk_fee",
@@ -41,7 +41,7 @@ export enum TransactionViewCaptureSplitsType {
 /**
  * A split of fees by type and amount.
  */
-export class TransactionViewCaptureSplits extends SpeakeasyBase {
+export class TransactionViewSplits extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     @Type(() => AmountView)
@@ -55,7 +55,7 @@ export class TransactionViewCaptureSplits extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: TransactionViewCaptureSplitsType;
+    type?: TransactionViewType;
 }
 
 /**
@@ -91,10 +91,10 @@ export class TransactionViewCapture extends SpeakeasyBase {
     /**
      * A split of fees by type and amount. **Nullable** for Transactions Details.
      */
-    @SpeakeasyMetadata({ elemType: TransactionViewCaptureSplits })
+    @SpeakeasyMetadata({ elemType: TransactionViewSplits })
     @Expose({ name: "splits" })
-    @Type(() => TransactionViewCaptureSplits)
-    splits?: TransactionViewCaptureSplits[];
+    @Type(() => TransactionViewSplits)
+    splits?: TransactionViewSplits[];
 
     /**
      * The status of the capture. **Nullable** for Transactions Details.
@@ -113,7 +113,7 @@ export enum TransactionViewRiskReviewStatus {
     Reviewed = "reviewed",
 }
 
-export enum TransactionViewViewStatus {
+export enum ViewStatus {
     NotViewed = "not_viewed",
     Viewed = "viewed",
     Viewing = "viewing",
@@ -122,7 +122,7 @@ export enum TransactionViewViewStatus {
 /**
  * Specifies why this particular transaction is voided.
  */
-export enum TransactionViewVoidCause {
+export enum TransactionViewCause {
     MerchantAction = "merchant_action",
     PaypalSync = "paypal_sync",
     AmazonPaySync = "amazon_pay_sync",
@@ -136,7 +136,7 @@ export enum TransactionViewVoidCause {
 /**
  * The status of the void request.
  */
-export enum TransactionViewVoidStatus {
+export enum TransactionViewStatus {
     Succeeded = "succeeded",
     Declined = "declined",
     Error = "error",
@@ -148,7 +148,7 @@ export class TransactionViewVoid extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "cause" })
-    cause?: TransactionViewVoidCause;
+    cause?: TransactionViewCause;
 
     /**
      * The reference ID associated with a transaction event (auth, capture, refund, void). This is an arbitrary identifier created by the merchant. Bolt does not enforce any uniqueness constraints on this ID. It is up to the merchant to generate identifiers that properly fulfill its needs.
@@ -162,7 +162,7 @@ export class TransactionViewVoid extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status?: TransactionViewVoidStatus;
+    status?: TransactionViewStatus;
 
     /**
      * The void ID returned from the payment processor.
@@ -346,7 +346,7 @@ export class TransactionView extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "view_status" })
-    viewStatus?: TransactionViewViewStatus;
+    viewStatus?: ViewStatus;
 
     @SpeakeasyMetadata()
     @Expose({ name: "void" })

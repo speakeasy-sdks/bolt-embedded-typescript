@@ -3,8 +3,8 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -93,9 +93,9 @@ export class Testing {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.createTestingShopperAccount200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.CreateTestingShopperAccount200ApplicationJSON
+                        operations.CreateTestingShopperAccountResponseBody
                     );
                 } else {
                     throw new errors.SDKError(
@@ -161,9 +161,9 @@ export class Testing {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getTestCreditCardToken200ApplicationJSONObject = utils.objectToClass(
+                    res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        operations.GetTestCreditCardToken200ApplicationJSON
+                        operations.GetTestCreditCardTokenResponseBody
                     );
                 } else {
                     throw new errors.SDKError(

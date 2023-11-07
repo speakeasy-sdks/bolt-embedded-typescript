@@ -1,5 +1,5 @@
 # OAuth
-(*oAuth*)
+(*.oAuth*)
 
 ## Overview
 
@@ -34,6 +34,7 @@ import { BoltEmbeddedApi } from "bolt-embedded-api";
   const res = await sdk.oAuth.oAuthToken({
     requestBody: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

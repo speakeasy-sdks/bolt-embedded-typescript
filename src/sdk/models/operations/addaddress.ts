@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
@@ -35,7 +35,7 @@ export class AddAddressRequest extends SpeakeasyBase {
 /**
  * The address object returned in the response.
  */
-export class AddAddress200ApplicationJSON extends SpeakeasyBase {
+export class AddAddressResponseBody extends SpeakeasyBase {
     /**
      * The company name associated with this address.
      */
@@ -201,5 +201,5 @@ export class AddAddressResponse extends SpeakeasyBase {
      * Address Added Successfully
      */
     @SpeakeasyMetadata()
-    addAddress200ApplicationJSONObject?: AddAddress200ApplicationJSON;
+    object?: AddAddressResponseBody;
 }
