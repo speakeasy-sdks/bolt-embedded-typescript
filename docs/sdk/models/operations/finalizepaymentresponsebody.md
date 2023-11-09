@@ -1,0 +1,14 @@
+# FinalizePaymentResponseBody
+
+Payment Token Retrieved
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     | Example                                                                         |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `id`                                                                            | *string*                                                                        | :heavy_minus_sign:                                                              | The ID for the given Payment Attempt                                            |                                                                                 |
+| `paymentMethodId`                                                               | *string*                                                                        | :heavy_minus_sign:                                                              | ID of the payment method in Bolt's system, only if the payment method is saved. |                                                                                 |
+| `paypal`                                                                        | [operations.Paypal](../../../sdk/models/operations/paypal.md)                   | :heavy_minus_sign:                                                              | N/A                                                                             |                                                                                 |
+| `status`                                                                        | [operations.Status](../../../sdk/models/operations/status.md)                   | :heavy_minus_sign:                                                              | The current payment status.                                                     | success                                                                         |
+| `transaction`                                                                   | [operations.Transaction](../../../sdk/models/operations/transaction.md)         | :heavy_minus_sign:                                                              | N/A                                                                             |                                                                                 |

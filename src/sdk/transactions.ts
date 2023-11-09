@@ -46,7 +46,8 @@ export class Transactions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/authorize";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/authorize";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -74,7 +75,7 @@ export class Transactions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -138,7 +139,8 @@ export class Transactions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/capture";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/capture";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -170,7 +172,7 @@ export class Transactions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -264,7 +266,7 @@ export class Transactions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/merchant/transactions/{REFERENCE}",
             req
@@ -281,7 +283,7 @@ export class Transactions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -356,7 +358,8 @@ export class Transactions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/credit";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/credit";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -384,7 +387,7 @@ export class Transactions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -459,7 +462,7 @@ export class Transactions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/merchant/transactions/{REFERENCE}",
             req
@@ -491,7 +494,7 @@ export class Transactions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -569,7 +572,7 @@ export class Transactions {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/void";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/merchant/transactions/void";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -597,7 +600,7 @@ export class Transactions {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

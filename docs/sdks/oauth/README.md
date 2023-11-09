@@ -1,5 +1,5 @@
 # OAuth
-(*.oAuth*)
+(*oAuth*)
 
 ## Overview
 
@@ -35,7 +35,6 @@ import { BoltEmbeddedApi } from "bolt-embedded-api";
     requestBody: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -44,13 +43,17 @@ import { BoltEmbeddedApi } from "bolt-embedded-api";
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.OAuthTokenRequest](../../models/operations/oauthtokenrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.OAuthTokenRequest](../../sdk/models/operations/oauthtokenrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
 
 
 ### Response
 
-**Promise<[operations.OAuthTokenResponse](../../models/operations/oauthtokenresponse.md)>**
+**Promise<[operations.OAuthTokenResponse](../../sdk/models/operations/oauthtokenresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

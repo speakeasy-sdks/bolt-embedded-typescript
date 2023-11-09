@@ -42,7 +42,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/account/addresses";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/account/addresses";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -70,7 +70,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -133,7 +133,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/account/payment_methods";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/account/payment_methods";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -161,7 +161,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -221,7 +221,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/account";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/account";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -253,7 +253,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -314,7 +314,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/account/addresses/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/v1/account/addresses/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.DeleteAddressSecurity(security);
@@ -331,7 +331,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -376,7 +376,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/v1/account/payment_methods/{payment_method_id}",
             req
@@ -397,7 +397,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -458,7 +458,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/account/exists";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/account/exists";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -480,7 +480,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -556,7 +556,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/account/addresses/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/v1/account/addresses/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -584,7 +584,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -644,7 +644,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/account";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/account";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetAccountSecurity(security);
@@ -661,7 +661,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -722,7 +722,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/account/addresses/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/v1/account/addresses/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -750,7 +750,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -810,7 +810,7 @@ export class Account {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/account/profile";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/account/profile";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -838,7 +838,7 @@ export class Account {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",

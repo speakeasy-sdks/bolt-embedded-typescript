@@ -42,7 +42,7 @@ export class Payments {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/payments/{id}/finalize", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/v1/payments/{id}/finalize", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -70,7 +70,7 @@ export class Payments {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -133,7 +133,7 @@ export class Payments {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/payments";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/payments";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -161,7 +161,7 @@ export class Payments {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -224,7 +224,7 @@ export class Payments {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/v1/payments/{id}", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/v1/payments/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -252,7 +252,7 @@ export class Payments {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

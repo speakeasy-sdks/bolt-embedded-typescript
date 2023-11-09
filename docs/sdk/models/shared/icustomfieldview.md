@@ -1,0 +1,17 @@
+# ICustomFieldView
+
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `checkoutStep`                                                    | [shared.CheckoutStep](../../../sdk/models/shared/checkoutstep.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `dynamic`                                                         | *boolean*                                                         | :heavy_minus_sign:                                                | N/A                                                               |
+| `externalId`                                                      | *string*                                                          | :heavy_minus_sign:                                                | N/A                                                               |
+| `fieldSetup`                                                      | *string*                                                          | :heavy_minus_sign:                                                | N/A                                                               |
+| `helperText`                                                      | *string*                                                          | :heavy_minus_sign:                                                | N/A                                                               |
+| `label`                                                           | *string*                                                          | :heavy_minus_sign:                                                | N/A                                                               |
+| `position`                                                        | *number*                                                          | :heavy_minus_sign:                                                | N/A                                                               |
+| `publicId`                                                        | *string*                                                          | :heavy_minus_sign:                                                | N/A                                                               |
+| `required`                                                        | *boolean*                                                         | :heavy_minus_sign:                                                | N/A                                                               |
+| `subscribeToNewsletter`                                           | *boolean*                                                         | :heavy_minus_sign:                                                | N/A                                                               |

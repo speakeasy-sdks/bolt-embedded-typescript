@@ -41,7 +41,7 @@ export class Testing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/testing/shopper/create";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/testing/shopper/create";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -69,7 +69,7 @@ export class Testing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -125,7 +125,7 @@ export class Testing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/v1/testing/card_token";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/testing/card_token";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         if (!(security instanceof utils.SpeakeasyBase)) {
             security = new operations.GetTestCreditCardTokenSecurity(security);
@@ -138,7 +138,7 @@ export class Testing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",

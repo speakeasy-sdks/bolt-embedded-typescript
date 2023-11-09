@@ -67,7 +67,7 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
 ## Available Resources and Operations
 
 
-### [.account](docs/sdks/account/README.md)
+### [account](docs/sdks/account/README.md)
 
 * [addAddress](docs/sdks/account/README.md#addaddress) - Add Address
 * [addPaymentMethod](docs/sdks/account/README.md#addpaymentmethod) - Add Payment Method
@@ -80,7 +80,7 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
 * [replaceAddress](docs/sdks/account/README.md#replaceaddress) - Replace Address
 * [updateAccountProfile](docs/sdks/account/README.md#updateaccountprofile) - Update Profile
 
-### [.transactions](docs/sdks/transactions/README.md)
+### [transactions](docs/sdks/transactions/README.md)
 
 * [authorizeTransaction](docs/sdks/transactions/README.md#authorizetransaction) - Authorize a Card
 * [captureTransaction](docs/sdks/transactions/README.md#capturetransaction) - Capture a Transaction
@@ -89,17 +89,17 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
 * [updateTransaction](docs/sdks/transactions/README.md#updatetransaction) - Update a Transaction
 * [voidTransaction](docs/sdks/transactions/README.md#voidtransaction) - Void a Transaction
 
-### [.oAuth](docs/sdks/oauth/README.md)
+### [oAuth](docs/sdks/oauth/README.md)
 
 * [oAuthToken](docs/sdks/oauth/README.md#oauthtoken) - OAuth Token Endpoint
 
-### [.payments](docs/sdks/payments/README.md)
+### [payments](docs/sdks/payments/README.md)
 
 * [finalizePayment](docs/sdks/payments/README.md#finalizepayment) - Finalize Payment
 * [initializePayment](docs/sdks/payments/README.md#initializepayment) - Initialize Payment
 * [updatePayment](docs/sdks/payments/README.md#updatepayment) - Update Payment
 
-### [.testing](docs/sdks/testing/README.md)
+### [testing](docs/sdks/testing/README.md)
 
 * [createTestingShopperAccount](docs/sdks/testing/README.md#createtestingshopperaccount) - Create Testing Shopper Account
 * [getTestCreditCardToken](docs/sdks/testing/README.md#gettestcreditcardtoken) - Fetch a Test Credit Card Token
@@ -128,9 +128,61 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 
+## Example
+
+```typescript
+import { BoltEmbeddedApi } from "bolt-embedded-api";
+import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
+
+(async () => {
+    const sdk = new BoltEmbeddedApi();
+    const operationSecurity: AddAddressSecurity = {
+        oAuth: "",
+        xAPIKey: "",
+    };
+
+    let res;
+    try {
+        res = await sdk.account.addAddress(
+            {
+                addressAccount: {
+                    company: "Bolt",
+                    country: "United States",
+                    countryCode: "US",
+                    doorCode: "123456",
+                    email: "alan.watts@example.com",
+                    firstName: "Alan",
+                    lastName: "Watts",
+                    locality: "Brooklyn",
+                    metadata: {},
+                    name: "Alan Watts",
+                    phone: "+12125550199",
+                    postalCode: "10044",
+                    region: "NY",
+                    regionCode: "NY",
+                    streetAddress1: "888 main street",
+                    streetAddress2: "apt 3021",
+                    streetAddress3: "c/o Alicia Watts",
+                    streetAddress4: "Bridge Street Apartment Building B",
+                },
+            },
+            operationSecurity
+        );
+    } catch (e) {}
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
 <!-- End Error Handling -->
 
 
@@ -269,19 +321,16 @@ const httpClient = axios.create({
 
 const sdk = new BoltEmbeddedApi({defaultClient: httpClient});
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name         | Type         | Scheme       |
 | ------------ | ------------ | ------------ |
@@ -336,7 +385,7 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
 
 ## Per-Operation Security Schemes
 
-Some operations in your SDK require the security scheme to be specified at the request level. For example:
+Some operations in this SDK require the security scheme to be specified at the request level. For example:
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
