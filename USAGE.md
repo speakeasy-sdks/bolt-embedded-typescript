@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
