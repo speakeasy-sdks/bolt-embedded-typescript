@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: b58aa22b520fd02d35640f920003ff1d
   docVersion: 1.0.1
-  speakeasyVersion: 1.118.3
-  generationVersion: 2.187.7
+  speakeasyVersion: 1.120.3
+  generationVersion: 2.192.1
 generation:
   comments: {}
   sdkClassName: bolt-embedded-api
@@ -12,12 +12,12 @@ generation:
     optionalPropertyRendering: withExample
 features:
   typescript:
-    core: 3.1.3
+    core: 3.1.4
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     methodSecurity: 2.82.0
 typescript:
-  version: 0.11.2
+  version: 0.11.3
   author: ryan-test
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: false

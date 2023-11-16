@@ -530,8 +530,8 @@ const operationSecurity: InitializePaymentSecurity = {
           },
         ],
         metadata: {
-          "key1": "value1",
           "key2": "value2",
+          "key1": "value1",
         },
         orderDescription: "Order #1234567890",
         orderReference: "order_100",
@@ -986,8 +986,8 @@ const operationSecurity: UpdatePaymentSecurity = {
             customizations: [
               {
                 attributes: {
-                  "key1": "value1",
                   "key2": "value2",
+                  "key1": "value1",
                 },
                 price: {
                   amount: 754,
@@ -1078,8 +1078,8 @@ const operationSecurity: UpdatePaymentSecurity = {
           },
         ],
         metadata: {
-          "key2": "value2",
           "key1": "value1",
+          "key2": "value2",
         },
         orderDescription: "Order #1234567890",
         orderReference: "order_100",
