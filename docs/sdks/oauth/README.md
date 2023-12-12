@@ -24,10 +24,10 @@ To use this endpoint, first use the Authorization Code Request flow by using the
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi({
     security: {
-      oAuth: "",
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -38,7 +38,9 @@ import { BoltEmbeddedApi } from "bolt-embedded-api";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

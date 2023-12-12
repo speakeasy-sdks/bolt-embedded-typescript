@@ -24,10 +24,10 @@ import {
   Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState,
 } from "bolt-embedded-api/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: CreateTestingShopperAccountSecurity = {
-  xAPIKey: "",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.testing.createTestingShopperAccount({
@@ -40,7 +40,9 @@ const operationSecurity: CreateTestingShopperAccountSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -71,10 +73,10 @@ This endpoint fetches a new credit card token for Bolt's universal test credit c
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { GetTestCreditCardTokenSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: GetTestCreditCardTokenSecurity = {
-  xAPIKey: "",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.testing.getTestCreditCardToken(operationSecurity);
@@ -82,7 +84,9 @@ const operationSecurity: GetTestCreditCardTokenSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

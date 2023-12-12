@@ -1,6 +1,6 @@
 # bolt-embedded-api
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### NPM
@@ -14,21 +14,22 @@ npm add https://github.com/speakeasy-sdks/bolt-embedded-typescript
 ```bash
 yarn add https://github.com/speakeasy-sdks/bolt-embedded-typescript
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new BoltEmbeddedApi();
     const operationSecurity: AddAddressSecurity = {
-        oAuth: "",
-        xAPIKey: "",
+        oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        xAPIKey: "<YOUR_API_KEY_HERE>",
     };
 
     const res = await sdk.account.addAddress(
@@ -60,14 +61,15 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [account](docs/sdks/account/README.md)
 
@@ -105,29 +107,15 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
 
 * [createTestingShopperAccount](docs/sdks/testing/README.md#createtestingshopperaccount) - Create Testing Shopper Account
 * [getTestCreditCardToken](docs/sdks/testing/README.md#gettestcreditcardtoken) - Fetch a Test Credit Card Token
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
 
 
 
-<!-- Start Pagination -->
-# Pagination
 
-Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
-returned response object will have a `next` method that can be called to pull down the next group of results. If the
-return value of `next` is `null`, then there are no more pages to be fetched.
-
-Here's an example of one such pagination call:
-<!-- End Pagination -->
-
-
-
-<!-- Start Error Handling -->
+<!-- Start Error Handling [errors] -->
 ## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
@@ -142,11 +130,11 @@ Example
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new BoltEmbeddedApi();
     const operationSecurity: AddAddressSecurity = {
-        oAuth: "",
-        xAPIKey: "",
+        oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        xAPIKey: "<YOUR_API_KEY_HERE>",
     };
 
     let res;
@@ -176,19 +164,26 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
             },
             operationSecurity
         );
-    } catch (e) {}
+    } catch (err) {
+        if (err instanceof errors.SDKError) {
+            console.error(err); // handle exception
+            throw err;
+        }
+    }
 
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Error Handling -->
+<!-- End Error Handling [errors] -->
 
 
 
-<!-- Start Server Selection -->
+<!-- Start Server Selection [server] -->
 ## Server Selection
 
 ### Select Server by Index
@@ -207,13 +202,13 @@ You can override the default server globally by passing a server index to the `s
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new BoltEmbeddedApi({
         serverIdx: 2,
     });
     const operationSecurity: AddAddressSecurity = {
-        oAuth: "",
-        xAPIKey: "",
+        oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        xAPIKey: "<YOUR_API_KEY_HERE>",
     };
 
     const res = await sdk.account.addAddress(
@@ -245,7 +240,9 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 
@@ -257,13 +254,13 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new BoltEmbeddedApi({
         serverURL: "https://api.bolt.com",
     });
     const operationSecurity: AddAddressSecurity = {
-        oAuth: "",
-        xAPIKey: "",
+        oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        xAPIKey: "<YOUR_API_KEY_HERE>",
     };
 
     const res = await sdk.account.addAddress(
@@ -295,23 +292,25 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
 
 
-<!-- Start Custom HTTP Client -->
+<!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
 
 For example, you could specify a header for every request that your sdk makes as follows:
 
 ```typescript
-from bolt-embedded-api import BoltEmbeddedApi;
-import axios;
+import { bolt-embedded-api } from "BoltEmbeddedApi";
+import axios from "axios";
 
 const httpClient = axios.create({
     headers: {'x-custom-header': 'someValue'}
@@ -319,11 +318,11 @@ const httpClient = axios.create({
 
 const sdk = new BoltEmbeddedApi({defaultClient: httpClient});
 ```
-<!-- End Custom HTTP Client -->
+<!-- End Custom HTTP Client [http-client] -->
 
 
 
-<!-- Start Authentication -->
+<!-- Start Authentication [security] -->
 ## Authentication
 
 ### Per-Client Security Schemes
@@ -338,45 +337,24 @@ This SDK supports the following security schemes globally:
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async () => {
-    const sdk = new BoltEmbeddedApi();
-    const operationSecurity: AddAddressSecurity = {
-        oAuth: "",
-        xAPIKey: "",
-    };
-
-    const res = await sdk.account.addAddress(
-        {
-            addressAccount: {
-                company: "Bolt",
-                country: "United States",
-                countryCode: "US",
-                doorCode: "123456",
-                email: "alan.watts@example.com",
-                firstName: "Alan",
-                lastName: "Watts",
-                locality: "Brooklyn",
-                metadata: {},
-                name: "Alan Watts",
-                phone: "+12125550199",
-                postalCode: "10044",
-                region: "NY",
-                regionCode: "NY",
-                streetAddress1: "888 main street",
-                streetAddress2: "apt 3021",
-                streetAddress3: "c/o Alicia Watts",
-                streetAddress4: "Bridge Street Apartment Building B",
-            },
+async function run() {
+    const sdk = new BoltEmbeddedApi({
+        security: {
+            oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         },
-        operationSecurity
-    );
+    });
+
+    const res = await sdk.account.detectAccount({
+        xPublishableKey: "string",
+    });
 
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 
@@ -387,11 +365,11 @@ Some operations in this SDK require the security scheme to be specified at the r
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new BoltEmbeddedApi();
     const operationSecurity: AddAddressSecurity = {
-        oAuth: "",
-        xAPIKey: "",
+        oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        xAPIKey: "<YOUR_API_KEY_HERE>",
     };
 
     const res = await sdk.account.addAddress(
@@ -423,10 +401,12 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Authentication -->
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

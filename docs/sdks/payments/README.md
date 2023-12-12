@@ -23,10 +23,10 @@ Finalize a Bolt Payment. NOTE: The authorization header is NOT required for paym
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { FinalizePaymentSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: FinalizePaymentSecurity = {
-  oAuth: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.payments.finalizePayment({
@@ -46,7 +46,9 @@ const operationSecurity: FinalizePaymentSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -87,10 +89,10 @@ import {
   TypeT,
 } from "bolt-embedded-api/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: InitializePaymentSecurity = {
-  oAuth: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.payments.initializePayment({
@@ -530,8 +532,8 @@ const operationSecurity: InitializePaymentSecurity = {
           },
         ],
         metadata: {
-          "key2": "value2",
           "key1": "value1",
+          "key2": "value2",
         },
         orderDescription: "Order #1234567890",
         orderReference: "order_100",
@@ -594,7 +596,9 @@ const operationSecurity: InitializePaymentSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -635,10 +639,10 @@ import {
   TypeT,
 } from "bolt-embedded-api/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: UpdatePaymentSecurity = {
-  oAuth: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 };
 
   const res = await sdk.payments.updatePayment({
@@ -707,8 +711,8 @@ const operationSecurity: UpdatePaymentSecurity = {
                 customizations: [
                   {
                     attributes: {
-                      "key2": "value2",
                       "key1": "value1",
+                      "key2": "value2",
                     },
                     price: {
                       amount: 754,
@@ -1143,7 +1147,9 @@ const operationSecurity: UpdatePaymentSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

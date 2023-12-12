@@ -29,11 +29,11 @@ Add an address to a shopper's account address book.
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: AddAddressSecurity = {
-  oAuth: "",
-  xAPIKey: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.account.addAddress({
@@ -62,7 +62,9 @@ const operationSecurity: AddAddressSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -96,11 +98,11 @@ Add a payment method to a shopper's Bolt account Wallet. For security purposes, 
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddPaymentMethodSecurity, Network, Priority, TokenType } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: AddPaymentMethodSecurity = {
-  oAuth: "",
-  xAPIKey: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.account.addPaymentMethod({
@@ -125,7 +127,7 @@ const operationSecurity: AddPaymentMethodSecurity = {
         streetAddress3: "c/o Alicia Watts",
         streetAddress4: "Bridge Street Apartment Building B",
       },
-      billingAddressId: "null",
+      billingAddressId: "string",
       bin: "411111",
       currency: "USD",
       expiration: "2025-11",
@@ -140,7 +142,9 @@ const operationSecurity: AddPaymentMethodSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -172,10 +176,10 @@ import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { CreateAccountSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 import { Network, PaymentMethodAccountPriority, TokenType } from "bolt-embedded-api/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: CreateAccountSecurity = {
-  xAPIKey: "",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.account.createAccount({
@@ -224,7 +228,7 @@ const operationSecurity: CreateAccountSecurity = {
             streetAddress3: "c/o Alicia Watts",
             streetAddress4: "Bridge Street Apartment Building B",
           },
-          billingAddressId: "null",
+          billingAddressId: "string",
           bin: "411111",
           expiration: "2025-11",
           last4: "1234",
@@ -247,7 +251,9 @@ const operationSecurity: CreateAccountSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -279,11 +285,11 @@ Deletes an existing address in a shopper's address book.
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { DeleteAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: DeleteAddressSecurity = {
-  oAuth: "",
-  xAPIKey: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.account.deleteAddress({
@@ -293,7 +299,9 @@ const operationSecurity: DeleteAddressSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -324,11 +332,11 @@ Delete a saved payment method from a shopper's Bolt account Wallet.
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { DeletePaymentMethodSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: DeletePaymentMethodSecurity = {
-  oAuth: "",
-  xAPIKey: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.account.deletePaymentMethod({
@@ -338,7 +346,9 @@ const operationSecurity: DeletePaymentMethodSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -368,10 +378,10 @@ Check whether an account exists using one of `email`, `phone`, or `sha256_email`
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi({
     security: {
-      oAuth: "",
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -382,7 +392,9 @@ import { BoltEmbeddedApi } from "bolt-embedded-api";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -414,11 +426,11 @@ This endpoint fully replaces the information for an existing address while retai
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { EditAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: EditAddressSecurity = {
-  oAuth: "",
-  xAPIKey: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.account.editAddress({
@@ -448,7 +460,9 @@ const operationSecurity: EditAddressSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -479,11 +493,11 @@ Fetch a shopper's account details to pre-fill checkout fields. This request must
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { GetAccountSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: GetAccountSecurity = {
-  oAuth: "",
-  xAPIKey: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.account.getAccount({}, operationSecurity);
@@ -491,7 +505,9 @@ const operationSecurity: GetAccountSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -524,11 +540,11 @@ These changes delete the existing address and create a new one.
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { ReplaceAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: ReplaceAddressSecurity = {
-  oAuth: "",
-  xAPIKey: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.account.replaceAddress({
@@ -558,7 +574,9 @@ const operationSecurity: ReplaceAddressSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -589,11 +607,11 @@ Update the identifiers for a shopper's profile (first name or last name).
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { UpdateAccountProfileSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: UpdateAccountProfileSecurity = {
-  oAuth: "",
-  xAPIKey: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.account.updateAccountProfile({
@@ -607,7 +625,9 @@ const operationSecurity: UpdateAccountProfileSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

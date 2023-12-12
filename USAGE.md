@@ -1,13 +1,13 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async () => {
+async function run() {
     const sdk = new BoltEmbeddedApi();
     const operationSecurity: AddAddressSecurity = {
-        oAuth: "",
-        xAPIKey: "",
+        oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        xAPIKey: "<YOUR_API_KEY_HERE>",
     };
 
     const res = await sdk.account.addAddress(
@@ -39,7 +39,9 @@ import { AddAddressSecurity } from "bolt-embedded-api/dist/sdk/models/operations
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

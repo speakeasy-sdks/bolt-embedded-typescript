@@ -29,11 +29,11 @@ This endpoint authorizes card payments and has three main use cases:
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { AuthorizeTransactionSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: AuthorizeTransactionSecurity = {
-  oAuth: "",
-  xAPIKey: "",
+  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.transactions.authorizeTransaction({
@@ -43,7 +43,9 @@ const operationSecurity: AuthorizeTransactionSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -77,10 +79,10 @@ Although the response returns the standard `transaction_view` object, only `capt
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { CaptureTransactionSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: CaptureTransactionSecurity = {
-  xAPIKey: "",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.transactions.captureTransaction({
@@ -96,7 +98,9 @@ const operationSecurity: CaptureTransactionSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -130,10 +134,10 @@ This allows you to pull the full transaction details for a given transaction.
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { GetTransactionDetailsSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: GetTransactionDetailsSecurity = {
-  xAPIKey: "",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.transactions.getTransactionDetails({
@@ -143,7 +147,9 @@ const operationSecurity: GetTransactionDetailsSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -174,10 +180,10 @@ This refunds a captured transaction. Refunds can be done for any partial amount 
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { RefundTransactionSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: RefundTransactionSecurity = {
-  xAPIKey: "",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.transactions.refundTransaction({
@@ -193,7 +199,9 @@ const operationSecurity: RefundTransactionSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -224,10 +232,10 @@ This allows you to update certain transaction properties post-authorization.
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { UpdateTransactionSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: UpdateTransactionSecurity = {
-  xAPIKey: "",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.transactions.updateTransaction({
@@ -244,7 +252,9 @@ const operationSecurity: UpdateTransactionSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -278,10 +288,10 @@ Although the response returns the standard `transaction_view` object, only `stat
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 import { VoidTransactionSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new BoltEmbeddedApi();
 const operationSecurity: VoidTransactionSecurity = {
-  xAPIKey: "",
+  xAPIKey: "<YOUR_API_KEY_HERE>",
 };
 
   const res = await sdk.transactions.voidTransaction({
@@ -295,7 +305,9 @@ const operationSecurity: VoidTransactionSecurity = {
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
