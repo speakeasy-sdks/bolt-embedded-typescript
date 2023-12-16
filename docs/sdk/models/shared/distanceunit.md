@@ -5,5 +5,5 @@
 
 | Name   | Value  |
 | ------ | ------ |
-| `Km`   | km     |
 | `Mile` | mile   |
+| `Km`   | km     |

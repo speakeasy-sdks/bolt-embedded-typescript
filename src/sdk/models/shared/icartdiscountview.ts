@@ -7,7 +7,7 @@ import { AmountView } from "./amountview";
 import { IFreeShippingDiscountView } from "./ifreeshippingdiscountview";
 import { Expose, Type } from "class-transformer";
 
-export enum ICartDiscountViewDiscountCategory {
+export enum DiscountCategory {
     Coupon = "coupon",
     Giftcard = "giftcard",
     ManagedGiftcard = "managed_giftcard",
@@ -49,7 +49,7 @@ export class ICartDiscountView extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "discount_category" })
-    discountCategory?: ICartDiscountViewDiscountCategory;
+    discountCategory?: DiscountCategory;
 
     @SpeakeasyMetadata()
     @Expose({ name: "free_shipping" })

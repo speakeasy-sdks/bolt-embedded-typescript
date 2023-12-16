@@ -28,7 +28,7 @@ export class Properties extends SpeakeasyBase {
     value?: string;
 }
 
-export enum ICartItemViewShipmentType {
+export enum ShipmentType {
     Unknown = "unknown",
     DoorDelivery = "door_delivery",
     ShipToStore = "ship_to_store",
@@ -36,7 +36,7 @@ export enum ICartItemViewShipmentType {
     ShipToHomeOnly = "ship_to_home_only",
 }
 
-export enum ICartItemViewType {
+export enum TypeT {
     Unknown = "unknown",
     Digital = "digital",
     Physical = "physical",
@@ -163,7 +163,7 @@ export class ICartItemView extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "shipment_type" })
-    shipmentType?: ICartItemViewShipmentType;
+    shipmentType?: ShipmentType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "shopify_line_item_reference" })
@@ -222,7 +222,7 @@ export class ICartItemView extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: ICartItemViewType;
+    type?: TypeT;
 
     @SpeakeasyMetadata()
     @Expose({ name: "unit_price" })

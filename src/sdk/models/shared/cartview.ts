@@ -12,7 +12,7 @@ import { ICurrency } from "./icurrency";
 import { InStoreShipment2 } from "./instoreshipment2";
 import { Expose, Type } from "class-transformer";
 
-export class CartViewFulfillments extends SpeakeasyBase {
+export class Fulfillments extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "cart_shipment" })
     @Type(() => ICartShipmentView)
@@ -119,10 +119,10 @@ export class CartView extends SpeakeasyBase {
     @Type(() => ICartItemView)
     fees?: ICartItemView[];
 
-    @SpeakeasyMetadata({ elemType: CartViewFulfillments })
+    @SpeakeasyMetadata({ elemType: Fulfillments })
     @Expose({ name: "fulfillments" })
-    @Type(() => CartViewFulfillments)
-    fulfillments?: CartViewFulfillments[];
+    @Type(() => Fulfillments)
+    fulfillments?: Fulfillments[];
 
     /**
      * A cart that is being prepared for shipment

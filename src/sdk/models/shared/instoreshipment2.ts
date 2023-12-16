@@ -7,7 +7,7 @@ import { AddressView } from "./addressview";
 import { InStoreShipment } from "./instoreshipment";
 import { Expose, Type } from "class-transformer";
 
-export enum InStoreShipment2DistanceUnit {
+export enum DistanceUnit {
     Mile = "mile",
     Km = "km",
 }
@@ -30,7 +30,7 @@ export class InStoreShipment2 extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "distance_unit" })
-    distanceUnit?: InStoreShipment2DistanceUnit;
+    distanceUnit?: DistanceUnit;
 
     /**
      * A cart that is being prepared for shipment

@@ -184,10 +184,7 @@ export class Payments {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.object = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        operations.InitializePaymentResponseBody
-                    );
+                    res.oneOf = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -275,10 +272,7 @@ export class Payments {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.object = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        operations.UpdatePaymentResponseBody
-                    );
+                    res.oneOf = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,

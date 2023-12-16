@@ -3,9 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
-import { Expose, Type } from "class-transformer";
 
 export class UpdatePaymentSecurity extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "security, scheme=true;type=oauth2;name=Authorization" })
@@ -13,64 +11,6 @@ export class UpdatePaymentSecurity extends SpeakeasyBase {
 
     @SpeakeasyMetadata({ data: "security, scheme=true;type=apiKey;subtype=header;name=X-API-Key" })
     xAPIKey?: string;
-}
-
-/**
- * Identification information for the Shopper. This is only required when creating a new Bolt account.
- */
-export class UpdatePaymentShopperIdentity extends SpeakeasyBase {
-    /**
-     * determines whether to create a bolt account for this shopper
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "create_bolt_account" })
-    createBoltAccount?: boolean;
-
-    /**
-     * Email address of the shopper
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "email" })
-    email: string;
-
-    /**
-     * First name of the shopper
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "first_name" })
-    firstName: string;
-
-    /**
-     * Last name of the shopper
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "last_name" })
-    lastName: string;
-
-    /**
-     * Phone number of the shopper
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "phone" })
-    phone: string;
-}
-
-export class UpdatePaymentRequestBody extends SpeakeasyBase {
-    /**
-     * The details of the cart being purchased with this payment.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "cart" })
-    @Type(() => shared.CartCreate)
-    cart?: shared.CartCreate;
-
-    /**
-     * Identification information for the Shopper. This is only required when creating a new Bolt account.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "shopper_identity" })
-    @Type(() => UpdatePaymentShopperIdentity)
-    shopperIdentity?: UpdatePaymentShopperIdentity;
 }
 
 export class UpdatePaymentRequest extends SpeakeasyBase {
@@ -81,7 +21,7 @@ export class UpdatePaymentRequest extends SpeakeasyBase {
     idempotencyKey?: string;
 
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    requestBody?: UpdatePaymentRequestBody;
+    requestBody?: any;
 
     /**
      * The publicly viewable identifier used to identify a merchant division. This key is found in the Developer > API section of the Bolt Merchant Dashboard [RECOMMENDED].
@@ -94,34 +34,6 @@ export class UpdatePaymentRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
-}
-
-/**
- * The current payment status.
- */
-export enum UpdatePaymentStatus {
-    AwaitingUserConfirmation = "awaiting_user_confirmation",
-    PaymentReady = "payment_ready",
-    Success = "success",
-}
-
-/**
- * Payment updated.
- */
-export class UpdatePaymentResponseBody extends SpeakeasyBase {
-    /**
-     * The ID for a Payment Attempt
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "id" })
-    id?: string;
-
-    /**
-     * The current payment status.
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "status" })
-    status?: UpdatePaymentStatus;
 }
 
 export class UpdatePaymentResponse extends SpeakeasyBase {
@@ -147,5 +59,5 @@ export class UpdatePaymentResponse extends SpeakeasyBase {
      * Payment updated.
      */
     @SpeakeasyMetadata()
-    object?: UpdatePaymentResponseBody;
+    oneOf?: any;
 }
