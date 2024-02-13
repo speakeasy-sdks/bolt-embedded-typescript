@@ -32,6 +32,7 @@ const operationSecurity: CreateTestingShopperAccountSecurity = {
 
   const res = await sdk.testing.createTestingShopperAccount({
     requestBody: {
+      deactivateInDays: 30,
       emailState: EmailState.Verified,
       phoneState: Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState.Verified,
     },

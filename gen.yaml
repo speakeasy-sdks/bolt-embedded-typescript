@@ -5,8 +5,10 @@ generation:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
 typescript:
-  version: 0.12.2
+  version: 0.12.3
   author: ryan-test
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: false

@@ -4,15 +4,15 @@ management:
   docChecksum: b58aa22b520fd02d35640f920003ff1d
   docVersion: 1.0.1
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.12.2
-  configChecksum: 2f18f07b9b6f2246b14cbacab2d6c645
+  generationVersion: 2.253.0
+  releaseVersion: 0.12.3
+  configChecksum: 54a9222d21824b754404e842fb606278
   repoURL: https://github.com/speakeasy-sdks/bolt-embedded-typescript.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/bolt-embedded-typescript
 features:
   typescript:
-    core: 3.4.1
+    core: 3.4.6
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.0
