@@ -346,7 +346,7 @@ async function run() {
     });
 
     const res = await sdk.account.detectAccount({
-        xPublishableKey: "string",
+        xPublishableKey: "<value>",
     });
 
     if (res.statusCode == 200) {

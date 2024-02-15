@@ -32,7 +32,7 @@ async function run() {
   });
 
   const res = await sdk.oAuth.oAuthToken({
-    requestBody: "string",
+    requestBody: "<value>",
   });
 
   if (res.statusCode == 200) {

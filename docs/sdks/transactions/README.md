@@ -37,7 +37,7 @@ const operationSecurity: AuthorizeTransactionSecurity = {
 };
 
   const res = await sdk.transactions.authorizeTransaction({
-    requestBody: "string",
+    requestBody: "<value>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -141,7 +141,7 @@ const operationSecurity: GetTransactionDetailsSecurity = {
 };
 
   const res = await sdk.transactions.getTransactionDetails({
-    reference: "string",
+    reference: "<value>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -239,7 +239,7 @@ const operationSecurity: UpdateTransactionSecurity = {
 };
 
   const res = await sdk.transactions.updateTransaction({
-    reference: "string",
+    reference: "<value>",
     requestBody: {
       displayId: "order-123",
       metadata: {

@@ -293,7 +293,7 @@ const operationSecurity: DeleteAddressSecurity = {
 };
 
   const res = await sdk.account.deleteAddress({
-    id: "<ID>",
+    id: "<id>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -340,7 +340,7 @@ const operationSecurity: DeletePaymentMethodSecurity = {
 };
 
   const res = await sdk.account.deletePaymentMethod({
-    paymentMethodId: "string",
+    paymentMethodId: "<value>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -386,7 +386,7 @@ async function run() {
   });
 
   const res = await sdk.account.detectAccount({
-    xPublishableKey: "string",
+    xPublishableKey: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -454,7 +454,7 @@ const operationSecurity: EditAddressSecurity = {
       streetAddress3: "c/o Alicia Watts",
       streetAddress4: "Bridge Street Apartment Building B",
     },
-    id: "<ID>",
+    id: "<id>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -568,7 +568,7 @@ const operationSecurity: ReplaceAddressSecurity = {
       streetAddress3: "c/o Alicia Watts",
       streetAddress4: "Bridge Street Apartment Building B",
     },
-    id: "<ID>",
+    id: "<id>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {

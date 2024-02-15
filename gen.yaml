@@ -8,7 +8,7 @@ generation:
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
 typescript:
-  version: 0.12.3
+  version: 0.12.4
   author: ryan-test
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: false

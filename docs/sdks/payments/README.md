@@ -40,7 +40,7 @@ const operationSecurity: FinalizePaymentSecurity = {
         phone: "567.701.8847 x69933",
       },
     },
-    id: "<ID>",
+    id: "<id>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -87,7 +87,7 @@ const operationSecurity: InitializePaymentSecurity = {
 };
 
   const res = await sdk.payments.initializePayment({
-    requestBody: "string",
+    requestBody: "<value>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {
@@ -134,8 +134,8 @@ const operationSecurity: UpdatePaymentSecurity = {
 };
 
   const res = await sdk.payments.updatePayment({
-    requestBody: "string",
-    id: "<ID>",
+    requestBody: "<value>",
+    id: "<id>",
   }, operationSecurity);
 
   if (res.statusCode == 200) {

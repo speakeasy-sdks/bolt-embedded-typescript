@@ -130,7 +130,6 @@ export enum TransactionViewCause {
     AuthExpire = "auth_expire",
     AuthVerificationExpired = "auth_verification_expired",
     PaymentMethodUpdater = "payment_method_updater",
-    LessThanNilGreaterThan = "<nil>",
 }
 
 /**
