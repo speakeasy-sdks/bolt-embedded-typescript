@@ -379,11 +379,7 @@ Check whether an account exists using one of `email`, `phone`, or `sha256_email`
 import { BoltEmbeddedApi } from "bolt-embedded-api";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi({
-    security: {
-      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-    },
-  });
+  const sdk = new BoltEmbeddedApi();
 
   const res = await sdk.account.detectAccount({
     xPublishableKey: "<value>",
