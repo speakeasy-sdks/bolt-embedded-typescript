@@ -19,16 +19,17 @@ Create a Bolt shopper account for testing purposes. Available for sandbox use on
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { CreateTestingShopperAccountSecurity, EmailState } from "bolt-embedded-api/dist/sdk/models/operations";
+import { EmailState } from "bolt-embedded-api/dist/sdk/models/operations";
 import {
   Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState,
 } from "bolt-embedded-api/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: CreateTestingShopperAccountSecurity = {
-  xAPIKey: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.testing.createTestingShopperAccount({
     requestBody: {
@@ -36,7 +37,7 @@ const operationSecurity: CreateTestingShopperAccountSecurity = {
       emailState: EmailState.Verified,
       phoneState: Onev11testing1shopper1createPostRequestBodyContentApplication1jsonSchemaPropertiesEmailState.Verified,
     },
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -48,11 +49,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.CreateTestingShopperAccountRequest](../../sdk/models/operations/createtestingshopperaccountrequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `security`                                                                                                           | [operations.CreateTestingShopperAccountSecurity](../../sdk/models/operations/createtestingshopperaccountsecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [operations.CreateTestingShopperAccountRequest](../../sdk/models/operations/createtestingshopperaccountrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
 
 
 ### Response
@@ -72,15 +72,15 @@ This endpoint fetches a new credit card token for Bolt's universal test credit c
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { GetTestCreditCardTokenSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: GetTestCreditCardTokenSecurity = {
-  xAPIKey: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
-  const res = await sdk.testing.getTestCreditCardToken(operationSecurity);
+  const res = await sdk.testing.getTestCreditCardToken();
 
   if (res.statusCode == 200) {
     // handle response
@@ -92,10 +92,9 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                 | [operations.GetTestCreditCardTokenSecurity](../../sdk/models/operations/gettestcreditcardtokensecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response

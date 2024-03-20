@@ -337,6 +337,11 @@ This SDK supports the following security schemes globally:
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
+import {
+    Network,
+    PaymentMethodAccountPriority,
+    TokenType,
+} from "bolt-embedded-api/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new BoltEmbeddedApi({
@@ -345,8 +350,70 @@ async function run() {
         },
     });
 
-    const res = await sdk.account.detectAccount({
-        xPublishableKey: "<value>",
+    const res = await sdk.account.createAccount({
+        createAccountInput: {
+            addresses: [
+                {
+                    company: "Bolt",
+                    country: "United States",
+                    countryCode: "US",
+                    doorCode: "123456",
+                    email: "alan.watts@example.com",
+                    firstName: "Alan",
+                    lastName: "Watts",
+                    locality: "Brooklyn",
+                    metadata: {},
+                    name: "Alan Watts",
+                    phone: "+12125550199",
+                    postalCode: "10044",
+                    region: "NY",
+                    regionCode: "NY",
+                    streetAddress1: "888 main street",
+                    streetAddress2: "apt 3021",
+                    streetAddress3: "c/o Alicia Watts",
+                    streetAddress4: "Bridge Street Apartment Building B",
+                },
+            ],
+            paymentMethods: [
+                {
+                    billingAddress: {
+                        company: "Bolt",
+                        country: "United States",
+                        countryCode: "US",
+                        default: true,
+                        doorCode: "123456",
+                        email: "alan.watts@example.com",
+                        firstName: "Alan",
+                        lastName: "Watts",
+                        locality: "Brooklyn",
+                        name: "Alan Watts",
+                        phone: "+12125550199",
+                        postalCode: "10044",
+                        region: "NY",
+                        regionCode: "NY",
+                        streetAddress1: "888 main street",
+                        streetAddress2: "apt 3021",
+                        streetAddress3: "c/o Alicia Watts",
+                        streetAddress4: "Bridge Street Apartment Building B",
+                    },
+                    billingAddressId: null,
+                    bin: "411111",
+                    expiration: "2025-11",
+                    last4: "1234",
+                    metadata: {},
+                    postalCode: "10044",
+                    token: "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0",
+                    tokenType: TokenType.Bolt,
+                },
+            ],
+            profile: {
+                email: "alan.watts@example.com",
+                firstName: "Alan",
+                lastName: "Watts",
+                metadata: {},
+                phone: "+12125550199",
+            },
+        },
     });
 
     if (res.statusCode == 200) {

@@ -77,13 +77,13 @@ Although the response returns the standard `transaction_view` object, only `capt
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { CaptureTransactionSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: CaptureTransactionSecurity = {
-  xAPIKey: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.transactions.captureTransaction({
     captureTransactionWithReference: {
@@ -93,7 +93,7 @@ const operationSecurity: CaptureTransactionSecurity = {
       skipHookNotification: false,
       transactionReference: "LBLJ-TWW7-R9VC",
     },
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -105,11 +105,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.CaptureTransactionRequest](../../sdk/models/operations/capturetransactionrequest.md)   | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `security`                                                                                         | [operations.CaptureTransactionSecurity](../../sdk/models/operations/capturetransactionsecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.CaptureTransactionRequest](../../sdk/models/operations/capturetransactionrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
@@ -132,17 +131,17 @@ This allows you to pull the full transaction details for a given transaction.
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { GetTransactionDetailsSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: GetTransactionDetailsSecurity = {
-  xAPIKey: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.transactions.getTransactionDetails({
     reference: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -154,11 +153,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.GetTransactionDetailsRequest](../../sdk/models/operations/gettransactiondetailsrequest.md)   | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `security`                                                                                               | [operations.GetTransactionDetailsSecurity](../../sdk/models/operations/gettransactiondetailssecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.GetTransactionDetailsRequest](../../sdk/models/operations/gettransactiondetailsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response
@@ -178,13 +176,13 @@ This refunds a captured transaction. Refunds can be done for any partial amount 
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { RefundTransactionSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: RefundTransactionSecurity = {
-  xAPIKey: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.transactions.refundTransaction({
     requestBody: {
@@ -194,7 +192,7 @@ const operationSecurity: RefundTransactionSecurity = {
       skipHookNotification: false,
       transactionReference: "LBLJ-TWW7-R9VC",
     },
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -206,11 +204,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.RefundTransactionRequest](../../sdk/models/operations/refundtransactionrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.RefundTransactionSecurity](../../sdk/models/operations/refundtransactionsecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.RefundTransactionRequest](../../sdk/models/operations/refundtransactionrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
@@ -230,13 +227,13 @@ This allows you to update certain transaction properties post-authorization.
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { UpdateTransactionSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: UpdateTransactionSecurity = {
-  xAPIKey: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.transactions.updateTransaction({
     reference: "<value>",
@@ -247,7 +244,7 @@ const operationSecurity: UpdateTransactionSecurity = {
         "key2": "value2",
       },
     },
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -259,11 +256,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.UpdateTransactionRequest](../../sdk/models/operations/updatetransactionrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.UpdateTransactionSecurity](../../sdk/models/operations/updatetransactionsecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.UpdateTransactionRequest](../../sdk/models/operations/updatetransactionrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
@@ -286,13 +282,13 @@ Although the response returns the standard `transaction_view` object, only `stat
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { VoidTransactionSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: VoidTransactionSecurity = {
-  xAPIKey: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.transactions.voidTransaction({
     creditCardVoid: {
@@ -300,7 +296,7 @@ const operationSecurity: VoidTransactionSecurity = {
       skipHookNotification: false,
       transactionReference: "LBLJ-TWW7-R9VC",
     },
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -312,11 +308,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.VoidTransactionRequest](../../sdk/models/operations/voidtransactionrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.VoidTransactionSecurity](../../sdk/models/operations/voidtransactionsecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.VoidTransactionRequest](../../sdk/models/operations/voidtransactionrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response

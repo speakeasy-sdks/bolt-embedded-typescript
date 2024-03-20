@@ -10,7 +10,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 typescript:
-  version: 0.12.7
+  version: 0.12.8
   author: ryan-test
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: false

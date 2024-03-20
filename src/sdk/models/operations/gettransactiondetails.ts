@@ -7,11 +7,6 @@ import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class GetTransactionDetailsSecurity extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "security, scheme=true;type=apiKey;subtype=header;name=X-API-Key" })
-    xAPIKey: string;
-}
-
 export class GetTransactionDetailsRequest extends SpeakeasyBase {
     /**
      * This is the Bolt transaction reference. (ex. N7Y3-NFKC-VFRF)

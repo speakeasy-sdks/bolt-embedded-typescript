@@ -21,13 +21,13 @@ Finalize a Bolt Payment. NOTE: The authorization header is NOT required for paym
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { FinalizePaymentSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: FinalizePaymentSecurity = {
-  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.payments.finalizePayment({
     requestBody: {
@@ -41,7 +41,7 @@ const operationSecurity: FinalizePaymentSecurity = {
       },
     },
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -53,11 +53,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.FinalizePaymentRequest](../../sdk/models/operations/finalizepaymentrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.FinalizePaymentSecurity](../../sdk/models/operations/finalizepaymentsecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.FinalizePaymentRequest](../../sdk/models/operations/finalizepaymentrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
@@ -78,17 +77,17 @@ Initialize a Bolt payment token that will be used to reference this payment to B
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { InitializePaymentSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: InitializePaymentSecurity = {
-  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.payments.initializePayment({
     requestBody: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -100,11 +99,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.InitializePaymentRequest](../../sdk/models/operations/initializepaymentrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.InitializePaymentSecurity](../../sdk/models/operations/initializepaymentsecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.InitializePaymentRequest](../../sdk/models/operations/initializepaymentrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
@@ -125,18 +123,18 @@ Update a Bolt payment using the token given after initializing a payment.  Updat
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { UpdatePaymentSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: UpdatePaymentSecurity = {
-  oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.payments.updatePayment({
     requestBody: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -148,11 +146,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.UpdatePaymentRequest](../../sdk/models/operations/updatepaymentrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.UpdatePaymentSecurity](../../sdk/models/operations/updatepaymentsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.UpdatePaymentRequest](../../sdk/models/operations/updatepaymentrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response

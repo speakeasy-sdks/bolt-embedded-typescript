@@ -210,7 +210,6 @@ export class Account {
      */
     async createAccount(
         req: operations.CreateAccountRequest,
-        security: operations.CreateAccountSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAccountResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -237,10 +236,14 @@ export class Account {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAccountSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,

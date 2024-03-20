@@ -5,6 +5,7 @@
 import * as utils from "../internal/utils";
 import * as errors from "../sdk/models/errors";
 import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -30,7 +31,6 @@ export class Testing {
      */
     async createTestingShopperAccount(
         req: operations.CreateTestingShopperAccountRequest,
-        security: operations.CreateTestingShopperAccountSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateTestingShopperAccountResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -53,10 +53,14 @@ export class Testing {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateTestingShopperAccountSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -118,7 +122,6 @@ export class Testing {
      * This endpoint fetches a new credit card token for Bolt's universal test credit card number `4111 1111 1111 1004`. This is for testing and is available only in sandbox.
      */
     async getTestCreditCardToken(
-        security: operations.GetTestCreditCardTokenSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetTestCreditCardTokenResponse> {
         const baseURL: string = utils.templateUrl(
@@ -127,10 +130,14 @@ export class Testing {
         );
         const operationUrl: string = baseURL.replace(/\/$/, "") + "/v1/testing/card_token";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetTestCreditCardTokenSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 

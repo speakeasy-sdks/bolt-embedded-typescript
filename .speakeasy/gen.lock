@@ -3,17 +3,17 @@ id: f07d4e92-2efa-4995-a0d5-bb4b35a769fd
 management:
   docChecksum: b58aa22b520fd02d35640f920003ff1d
   docVersion: 1.0.1
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 0.12.7
-  configChecksum: c6a88e5aa426eccd02b40c82d56eff6a
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 0.12.8
+  configChecksum: cedff2c5202fa0a836b3f29f8e312adf
   repoURL: https://github.com/speakeasy-sdks/bolt-embedded-typescript.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/bolt-embedded-typescript
 features:
   typescript:
     core: 3.4.8
-    globalSecurity: 2.82.4
+    globalSecurity: 2.82.5
     globalServerURLs: 2.82.2
     methodSecurity: 2.82.0
 generatedFiles:
@@ -195,7 +195,6 @@ generatedFiles:
   - docs/sdk/models/operations/addpaymentmethodrequestbody.md
   - docs/sdk/models/operations/addpaymentmethodrequest.md
   - docs/sdk/models/operations/addpaymentmethodresponse.md
-  - docs/sdk/models/operations/createaccountsecurity.md
   - docs/sdk/models/operations/createaccountrequest.md
   - docs/sdk/models/operations/createaccountresponse.md
   - docs/sdk/models/operations/deleteaddresssecurity.md
@@ -224,13 +223,11 @@ generatedFiles:
   - docs/sdk/models/operations/authorizetransactionsecurity.md
   - docs/sdk/models/operations/authorizetransactionrequest.md
   - docs/sdk/models/operations/authorizetransactionresponse.md
-  - docs/sdk/models/operations/capturetransactionsecurity.md
   - docs/sdk/models/operations/capturetransactionrequest.md
   - docs/sdk/models/operations/errors.md
   - docs/sdk/models/operations/result.md
   - docs/sdk/models/operations/capturetransactionresponsebody.md
   - docs/sdk/models/operations/capturetransactionresponse.md
-  - docs/sdk/models/operations/gettransactiondetailssecurity.md
   - docs/sdk/models/operations/gettransactiondetailsrequest.md
   - docs/sdk/models/operations/typet.md
   - docs/sdk/models/operations/splits.md
@@ -238,11 +235,9 @@ generatedFiles:
   - docs/sdk/models/operations/transactionrejectiondetails.md
   - docs/sdk/models/operations/gettransactiondetailsresponsebody.md
   - docs/sdk/models/operations/gettransactiondetailsresponse.md
-  - docs/sdk/models/operations/refundtransactionsecurity.md
   - docs/sdk/models/operations/refundtransactionrequestbody.md
   - docs/sdk/models/operations/refundtransactionrequest.md
   - docs/sdk/models/operations/refundtransactionresponse.md
-  - docs/sdk/models/operations/updatetransactionsecurity.md
   - docs/sdk/models/operations/updatetransactionrequestbody.md
   - docs/sdk/models/operations/updatetransactionrequest.md
   - docs/sdk/models/operations/updatetransactiontype.md
@@ -251,12 +246,10 @@ generatedFiles:
   - docs/sdk/models/operations/updatetransactiontransactionrejectiondetails.md
   - docs/sdk/models/operations/updatetransactionresponsebody.md
   - docs/sdk/models/operations/updatetransactionresponse.md
-  - docs/sdk/models/operations/voidtransactionsecurity.md
   - docs/sdk/models/operations/voidtransactionrequest.md
   - docs/sdk/models/operations/voidtransactionresponse.md
   - docs/sdk/models/operations/oauthtokenrequest.md
   - docs/sdk/models/operations/oauthtokenresponse.md
-  - docs/sdk/models/operations/finalizepaymentsecurity.md
   - docs/sdk/models/operations/shopperidentity.md
   - docs/sdk/models/operations/finalizepaymentrequestbody.md
   - docs/sdk/models/operations/finalizepaymentrequest.md
@@ -265,19 +258,15 @@ generatedFiles:
   - docs/sdk/models/operations/transaction.md
   - docs/sdk/models/operations/finalizepaymentresponsebody.md
   - docs/sdk/models/operations/finalizepaymentresponse.md
-  - docs/sdk/models/operations/initializepaymentsecurity.md
   - docs/sdk/models/operations/initializepaymentrequest.md
   - docs/sdk/models/operations/initializepaymentresponse.md
-  - docs/sdk/models/operations/updatepaymentsecurity.md
   - docs/sdk/models/operations/updatepaymentrequest.md
   - docs/sdk/models/operations/updatepaymentresponse.md
-  - docs/sdk/models/operations/createtestingshopperaccountsecurity.md
   - docs/sdk/models/operations/emailstate.md
   - docs/sdk/models/operations/createtestingshopperaccountrequestbody.md
   - docs/sdk/models/operations/createtestingshopperaccountrequest.md
   - docs/sdk/models/operations/createtestingshopperaccountresponsebody.md
   - docs/sdk/models/operations/createtestingshopperaccountresponse.md
-  - docs/sdk/models/operations/gettestcreditcardtokensecurity.md
   - docs/sdk/models/operations/gettestcreditcardtokenresponsebody.md
   - docs/sdk/models/operations/gettestcreditcardtokenresponse.md
   - docs/sdk/models/shared/metadata.md

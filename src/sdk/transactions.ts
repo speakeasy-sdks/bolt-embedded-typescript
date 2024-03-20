@@ -128,7 +128,6 @@ export class Transactions {
      */
     async captureTransaction(
         req: operations.CaptureTransactionRequest,
-        security: operations.CaptureTransactionSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CaptureTransactionResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -156,10 +155,14 @@ export class Transactions {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CaptureTransactionSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -255,7 +258,6 @@ export class Transactions {
      */
     async getTransactionDetails(
         req: operations.GetTransactionDetailsRequest,
-        security: operations.GetTransactionDetailsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetTransactionDetailsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -272,10 +274,14 @@ export class Transactions {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetTransactionDetailsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -347,7 +353,6 @@ export class Transactions {
      */
     async refundTransaction(
         req: operations.RefundTransactionRequest,
-        security: operations.RefundTransactionSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RefundTransactionResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -371,10 +376,14 @@ export class Transactions {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RefundTransactionSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -451,7 +460,6 @@ export class Transactions {
      */
     async updateTransaction(
         req: operations.UpdateTransactionRequest,
-        security: operations.UpdateTransactionSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateTransactionResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -478,10 +486,14 @@ export class Transactions {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateTransactionSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -561,7 +573,6 @@ export class Transactions {
      */
     async voidTransaction(
         req: operations.VoidTransactionRequest,
-        security: operations.VoidTransactionSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.VoidTransactionResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -584,10 +595,14 @@ export class Transactions {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.VoidTransactionSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,

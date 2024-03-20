@@ -5,6 +5,7 @@
 import * as utils from "../internal/utils";
 import * as errors from "../sdk/models/errors";
 import * as operations from "../sdk/models/operations";
+import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -31,7 +32,6 @@ export class Payments {
      */
     async finalizePayment(
         req: operations.FinalizePaymentRequest,
-        security: operations.FinalizePaymentSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.FinalizePaymentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -54,10 +54,14 @@ export class Payments {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.FinalizePaymentSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -122,7 +126,6 @@ export class Payments {
      */
     async initializePayment(
         req: operations.InitializePaymentRequest,
-        security: operations.InitializePaymentSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.InitializePaymentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -145,10 +148,14 @@ export class Payments {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.InitializePaymentSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,
@@ -210,7 +217,6 @@ export class Payments {
      */
     async updatePayment(
         req: operations.UpdatePaymentRequest,
-        security: operations.UpdatePaymentSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdatePaymentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -233,10 +239,14 @@ export class Payments {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdatePaymentSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...reqBodyHeaders,

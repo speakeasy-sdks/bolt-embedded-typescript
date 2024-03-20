@@ -173,14 +173,14 @@ Create a Bolt shopping account.
 
 ```typescript
 import { BoltEmbeddedApi } from "bolt-embedded-api";
-import { CreateAccountSecurity } from "bolt-embedded-api/dist/sdk/models/operations";
 import { Network, PaymentMethodAccountPriority, TokenType } from "bolt-embedded-api/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new BoltEmbeddedApi();
-const operationSecurity: CreateAccountSecurity = {
-  xAPIKey: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new BoltEmbeddedApi({
+    security: {
+      oAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+    },
+  });
 
   const res = await sdk.account.createAccount({
     createAccountInput: {
@@ -246,7 +246,7 @@ const operationSecurity: CreateAccountSecurity = {
         phone: "+12125550199",
       },
     },
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -258,11 +258,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.CreateAccountRequest](../../sdk/models/operations/createaccountrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.CreateAccountSecurity](../../sdk/models/operations/createaccountsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.CreateAccountRequest](../../sdk/models/operations/createaccountrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
